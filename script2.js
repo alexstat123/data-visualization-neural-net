@@ -31,6 +31,7 @@ function getdata(graph){
 
 
 
+// function that draws bars and text on the canvas
 
 function drawRectangle(depthArr,name,siblingsArr)
 {
@@ -55,13 +56,17 @@ function drawRectangle(depthArr,name,siblingsArr)
             .attr("x", function(d,i)
             {
 
+                // number of siblings on ith layer
                 var indexes = getAllIndexes(depthArr, d);
+
+                // if number of sibling on ith layer is bigger than 1
+                // return width of bar equal to barwidth devided by number of children
 
                 if(indexes.length > 1){
 
-                    console.log("my length is", indexes.length);
-                    console.log("out of my siblings i am: ",indexes.indexOf(i));
-                    return xpos + 201*indexes.indexOf(i);
+
+                    return  ((barwidth/indexes.length + gap))*indexes.indexOf(i);
+
                 }
 
 
@@ -70,10 +75,19 @@ function drawRectangle(depthArr,name,siblingsArr)
             .attr("y", function(d,i){
 
                 return d*(barthinkness+gap)})
-            .attr("width", barwidth)
+            .attr("width", function (d,i) {
+
+                var indexes = getAllIndexes(depthArr, d);
+                console.log("siblings length",indexes.length);
+                return barwidth/indexes.length
+            })
             .attr("height", barthinkness)
             .attr("fill", "teal");
 
+
+
+
+        // draw text on the canvas
 
         var label = svg.selectAll("text")
             .data(depthArr)
@@ -86,9 +100,8 @@ function drawRectangle(depthArr,name,siblingsArr)
                 //console.log("find all indexes of ",indexes);
                 if(indexes.length > 1){
 
-                    console.log("my length is", indexes.length);
-                    console.log("out of my siblings i am: ",indexes.indexOf(i));
-                    return 100 + 200*indexes.indexOf(i);
+
+                    return 50 + 100*indexes.indexOf(i);
                 }else{
                     return 100;
                 }
@@ -107,29 +120,6 @@ function drawRectangle(depthArr,name,siblingsArr)
 }
 
 depthCheckArr = [];
-function siblings(data){
-
-
-    depthCheckArr.push(data);
-
-
-    return countInArray(depthCheckArr, data)
-}
-
-
-function countInArray(array, what) {
-    var count = -1;
-    var newcount=0;
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] === what) {
-            count++;
-        }
-    }
-
-
-    return count;
-}
-
 
 function getAllIndexes(arr, val) {
     var indexes = [], i = -1;
