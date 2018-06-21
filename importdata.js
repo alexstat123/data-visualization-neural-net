@@ -2,25 +2,28 @@
 
 function getdata(graph){
 
-    console.log("my script is working!");
+    console.log("my script is working well!");
     console.log("grap data is:",graph);
 
     var name = [];
     var depthArr = [];
     var siblingArr = [];
     var order = [];
+    var tabs = [];
     graph["nodes"].forEach(function (item,index,array) {
 
         depthArr.push(item["depth"]);
         siblingArr.push(item["siblingsNum"]);
         name.push(item["id"]);
         order.push(item["order"]);
+        tabs.push(item["tab"]);
 
     })
     console.log(name);
     console.log(depthArr);
     console.log(siblingArr);
     console.log(order);
+    console.log(tabs);
 
     drawRectangle(depthArr,name,siblingArr)
 
