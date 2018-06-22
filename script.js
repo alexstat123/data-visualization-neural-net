@@ -35,8 +35,10 @@ graph = {
             siblingsNum: 0,
             // The order between siblings
             order: 0,
-            //Nesting level
+            // Nesting level
             tab: 0,
+            // Height of the node
+            height: -1,
             //Dictionary of nodes connected to this node "on top" part of it
             parents: new Map(),
             //Dictionary of nodes connected to this node "on bottom" part of it.
@@ -98,11 +100,25 @@ graph = {
             },
             updateChildsHorizontalPosition: function () {
                 var order = 0;
+
                 this.childs.forEach(child => {
                     child.siblingsNum = this.childs.size;
                     child.order = order;
                     order++;
                     child.updateChildsHorizontalPosition();
+                });
+            },
+            updateParentsHeight: function () {
+                if (this.parents.size === 0) return;
+
+                var maxDepth = d3.max(Array.from(this.parents.values()), parent => {
+                    console.log(parent);
+                    return parent.depth;
+                });
+
+                this.parents.forEach(parent => {
+                    parent.height = 1 + (maxDepth - parent.depth);
+                    parent.updateParentsHeight();
                 });
             }
         };
@@ -145,6 +161,13 @@ graph = {
 
     updateChildsPosition() {
         this.getRoot().updateChildsHorizontalPosition();
+    },
+    updateNodesHeight() {
+        var leafs = Array.from(this.nodes.values()).filter(e => e.childs.size === 0);
+        console.log(leafs);
+        leafs.forEach(leaf => {
+            leaf.updateParentsHeight();
+        });
     }
 
 };
@@ -166,9 +189,12 @@ function createGraph(neuralNetwork) {
     graph.updateDepth();
     graph.updateTabs();
     graph.updateChildsPosition();
+    graph.updateNodesHeight();
 
     console.log("graph");
     console.log(graph);
+    console.log("nodes");
+    console.log(Array.from(graph.nodes.values()));
 }
 
 d3.json("data/AnnaNet/net.json", function (error, json) {
