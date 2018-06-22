@@ -68,16 +68,16 @@ graph = {
                 this.childs.forEach(child => childDepths.set(child.depth, 1 + (childDepths.get(child.depth) || 0)));
 
                 var toDo = null;
-                console.log(childDepths);
+                //console.log(childDepths);
                 if (childDepths.size === 0) {
                     //No childs
-                    console.log("nochilds");
+                    //console.log("nochilds");
                     return;
                 }
                 else if (childDepths.size === 1) {
                     //Childs are all on the same depth
                     toDo = (child) => child.setTab(newTab);
-                    console.log("+0")
+                    //console.log("+0")
                 }
                 else if (childDepths.size === 2) {
                     //The childs of this have 2 different levels of depth so it is the case to use tabs
@@ -204,6 +204,7 @@ d3.json("data/AnnaNet/net.json", function (error, json) {
     }
 
     createGraph(json);
-    console.log("json");
-    console.log(json);
+    getdata(graph);
+    //console.log("json");
+    //console.log(json);
 });
