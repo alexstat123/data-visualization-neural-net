@@ -7,6 +7,7 @@ graph = {
         id=>nodeObject
      */
     nodes: new Map(),
+    nodesArray: [],
     //Given an id, returns the node object
     getNode: function (id) {
         var node = this.nodes[id];
@@ -64,8 +65,7 @@ graph = {
             setTab: function (newTab) {
 
                 this.tab = newTab;
-                var childDepths = new Map();
-                this.childs.forEach(child => childDepths.set(child.depth, 1 + (childDepths.get(child.depth) || 0)));
+                var childDepths = new Set([...this.childs.values()].map(node => node.depth));
 
                 var toDo = null;
                 //console.log(childDepths);
@@ -81,11 +81,7 @@ graph = {
                 }
                 else if (childDepths.size === 2) {
                     //The childs of this have 2 different levels of depth so it is the case to use tabs
-                    var maxDepth = 0;
-
-                    for (var depth of childDepths.keys())
-                        maxDepth = depth > maxDepth ? depth : maxDepth;
-
+                    var maxDepth = d3.max([...childDepths]);
                     toDo = (child) => {
                         //The child which is at maximum depth is the merge node so it should not be tabbed
                         child.depth === maxDepth ? child.setTab(newTab) : child.setTab(newTab + 1);
@@ -111,13 +107,8 @@ graph = {
             updateParentsHeight: function () {
                 if (this.parents.size === 0) return;
 
-                var maxDepth = d3.max(Array.from(this.parents.values()), parent => {
-                    console.log(parent);
-                    return parent.depth;
-                });
-
                 this.parents.forEach(parent => {
-                    parent.height = 1 + (maxDepth - parent.depth);
+                    parent.height = this.depth - parent.depth;
                     parent.updateParentsHeight();
                 });
             }
@@ -125,6 +116,7 @@ graph = {
 
         //add the created node to the list of nodes of this graph
         this.nodes.set(id, node);
+        this.nodesArray.push(node);
 
         //end of createNode()
         return node;
@@ -163,12 +155,39 @@ graph = {
         this.getRoot().updateChildsHorizontalPosition();
     },
     updateNodesHeight() {
-        var leafs = Array.from(this.nodes.values()).filter(e => e.childs.size === 0);
+        var leafs = this.nodesArray.filter(e => e.childs.size === 0);
         console.log(leafs);
         leafs.forEach(leaf => {
             leaf.updateParentsHeight();
         });
-    }
+    },
+    updateNodesColors() {
+        var types = new Set(this.nodesArray.map(e => e.originalData.layerType));
+        var layersFixedTypes = ["FullyConnected"
+            , "Activation"
+            , "Subsampling"
+            , "ConvolutionalND"
+            , "Split"
+            , "Join"
+            , "BatchNormalization"
+            , "SoftmaxAlt"];
+
+        var layersType = [...new Set(layersFixedTypes, types)];
+        var c20 = d3.scaleOrdinal(d3['schemeCategory20']);
+
+        var colorScale = node => {
+            var idx = layersType.indexOf(node.originalData.layerType);
+            if (idx > 20) idx = 20;
+            console.log(c20(idx));
+            return c20(idx);
+        };
+
+        this.nodesArray.forEach(node => {
+            node.color = colorScale(node)
+        });
+
+        console.log(types);
+    },
 
 };
 
@@ -190,11 +209,11 @@ function createGraph(neuralNetwork) {
     graph.updateTabs();
     graph.updateChildsPosition();
     graph.updateNodesHeight();
-
+    graph.updateNodesColors();
     console.log("graph");
     console.log(graph);
     console.log("nodes");
-    console.log(Array.from(graph.nodes.values()));
+    console.log(this.nodesArray);
 }
 
 d3.json("data/AnnaNet/net.json", function (error, json) {
