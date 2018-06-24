@@ -8,6 +8,9 @@ graph = {
      */
     nodes: new Map(),
     nodesArray: [],
+    nodesColorScale: null,
+    layerTypes: [],
+
     //Given an id, returns the node object
     getNode: function (id) {
         var node = this.nodes[id];
@@ -161,9 +164,8 @@ graph = {
             leaf.updateParentsHeight();
         });
     },
-    updateNodesColors() {
-        var types = new Set(this.nodesArray.map(e => e.originalData.layerType));
-        var layersFixedTypes = ["FullyConnected"
+    getFixedLayersTypes() {
+        return ["FullyConnected"
             , "Activation"
             , "Subsampling"
             , "ConvolutionalND"
@@ -171,23 +173,29 @@ graph = {
             , "Join"
             , "BatchNormalization"
             , "SoftmaxAlt"];
-
-        var layersType = [...new Set(layersFixedTypes, types)];
+    },
+    getActualLayersTypes() {
+        return new Set(this.nodesArray.map(e => e.originalData.layerType));
+    },
+    updateNodesColors() {
+        var layersType = [...new Set(this.getFixedLayersTypes(), this.getActualLayersTypes())];
         var c20 = d3.scaleOrdinal(d3['schemeCategory20']);
 
-        var colorScale = node => {
-            var idx = layersType.indexOf(node.originalData.layerType);
+        this.nodesColorScale = layerType => {
+            var idx = layersType.indexOf(layerType);
             if (idx > 20) idx = 20;
-            console.log(c20(idx));
             return c20(idx);
         };
 
         this.nodesArray.forEach(node => {
-            node.color = colorScale(node)
+            node.color = this.nodesColorScale(node.originalData.layerType)
         });
-
-        console.log(types);
     },
+    getLayersColors() {
+        var layersType = [...new Set(this.getFixedLayersTypes(), this.getActualLayersTypes())];
+
+        return layersType.map(type => ({"type": type, "color": this.nodesColorScale(type)}))
+    }
 
 };
 
@@ -216,14 +224,18 @@ function createGraph(neuralNetwork) {
     console.log(this.nodesArray);
 }
 
-d3.json("data/AnnaNet/net.json", function (error, json) {
-    if (error) {
-        console.log(error);  //Log the error.
-        throw error;
-    }
+$(window).bind("load", function () {
+    d3.json("data/AnnaNet/net.json", function (error, json) {
+        if (error) {
+            console.log(error);  //Log the error.
+            throw error;
+        }
 
-    createGraph(json);
-    getdata(graph);
-    //console.log("json");
-    //console.log(json);
-});
+        createGraph(json);
+        $(window).trigger("graphLoaded", graph);
+
+        //  getdata(graph);
+        //console.log("json");
+        //console.log(json);
+    });
+})
