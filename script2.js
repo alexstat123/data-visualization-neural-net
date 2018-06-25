@@ -2,8 +2,11 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 
 function getdata(graph) {
 
-    console.log("my script is working well!");
-    console.log("grap data is:", graph);
+     console.log("my script is working pretty well!");
+    // console.log("grap data is:", graph);
+     //console.log("values of graph.nodesArray",Object.entries(graph.nodesArray) );
+
+    console.log("graph.nodesArray",graph.nodesArray);
 
     var name = [];
     var depthArr = [];
@@ -34,6 +37,9 @@ function getdata(graph) {
 
 function drawRectangle(depthArr, name, siblingsArr) {
 
+console.log("depth array!",depthArr);
+//console.log("new depth array!",graph.nodesArray[0]["depth"]);
+//console.log("graph.nodesArray",graph.nodesArray);
 
     var gap = 1;
     var barthinkness = 20;
@@ -54,6 +60,8 @@ function drawRectangle(depthArr, name, siblingsArr) {
 
             // number of siblings on ith layer
             var indexes = getAllIndexes(depthArr, d);
+            //console.log("new depth array!",graph.nodesArray[i]["depth"]);
+
 
             // if number of sibling on ith layer is bigger than 1
             // return width of bar equal to barwidth devided by number of children
@@ -69,12 +77,16 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .attr("y", function (d, i) {
 
-            return d * (barthinkness + gap)
+            return graph.nodesArray[i]["depth"] * (barthinkness + gap)
         })
         .attr("width", function (d, i) {
 
             var indexes = getAllIndexes(depthArr, d);
-            console.log("siblings length", indexes.length);
+            //console.log("siblings number",graph.nodesArray[i]["siblingsNum"]);
+            console.log("index,length",indexes.length);
+            //layerOrder(graph.nodesArray[i]["depth"]);
+            //console.log("check length",layerOrder(graph.nodesArray[i]["depth"]));
+            //console.log("index length",indexes.length);
             return (barwidth / indexes.length);
         })
         .attr("height", barthinkness)
@@ -94,7 +106,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
             //console.log("find all indexes of ",indexes);
             if (indexes.length > 1) {
 
-                console.log("there are this number of siblings", siblingsArr[i]);
+                //console.log("there are this number of siblings", siblingsArr[i]);
                 return (barwidth + gap) / (indexes.length * 2) + (barwidth / indexes.length) * indexes.indexOf(i) - gap * (indexes.length - 1);
             } else {
                 return 100;
@@ -117,10 +129,26 @@ function drawRectangle(depthArr, name, siblingsArr) {
 depthCheckArr = [];
 
 function getAllIndexes(arr, val) {
+
     var indexes = [], i = -1;
     while ((i = arr.indexOf(val, i + 1)) != -1) {
         indexes.push(i);
     }
+
     return indexes;
+}
+
+var arr = [];
+function layerOrder(myDepth){
+
+
+    arr.push(myDepth)
+    //console.log("my depth is", myDepth);
+    //console.log("arr", arr);
+    const check = arr.filter(arr => arr == myDepth);
+    //console.log("check",check);
+    return check.length/2
+
+
 }
 

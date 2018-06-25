@@ -225,7 +225,8 @@ function createGraph(neuralNetwork) {
 }
 
 $(window).bind("load", function () {
-    d3.json("data/AnnaNet/net.json", function (error, json) {
+    // d3.json("data/AnnaNet/net.json", function (error, json) {
+    d3.json("BranchNet/net.json", function (error, json) {
         if (error) {
             console.log(error);  //Log the error.
             throw error;
