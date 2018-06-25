@@ -119,7 +119,6 @@ graph = {
 
         //add the created node to the list of nodes of this graph
         this.nodes.set(id, node);
-        this.nodesArray.push(node);
 
         //end of createNode()
         return node;
@@ -159,7 +158,6 @@ graph = {
     },
     updateNodesHeight() {
         var leafs = this.nodesArray.filter(e => e.childs.size === 0);
-        console.log(leafs);
         leafs.forEach(leaf => {
             leaf.updateParentsHeight();
         });
@@ -195,6 +193,20 @@ graph = {
         var layersType = [...new Set(this.getFixedLayersTypes(), this.getActualLayersTypes())];
 
         return layersType.map(type => ({"type": type, "color": this.nodesColorScale(type)}))
+    },
+    BFS() {
+        //TODO improve efficiency
+        var nodesToCall = [this.getRoot()];
+        var result = [];
+        while (nodesToCall.length !== 0) {
+            var n = nodesToCall.shift();
+            result.push(n);
+            nodesToCall.push(...n.childs.values());
+        }
+        this.nodesArray = [];
+        result.forEach((el) => {
+            if ($.inArray(el, this.nodesArray) === -1) this.nodesArray.push(el);
+        });
     }
 
 };
@@ -218,6 +230,7 @@ function createGraph(neuralNetwork) {
     graph.updateChildsPosition();
     graph.updateNodesHeight();
     graph.updateNodesColors();
+    graph.BFS();
     console.log("graph");
     console.log(graph);
     console.log("nodes");

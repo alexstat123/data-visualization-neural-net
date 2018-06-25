@@ -13,7 +13,7 @@ function getdata(graph) {
     var siblingArr = [];
     var order = [];
     var tabs = [];
-    graph["nodes"].forEach(function (item, index, array) {
+    graph["nodesArray"].forEach(function (item, index, array) {
 
         depthArr.push(item["depth"]);
         siblingArr.push(item["siblingsNum"]);
@@ -53,13 +53,13 @@ console.log("depth array!",depthArr);
 
 
     var rects = svg.selectAll("foo")
-        .data(depthArr)
+        .data(graph.nodesArray)
         .enter()
         .append("rect")
         .attr("x", function (d, i) {
 
             // number of siblings on ith layer
-            var indexes = getAllIndexes(depthArr, d);
+            var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("new depth array!",graph.nodesArray[i]["depth"]);
 
 
@@ -77,11 +77,11 @@ console.log("depth array!",depthArr);
         })
         .attr("y", function (d, i) {
 
-            return graph.nodesArray[i]["depth"] * (barthinkness + gap)
+            return d["depth"] * (barthinkness + gap)
         })
         .attr("width", function (d, i) {
 
-            var indexes = getAllIndexes(depthArr, d);
+            var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("siblings number",graph.nodesArray[i]["siblingsNum"]);
             console.log("index,length",indexes.length);
             //layerOrder(graph.nodesArray[i]["depth"]);
@@ -96,13 +96,13 @@ console.log("depth array!",depthArr);
     // draw text on the canvas
 
     var label = svg.selectAll("text")
-        .data(depthArr)
+        .data(graph.nodesArray)
         .enter()
         .append("text")
         .style("fill", "black")
         .attr("x", function (d, i) {
 
-            var indexes = getAllIndexes(depthArr, d);
+            var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("find all indexes of ",indexes);
             if (indexes.length > 1) {
 
@@ -114,7 +114,7 @@ console.log("depth array!",depthArr);
         })
         .attr("y", function (d, i) {
 
-            return d * (barthinkness + gap)
+            return d.depth * (barthinkness + gap)
         })
         .attr("dy", ".75em")
         .attr("text-anchor", "middle")
