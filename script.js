@@ -225,12 +225,12 @@ function createGraph(neuralNetwork) {
         })
     });
 
+    graph.BFS();
     graph.updateDepth();
     graph.updateTabs();
     graph.updateChildsPosition();
     graph.updateNodesHeight();
     graph.updateNodesColors();
-    graph.BFS();
     console.log("graph");
     console.log(graph);
     console.log("nodes");
