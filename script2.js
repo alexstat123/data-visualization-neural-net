@@ -2,11 +2,11 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 
 function getdata(graph) {
 
-     console.log("my script is working pretty well!");
+     console.log("my script is working very well yea!");
     // console.log("grap data is:", graph);
      //console.log("values of graph.nodesArray",Object.entries(graph.nodesArray) );
 
-    console.log("graph.nodesArray",graph.nodesArray);
+    console.log("graph.nodesArray",graph.nodesArray[0]);
 
     var name = [];
     var depthArr = [];
@@ -90,7 +90,9 @@ console.log("depth array!",depthArr);
             return (barwidth / indexes.length);
         })
         .attr("height", barthinkness)
-        .attr("fill", "teal");
+        .attr("fill", function(d,i){
+            return "teal"
+        });
 
 
     // draw text on the canvas
