@@ -6,7 +6,7 @@ function getdata(graph) {
     // console.log("grap data is:", graph);
      //console.log("values of graph.nodesArray",Object.entries(graph.nodesArray) );
 
-    console.log("graph.nodesArray",graph.nodesArray[0]);
+    console.log("color",graph.nodesArray[0]["color"]);
 
     var name = [];
     var depthArr = [];
@@ -91,7 +91,8 @@ console.log("depth array!",depthArr);
         })
         .attr("height", barthinkness)
         .attr("fill", function(d,i){
-            return "teal"
+            console.log("all other colors",graph.nodesArray[i]["color"]);
+            return graph.nodesArray[i]["color"]
         });
 
 
