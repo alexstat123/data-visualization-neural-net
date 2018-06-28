@@ -1,0 +1,713 @@
+{
+  "netId": "AnnaNet2",
+  "netLayers": [
+    {
+      "id": "'join",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@767191b1",
+        "order": "0",
+        "id": "'join"
+      },
+      "params": []
+    },
+    {
+      "id": "'prelu3",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu3"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'fc2",
+      "layerType": "FullyConnected",
+      "config": {
+        "numOutputs": "101",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'fc2",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'prelu2c",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu2c"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'fc1",
+      "layerType": "FullyConnected",
+      "config": {
+        "numOutputs": "1024",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'fc1",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'split",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2127e66e",
+        "order": "0",
+        "id": "'split"
+      },
+      "params": []
+    },
+    {
+      "id": "'split2",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2127e66e",
+        "order": "0",
+        "id": "'split2"
+      },
+      "params": []
+    },
+    {
+      "id": "'prelu2b",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu2b"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'bn3",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn3",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'conv3",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv3",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'bn1",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn1",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'prelu2",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu2"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'pool2",
+      "layerType": "Subsampling",
+      "config": {
+        "kernel": "2,2",
+        "ceiling": "false",
+        "pad": "0,0",
+        "id": "'pool2",
+        "order": "0",
+        "poolingMode": "com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_MAX$@2f5ac102",
+        "stride": "2,2"
+      },
+      "params": []
+    },
+    {
+      "id": "'conv2",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv2",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'conv2b",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv2b",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'conv2c",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv2c",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'conv2e",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2127e66e",
+        "order": "0",
+        "id": "'conv2e"
+      },
+      "params": []
+    },
+    {
+      "id": "'conv2d",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv2d",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'bn2c",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn2c",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'prelu1",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu1"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'softmax",
+      "layerType": "SoftmaxAlt",
+      "config": {
+        "order": "0",
+        "id": "'softmax"
+      },
+      "params": []
+    },
+    {
+      "id": "'pool1",
+      "layerType": "Subsampling",
+      "config": {
+        "kernel": "2,2",
+        "ceiling": "false",
+        "pad": "0,0",
+        "id": "'pool1",
+        "order": "0",
+        "poolingMode": "com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_MAX$@2f5ac102",
+        "stride": "2,2"
+      },
+      "params": []
+    },
+    {
+      "id": "'prelu4",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu4"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'prelu2d",
+      "layerType": "PReLU",
+      "config": {
+        "order": "0",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'prelu2d"
+      },
+      "params": [
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'bn2d",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn2d",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'pool3",
+      "layerType": "Subsampling",
+      "config": {
+        "kernel": "2,2",
+        "ceiling": "false",
+        "pad": "0,0",
+        "id": "'pool3",
+        "order": "0",
+        "poolingMode": "com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_MAX$@2f5ac102",
+        "stride": "2,2"
+      },
+      "params": []
+    },
+    {
+      "id": "'bn2b",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn2b",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'bn2",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@2643d762",
+        "momentum": "0.1",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'bn2",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'conv1",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'conv1",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "32"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "idPrev": "'prelu2d",
+      "idsNext": [
+        "'join"
+      ]
+    },
+    {
+      "idPrev": "'bn3",
+      "idsNext": [
+        "'prelu3"
+      ]
+    },
+    {
+      "idPrev": "'prelu4",
+      "idsNext": [
+        "'fc2"
+      ]
+    },
+    {
+      "idPrev": "'bn2c",
+      "idsNext": [
+        "'prelu2c"
+      ]
+    },
+    {
+      "idPrev": "'pool3",
+      "idsNext": [
+        "'fc1"
+      ]
+    },
+    {
+      "idPrev": "'pool1",
+      "idsNext": [
+        "'split",
+        "'split2"
+      ]
+    },
+    {
+      "idPrev": "'bn2b",
+      "idsNext": [
+        "'prelu2b"
+      ]
+    },
+    {
+      "idPrev": "'conv3",
+      "idsNext": [
+        "'bn3"
+      ]
+    },
+    {
+      "idPrev": "'pool2",
+      "idsNext": [
+        "'conv3"
+      ]
+    },
+    {
+      "idPrev": "'prelu2b",
+      "idsNext": [
+        "'join"
+      ]
+    },
+    {
+      "idPrev": "'conv1",
+      "idsNext": [
+        "'bn1"
+      ]
+    },
+    {
+      "idPrev": "'bn2",
+      "idsNext": [
+        "'prelu2"
+      ]
+    },
+    {
+      "idPrev": "'join",
+      "idsNext": [
+        "'pool2"
+      ]
+    },
+    {
+      "idPrev": "'split",
+      "idsNext": [
+        "'conv2",
+        "'conv2b",
+        "'conv2c",
+        "'conv2d"
+      ]
+    },
+    {
+      "idPrev": "'split2",
+      "idsNext": [
+        "'conv2d",
+        "'conv2e"
+      ]
+    },
+    {
+      "idPrev": "'conv2c",
+      "idsNext": [
+        "'bn2c"
+      ]
+    },
+    {
+      "idPrev": "'bn1",
+      "idsNext": [
+        "'prelu1"
+      ]
+    },
+    {
+      "idPrev": "'fc2",
+      "idsNext": [
+        "'softmax"
+      ]
+    },
+    {
+      "idPrev": "'prelu1",
+      "idsNext": [
+        "'pool1"
+      ]
+    },
+    {
+      "idPrev": "'fc1",
+      "idsNext": [
+        "'prelu4"
+      ]
+    },
+    {
+      "idPrev": "'bn2d",
+      "idsNext": [
+        "'prelu2d"
+      ]
+    },
+    {
+      "idPrev": "'conv2d",
+      "idsNext": [
+        "'bn2d"
+      ]
+    },
+    {
+      "idPrev": "'prelu2",
+      "idsNext": [
+        "'join"
+      ]
+    },
+    {
+      "idPrev": "'prelu3",
+      "idsNext": [
+        "'pool3"
+      ]
+    },
+    {
+      "idPrev": "'conv2b",
+      "idsNext": [
+        "'bn2b"
+      ]
+    },
+    {
+      "idPrev": "'conv2",
+      "idsNext": [
+        "'bn2"
+      ]
+    },
+    {
+      "idPrev": "'prelu2c",
+      "idsNext": [
+        "'join"
+      ]
+    }
+  ]
+}
