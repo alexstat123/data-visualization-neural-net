@@ -92,8 +92,8 @@ console.log("depth array!",depthArr);
         .attr("height", barthinkness)
         .attr("fill", function(d,i)
         {
-            console.log("all other colors",graph.nodesArray[i]["color"]);
-            return graph.nodesArray[i]["color"]
+            console.log("all other colors",d.color);
+            return d.color
         });
 
 
