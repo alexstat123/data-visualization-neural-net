@@ -2,7 +2,7 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 
 function getdata(graph) {
 
-     console.log("my script is working very well yea!");
+     console.log("my script is working yes yes !");
     // console.log("grap data is:", graph);
      //console.log("values of graph.nodesArray",Object.entries(graph.nodesArray) );
 
@@ -56,18 +56,17 @@ console.log("depth array!",depthArr);
         .data(graph.nodesArray)
         .enter()
         .append("rect")
-        .attr("x", function (d, i) {
+        .attr("x", function (d, i)
+        {
 
             // number of siblings on ith layer
             var indexes = getAllIndexes(depthArr, d.depth);
-            //console.log("new depth array!",graph.nodesArray[i]["depth"]);
-
 
             // if number of sibling on ith layer is bigger than 1
             // return width of bar equal to barwidth devided by number of children
 
-            if (indexes.length > 1) {
-
+            if (indexes.length > 1)
+            {
 
                 return ((barwidth / indexes.length + gap)) * indexes.indexOf(i) - gap * (indexes.length - 1);
 
@@ -79,7 +78,8 @@ console.log("depth array!",depthArr);
 
             return d["depth"] * (barthinkness + gap)
         })
-        .attr("width", function (d, i) {
+        .attr("width", function (d, i)
+        {
 
             var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("siblings number",graph.nodesArray[i]["siblingsNum"]);
@@ -90,7 +90,8 @@ console.log("depth array!",depthArr);
             return (barwidth / indexes.length);
         })
         .attr("height", barthinkness)
-        .attr("fill", function(d,i){
+        .attr("fill", function(d,i)
+        {
             console.log("all other colors",graph.nodesArray[i]["color"]);
             return graph.nodesArray[i]["color"]
         });
@@ -103,7 +104,8 @@ console.log("depth array!",depthArr);
         .enter()
         .append("text")
         .style("fill", "black")
-        .attr("x", function (d, i) {
+        .attr("x", function (d, i)
+        {
 
             var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("find all indexes of ",indexes);
@@ -121,20 +123,26 @@ console.log("depth array!",depthArr);
         })
         .attr("dy", ".75em")
         .attr("text-anchor", "middle")
-        .text(function (d, i) {
-
-            //console.log("name",name[i]);
+        .text(function (d, i)
+        {
             return name[i];
+        })
+        .style("font-size", function(d,i)
+        {
+            var indexes = getAllIndexes(depthArr, d.depth);
+            return 16 - indexes.length
         });
 
 }
 
 depthCheckArr = [];
 
-function getAllIndexes(arr, val) {
+function getAllIndexes(arr, val)
+{
 
     var indexes = [], i = -1;
-    while ((i = arr.indexOf(val, i + 1)) != -1) {
+    while ((i = arr.indexOf(val, i + 1)) != -1)
+    {
         indexes.push(i);
     }
 
@@ -142,7 +150,8 @@ function getAllIndexes(arr, val) {
 }
 
 var arr = [];
-function layerOrder(myDepth){
+function layerOrder(myDepth)
+{
 
 
     arr.push(myDepth)
