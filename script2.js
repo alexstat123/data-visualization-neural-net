@@ -53,7 +53,7 @@ console.log("depth array!",depthArr);
 
 
     var rects = svg.selectAll("foo")
-        .data(graph.nodesArray)
+        .data(graph.nodesArray, node => node.id)
         .enter()
         .append("rect")
         .attr("x", function (d, i)
@@ -100,7 +100,7 @@ console.log("depth array!",depthArr);
     // draw text on the canvas
 
     var label = svg.selectAll("text")
-        .data(graph.nodesArray)
+        .data(graph.nodesArray,node => node.id)
         .enter()
         .append("text")
         .style("fill", "black")
