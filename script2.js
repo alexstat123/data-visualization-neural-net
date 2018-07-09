@@ -1,16 +1,15 @@
 $(window).on("graphLoaded", (event, data) => getdata(data));
 
+
+var siblingArr = [];
+console.log("sibling arr",siblingArr);
 function getdata(graph) {
 
-     console.log("my script is working yes yes !");
-    // console.log("grap data is:", graph);
-     //console.log("values of graph.nodesArray",Object.entries(graph.nodesArray) );
+     console.log("my script is working !");
 
-    console.log("color",graph.nodesArray[0]["color"]);
 
     var name = [];
     var depthArr = [];
-    var siblingArr = [];
     var order = [];
     var tabs = [];
     graph["nodesArray"].forEach(function (item, index, array) {
@@ -22,13 +21,15 @@ function getdata(graph) {
         tabs.push(item["tab"]);
 
     })
-    console.log(name);
-    console.log(depthArr);
-    console.log(siblingArr);
-    console.log(order);
-    console.log(tabs);
+    // console.log(name);
+    // console.log(depthArr);
+    // console.log(siblingArr);
+    // console.log(order);
+    // console.log(tabs);
 
     drawRectangle(depthArr, name, siblingArr);
+    //console.log("sibling arr",siblingArr);
+    //console.log("depth arr",depthArr);
     $(window).trigger("graphDrawn");
 }
 
@@ -37,7 +38,7 @@ function getdata(graph) {
 
 function drawRectangle(depthArr, name, siblingsArr) {
 
-console.log("depth array!",depthArr);
+//console.log("depth array!",depthArr);
 //console.log("new depth array!",graph.nodesArray[0]["depth"]);
 //console.log("graph.nodesArray",graph.nodesArray);
 
@@ -83,16 +84,19 @@ console.log("depth array!",depthArr);
 
             var indexes = getAllIndexes(depthArr, d.depth);
             //console.log("siblings number",graph.nodesArray[i]["siblingsNum"]);
-            console.log("index,length",indexes.length);
+            //console.log("index length",indexes.length);
             //layerOrder(graph.nodesArray[i]["depth"]);
             //console.log("check length",layerOrder(graph.nodesArray[i]["depth"]));
             //console.log("index length",indexes.length);
-            return (barwidth / indexes.length);
+
+
+            scalling(barwidth  / indexes.length, d.siblingsNum, indexes, i);
+            return (barwidth  / indexes.length);
         })
         .attr("height", barthinkness)
         .attr("fill", function(d,i)
         {
-            console.log("all other colors",d.color);
+            //console.log("all other colors",d.color);
             return d.color
         });
 
@@ -149,18 +153,27 @@ function getAllIndexes(arr, val)
     return indexes;
 }
 
-var arr = [];
-function layerOrder(myDepth)
-{
 
 
-    arr.push(myDepth)
-    //console.log("my depth is", myDepth);
-    //console.log("arr", arr);
-    const check = arr.filter(arr => arr == myDepth);
-    //console.log("check",check);
-    return check.length/2
+function scalling(width,siblingNum,depthIndexes,i){
 
+    var setWidth = 200;
+    sN = [];
+    wSn = [];
+    depthIndexes.forEach(function(element)
+    {
+
+        sN.push(siblingArr[element]);
+        wSn.push(width/siblingArr[element]);
+    });
+    //console.log("arr",sN);
+
+    //console.log("wSn",wSn);
+    var sum = wSn.reduce((x,y) => x + y);
+    //console.log("sum",sum);
+    console.log("width",setWidth);
+    console.log("sibling num",siblingNum);
+    var r = width/sum;
+    console.log("r",r);
 
 }
-
