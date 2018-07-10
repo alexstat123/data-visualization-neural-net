@@ -626,8 +626,7 @@
       "idsNext": [
         "'conv2",
         "'conv2b",
-        "'conv2c",
-        "'conv2d"
+        "'conv2c"
       ]
     },
     {
@@ -641,6 +640,12 @@
       "idPrev": "'conv2c",
       "idsNext": [
         "'bn2c"
+      ]
+    },
+    {
+      "idPrev": "'conv2e",
+      "idsNext": [
+        "'join"
       ]
     },
     {

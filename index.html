@@ -19,9 +19,12 @@
     <script type="text/javascript" src="libraries/js/jquery-3.3.1.min.js"></script>
 
     <script type="text/javascript" src="d3/d3.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="graphNode.js"></script>
+    <script type="text/javascript" src="graph.js"></script>
     <script type="text/javascript" src="script2.js"></script>
-    <script type="text/javascript" src="graph_tools_vis.js"></script>
+    <script type="text/javascript" src="panelLegend.js"></script>
+    <script type="text/javascript" src="panelInfo.js"></script>
+    <script type="text/javascript" src="userInteraction.js"></script>
 </head>
 
 <body class="container-fluid">
@@ -70,8 +73,14 @@
             <div class="card-body card-body-cascade text-left">
                 <div class="row">
                     <div class="col-12 col-xl-6">
-                        <div class="btn btn-sm btn-primary">Load</div>
-                        Neural Network
+                        <div class="file-field">
+                            <div class="btn btn-primary btn-sm float-none">
+                                <input id="nn_file" type="file">
+                                Load
+                            </div>
+                            Neural Network
+                        </div>
+
                     </div>
                     <div class="col-12 col-xl-6">
                         <div class="btn btn-sm btn-primary">Load</div>
