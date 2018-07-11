@@ -77,12 +77,12 @@ function createNode(nodeData) {
             this.childs.forEach(child => toDo(child));
         },
         updateChildsHorizontalPosition: function () {
-            var order = 0;
+            var order = {};
 
             this.childs.forEach(child => {
-                child.siblingsNum = this.childs.size;
-                child.order = order;
-                order++;
+                child.siblingsNum = [...this.childs.values()].filter(sibling => sibling.depth === child.depth).length;
+                child.order = order[child.depth] || 0;
+                order[child.depth] = child.order + 1;
                 child.updateChildsHorizontalPosition();
             });
         },
