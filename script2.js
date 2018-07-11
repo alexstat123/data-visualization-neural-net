@@ -67,8 +67,6 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .attr("height", function(d){
             dimetionParameter =width(d);
-            console.log("node height",dimetionParameter[2]);
-            //return barthinkness
             return dimetionParameter[2] * barthinkness
         })
         .attr("fill", function(d)
@@ -128,7 +126,6 @@ function getAllIndexes(arr, val)
 
 function width(node){
 
-    //console.log("height",node.height);
 
     if(node.parents.size === 0){
 
