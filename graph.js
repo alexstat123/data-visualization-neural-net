@@ -64,6 +64,7 @@ graph = {
     updateNodesHeight() {
         var leafs = this.nodesArray.filter(e => e.childs.size === 0);
         leafs.forEach(leaf => {
+            leaf.height = 1;
             leaf.updateParentsHeight();
         });
     },
@@ -108,7 +109,7 @@ graph = {
         this.nodesArray.forEach(node => node.visited = false);
         while (nodesToCall.length !== 0) {
             var n = nodesToCall.shift();
-            if (n.visited){
+            if (n.visited) {
                 var index = result.indexOf(n);
                 if (index > -1) {
                     result.splice(index, 1);
