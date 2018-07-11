@@ -2,11 +2,12 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 
 
 var siblingArr = [];
-console.log("sibling arr",siblingArr);
+var gap = 2;
+
 function getdata(graph) {
 
-     console.log("my script is working !");
-
+    console.log("my script is working !");
+    console.log("graph",graph);
 
     var name = [];
     var depthArr = [];
@@ -21,28 +22,16 @@ function getdata(graph) {
         tabs.push(item["tab"]);
 
     })
-    // console.log(name);
-    // console.log(depthArr);
-    // console.log(siblingArr);
-    // console.log(order);
-    // console.log(tabs);
 
     drawRectangle(depthArr, name, siblingArr);
-    //console.log("sibling arr",siblingArr);
-    //console.log("depth arr",depthArr);
     $(window).trigger("graphDrawn");
 }
 
 
-// function that draws bars and text on the canvas
-
 function drawRectangle(depthArr, name, siblingsArr) {
 
-//console.log("depth array!",depthArr);
-//console.log("new depth array!",graph.nodesArray[0]["depth"]);
-//console.log("graph.nodesArray",graph.nodesArray);
 
-    var gap = 1;
+    //var gap = 1;
     var barthinkness = 20;
     var barwidth = 200;
     var xpos = 0;
@@ -57,82 +46,62 @@ function drawRectangle(depthArr, name, siblingsArr) {
         .data(graph.nodesArray, node => node.id)
         .enter()
         .append("rect")
-        .attr("x", function (d, i)
+        .attr("x", function (d)
         {
 
-            // number of siblings on ith layer
-            var indexes = getAllIndexes(depthArr, d.depth);
-
-            // if number of sibling on ith layer is bigger than 1
-            // return width of bar equal to barwidth devided by number of children
-
-            if (indexes.length > 1)
-            {
-
-                return ((barwidth / indexes.length + gap)) * indexes.indexOf(i) - gap * (indexes.length - 1);
-
-            }
-
+            dimetionParameter =width(d);
+            return dimetionParameter[1]
 
         })
         .attr("y", function (d, i) {
 
-            return d["depth"] * (barthinkness + gap)
+            return d["depth"] * (barthinkness) // d["depth"] * (barthinkness + gap) was here
         })
-        .attr("width", function (d, i)
+        .attr("width", function (d)
         {
 
             var indexes = getAllIndexes(depthArr, d.depth);
-            //console.log("siblings number",graph.nodesArray[i]["siblingsNum"]);
-            //console.log("index length",indexes.length);
-            //layerOrder(graph.nodesArray[i]["depth"]);
-            //console.log("check length",layerOrder(graph.nodesArray[i]["depth"]));
-            //console.log("index length",indexes.length);
-            myDebth(graph.nodesArray,d,i);
-            width(graph.nodesArray,d,i);
 
-            scalling(barwidth  / indexes.length, d.siblingsNum, indexes, i);
-            return (barwidth  / indexes.length);
+            dimetionParameter =width(d);
+            return dimetionParameter[0]- gap;
         })
-        .attr("height", barthinkness)
-        .attr("fill", function(d,i)
+        .attr("height", function(d){
+            dimetionParameter =width(d);
+            console.log("node height",dimetionParameter[2]);
+            //return barthinkness
+            return dimetionParameter[2] * barthinkness
+        })
+        .attr("fill", function(d)
         {
-            //console.log("all other colors",d.color);
+
             return d.color
         });
 
 
-    // draw text on the canvas
+
 
     var label = svg.selectAll("text")
         .data(graph.nodesArray,node => node.id)
         .enter()
         .append("text")
         .style("fill", "black")
-        .attr("x", function (d, i)
+        .attr("x", function (d)
         {
 
-            var indexes = getAllIndexes(depthArr, d.depth);
-            //console.log("find all indexes of ",indexes);
-            if (indexes.length > 1) {
+            return d.xPossition + d.width/2
 
-                //console.log("there are this number of siblings", siblingsArr[i]);
-                return (barwidth + gap) / (indexes.length * 2) + (barwidth / indexes.length) * indexes.indexOf(i) - gap * (indexes.length - 1);
-            } else {
-                return 100;
-            }
         })
-        .attr("y", function (d, i) {
+        .attr("y", function (d) {
 
-            return d.depth * (barthinkness + gap)
+            return d.depth * (barthinkness) // d.depth * (barthinkness + gap) was here
         })
         .attr("dy", ".75em")
         .attr("text-anchor", "middle")
-        .text(function (d, i)
+        .text(function (d)
         {
-            return name[i];
+            return d.id;
         })
-        .style("font-size", function(d,i)
+        .style("font-size", function(d)
         {
             var indexes = getAllIndexes(depthArr, d.depth);
             return 16 - indexes.length
@@ -156,111 +125,55 @@ function getAllIndexes(arr, val)
 
 
 
-function scalling(width,siblingNum,depthIndexes,i){
 
-    var setWidth = 200;
-    sN = [];
-    wSn = [];
-    depthIndexes.forEach(function(element)
-    {
+function width(node){
 
-        sN.push(siblingArr[element]);
-        wSn.push(width/siblingArr[element]);
-    });
-    //console.log("arr",sN);
+    //console.log("height",node.height);
 
-    //console.log("wSn",wSn);
-    var sum = wSn.reduce((x,y) => x + y);
-    //console.log("sum",sum);
-    //console.log("width",setWidth);
-    //console.log("sibling num",siblingNum);
-    var r = width/sum;
-    //console.log("r",r);
+    if(node.parents.size === 0){
 
-}
-
-widthArr = [];
-widthStorageArr = [200];
-function myDebth(graphnodesArray,node,i){
-
-    // identify parent of this node
-    gA = graphnodesArray;
-    me =node.id;
-    p = node.parents;
+        // width
+        node.width = 200;
 
 
-    // extract parent name from Map
-    var myMap = p
-    for (var [key] of myMap) {
+        // x possition
+        node.xPossition = 0;
+        nodeWidthAndPosX = [node.width,node.xPossition,node.height];
+        return nodeWidthAndPosX
+    }
+    if(node.parents.size === 1){
 
+        //width
+        widthsum = 0;
+        //sum all parents witdths
+        node.parents.forEach((key,value) => {widthsum += key.width;});
+        node.width = widthsum / node.siblingsNum;
+
+
+        // x position
+        parentXpos = 0;
+        node.parents.forEach((key,value) => {parentXpos = key.xPossition})
+        node.xPossition = parentXpos + node.width * node.order;
+        nodeWidthAndPosX = [node.width,node.xPossition,node.height];
+        return nodeWidthAndPosX
+    }
+
+    if(node.parents.size > 1){
+
+        //width
+        widthsum = 0;
+        //sum all parents witdths
+        node.parents.forEach((key,value) => {widthsum += key.width;});
+        node.width = widthsum / node.siblingsNum;
+
+
+        node.xPossition = 0;
+
+        nodeWidthAndPosX = [node.width,node.xPossition,node.height];
+
+        return nodeWidthAndPosX
     }
 
 
-    // find index of parent
-    var data = gA;
-    var index = -1;
-    var val = key;
-    var filteredObj = data.find(function(item, i){
-        if(item.id === val){
-            index = i;
-            return i;
-        }
-    });
-
-
-    //     //console.log("children of my parent",siblingArr[index]);
-    //     console.log("i am ",me);
-    //     console.log("my parent is ",key);
-    //     console.log("my parent index is",index);
-    //     console.log("children of my parent",siblingArr[index]);
-
-
-    //console.log("i am ",me);
-    //console.log("my parent is ",key);
-    //console.log("my parent index is",index);
-    if(index > -1){
-        numChildrenParent = graph.nodesArray[index]["childs"].size;
-        //console.log("children of my parent",numChildrenParent);
-        widthStorageArr.push(widthStorageArr[index] /numChildrenParent );
-
-        // width of each node
-        //console.log(widthStorageArr);
-
-        numParent = graph.nodesArray[i]["parents"].size;
-        //console.log("parents num",numParent);
-        //console.log("children of my parent",numChildrenParent);
-
-
-        if(numParent > 1 && numChildrenParent == 1){
-            //console.log("UNITY UNITY UNITY UNITY UNITY!");
-            widthStorageArr.push(200);
-        }
-
-    }
-
-
-
 }
 
-function width(graphnodesArray,node,i){
-
-if(node.parents.size === 0){
-    node.width = 200;
-}else{
-
-    widthsum = 0;
-//sum all parents witdths
-    node.parents.forEach((key,value) => {widthsum += key.width;
-    });
-
-    node.width = widthsum / node.siblingsNum;
-    
-
-
-}
-
-console.log(node.width);
-
-
-
-}
