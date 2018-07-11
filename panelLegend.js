@@ -21,6 +21,7 @@ function drawLegend(graph) {
             return legendItem.cloneNode(true);
         })
         .attr("x", 0)
+        .merge(legendsBind)
         .attr("y", (d, i) => lineHeight * i);
 
     items.select(".type")

@@ -108,8 +108,12 @@ graph = {
         this.nodesArray.forEach(node => node.visited = false);
         while (nodesToCall.length !== 0) {
             var n = nodesToCall.shift();
-            if (n.visited)
-                continue;
+            if (n.visited){
+                var index = result.indexOf(n);
+                if (index > -1) {
+                    result.splice(index, 1);
+                }
+            }
             result.push(n);
             n.visited = true;
             nodesToCall.push(...n.childs.values());
@@ -126,6 +130,8 @@ graph = {
         return this.nodesArray.filter(filter);
     },
     getAllPathsBetween(nodeA, nodeB) {
+        this.nodesArray.forEach(node => node.isInPath = false);
+
         if (nodeA.depth > nodeB.depth) {
             var tmp = nodeA;
             nodeA = nodeB;

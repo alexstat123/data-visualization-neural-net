@@ -15,7 +15,7 @@ function createNode(nodeData) {
         // The order between siblings
         order: 0,
         // Nesting level
-        tab: 0,
+        tab: -1,
         // Height of the node
         height: -1,
         //Dictionary of nodes connected to this node "on top" part of it
@@ -41,6 +41,10 @@ function createNode(nodeData) {
             this.childs.forEach(child => child.setDepth(newDepth + 1));
         },
         setTab: function (newTab) {
+
+            if (this.tab > -1 && this.tab < newTab) {
+                return;
+            }
 
             this.tab = newTab;
             var childDepths = new Set([...this.childs.values()].map(node => node.depth));
@@ -101,8 +105,9 @@ function createNode(nodeData) {
 
             var found = false;
             for (const parent of this.parents.values()) {
-                if (parent.upperHierarchyContains(node, pathSet) && !found) {
+                if (parent.isInPath || (parent.upperHierarchyContains(node, pathSet) && !found)) {
                     found = true;
+                    this.isInPath = true;
                     pathSet.add(this);
                 }
             }

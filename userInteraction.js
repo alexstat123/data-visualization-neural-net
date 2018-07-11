@@ -50,28 +50,35 @@ function nodeClickSetup() {
 
     d3.select("#nnblocks")
         .selectAll("rect")
-        .data(graph.nodesArray)
-        .on("click", d => {
-            if (isCTRLpressed) {
-                d.selected = !d.selected;
-            }
-            else if (isSHIFTpressed) {
-                d.selected = true;
+        .data(graph.nodesArray, node => node.id)
+        .on("click", d => clickEvent(d));
 
-                var selectedNodes = graph.nodesArray.filter(node => node.selected);
-                if (selectedNodes.length === 2) {
-                    graph.deselectAllNodes();
-                    var start = selectedNodes[0];
-                    var end = selectedNodes[1];
+    d3.select("#nnblocks")
+        .selectAll("text")
+        .data(graph.nodesArray, node => node.id)
+        .on("click", d => clickEvent(d));
+}
 
-                    var nodesBetween = graph.getAllPathsBetween(start, end);
-                    nodesBetween.forEach(node => node.selected = true);
-                }
-            }
-            else {
-                graph.deselectAllNodes();
-                d.selected = true;
-            }
-            $(window).trigger("nodesSelectionChanged", [graph.getSelectedNodes()]);
-        });
+function clickEvent(d) {
+    if (isCTRLpressed) {
+        d.selected = !d.selected;
+    }
+    else if (isSHIFTpressed) {
+        d.selected = true;
+
+        var selectedNodes = graph.nodesArray.filter(node => node.selected);
+        if (selectedNodes.length === 2) {
+            graph.deselectAllNodes();
+            var start = selectedNodes[0];
+            var end = selectedNodes[1];
+
+            var nodesBetween = graph.getAllPathsBetween(start, end);
+            nodesBetween.forEach(node => node.selected = true);
+        }
+    }
+    else {
+        graph.deselectAllNodes();
+        d.selected = true;
+    }
+    $(window).trigger("nodesSelectionChanged", [graph.getSelectedNodes()]);
 }
