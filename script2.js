@@ -6,7 +6,7 @@ var gap = 2;
 
 function getdata(graph) {
 
-    console.log("my script is working well !");
+    console.log("my script is working  well!");
     console.log("graph",graph);
 
     var name = [];
@@ -51,6 +51,9 @@ function drawRectangle(depthArr, name, siblingsArr) {
 
             dimetionParameter =width(d);
             // x position of bar + tab val*variable
+            console.log("i am",d.id);
+            //console.log("my tab",d.tab);
+            console.log("my order",d.order);
             return dimetionParameter[1] + d.tab * 30
 
         })
@@ -64,7 +67,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
             var indexes = getAllIndexes(depthArr, d.depth);
 
             dimetionParameter =width(d);
-            return dimetionParameter[0]- gap;
+            return dimetionParameter[0]- gap - d.tab*30;
         })
         .attr("height", function(d){
             dimetionParameter =width(d);
@@ -149,9 +152,9 @@ function width(node){
         //sum all parents witdths
         node.parents.forEach((key,value) => {
             widthsum += key.width;
-
+            //widthsum = widthsum - key.tab *30;
         });
-        node.width = widthsum / node.siblingsNum;
+        node.width = (widthsum / node.siblingsNum);
 
 
         // x position
@@ -160,6 +163,8 @@ function width(node){
         //node.xPossition = parentXpos + node.width * node.order + node.tab *30;
         node.xPossition = parentXpos + node.width * node.order;
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
+
+
         return nodeWidthAndPosX
     }
 
@@ -180,10 +185,11 @@ function width(node){
             truth =tabsArr.reduce(function(a, b){ return (a === b) ? a : NaN; });
 
 
-            // if parents have tab value higher me, the sum of their widths is my width
+            // if parents have tab value higher than me, the sum of their widths is my width
             // returns 0 if all equal and NaN if not all equal
             if(key.tab > node.tab){
                 widthsum += key.width;
+                //console.log("i am",node.id)
             }
 
 
@@ -202,8 +208,14 @@ function width(node){
         node.xPossition = 0;
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
 
+
         return nodeWidthAndPosX
     }
+
+     // if(node.tab > 0){
+     //     //widthsum += key.width - 10;
+     //     console.log("i am",node.id)
+     // }
 
 
 }
