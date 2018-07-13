@@ -22,6 +22,8 @@ function createNode(nodeData) {
         parents: new Map(),
         //Dictionary of nodes connected to this node "on bottom" part of it.
         childs: new Map(),
+        childsArr: [],
+        parentsArr: [],
         //Add a parent to the dictionary, indexed by id
         addParent: function (parentNode) {
             this.parents.set(parentNode.id, parentNode);
@@ -47,7 +49,7 @@ function createNode(nodeData) {
             }
 
             this.tab = newTab;
-            var childDepths = new Set([...this.childs.values()].map(node => node.depth));
+            var childDepths = new Set(this.childsArr.map(node => node.depth));
 
             var toDo = null;
             //console.log(childDepths);
@@ -80,7 +82,7 @@ function createNode(nodeData) {
             var order = {};
 
             this.childs.forEach(child => {
-                child.siblingsNum = [...this.childs.values()].filter(sibling => sibling.depth === child.depth).length;
+                child.siblingsNum = this.childsArr.filter(sibling => sibling.depth === child.depth).length;
                 child.order = order[child.depth] || 0;
                 order[child.depth] = child.order + 1;
                 child.updateChildsHorizontalPosition();
@@ -88,8 +90,12 @@ function createNode(nodeData) {
         },
         updateParentsHeight: function () {
             if (this.parents.size === 0) return;
+            if (this.id === '\'562'){
+                console.log([...this.parentsArr]);}
+            this.parentsArr.forEach(parent => {
+                if (parent.height > 0)
+                    return;
 
-            this.parents.forEach(parent => {
                 parent.height = this.depth - parent.depth;
                 parent.updateParentsHeight();
             });

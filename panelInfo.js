@@ -21,8 +21,6 @@ function intersectKeys(firstSet, ...sets) {
 $(window).on("nodesSelectionChanged", updatePanel);
 
 function updatePanel(event, newSelection) {
-    console.log(newSelection);
+    d3.select("#info_selectedLayersNum").text(newSelection.length);
     var sets = newSelection.map(node => new Set(Object.keys(node.originalData.config || {})));
-    console.log(sets);
-    console.log(intersectKeys(...sets));
 }

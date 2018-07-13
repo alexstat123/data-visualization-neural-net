@@ -5,11 +5,18 @@ $(window).on("graphDrawn", () => {
     nodeClickSetup()
 });
 
-$(window).on("load", () => setupKeyboard());
 $(window).on("load", () => setupFileLoader());
+$(window).on("load", () => setupCollapseClicks());
+
+function setupCollapseClicks() {
+    $("#toggle_expandNeuralNetwork, #toggle_resizeNeuralNetwork").on("click", () => {
+        $("#centralContainer").toggleClass("col-xl-12 order-first");
+        $("#toggle_expandNeuralNetwork, #toggle_resizeNeuralNetwork").toggleClass('d-none');
+    });
+}
 
 function setupFileLoader() {
-    $('#nn_file').change(function (event) {
+    $('#nn_file').on("change", function (event) {
         d3.select("#nnblocks")
             .select('svg')
             .remove();
@@ -22,29 +29,6 @@ function setupFileLoader() {
         reader.readAsText(event.target.files[0]);
     });
 }
-
-function setupKeyboard() {
-    d3.select("body")
-        .on("keydown", () => {
-            if (d3.event.keyCode === 16) {
-                isSHIFTpressed = true;
-            }
-            else if (d3.event.keyCode == 17) {
-                isCTRLpressed = true;
-            }
-        }).on("keyup", () => {
-        if (d3.event.keyCode === 16) {
-            isSHIFTpressed = false;
-        }
-        else if (d3.event.keyCode == 17) {
-            isCTRLpressed = false;
-        }
-    });
-}
-
-
-var isCTRLpressed = false;
-var isSHIFTpressed = false;
 
 function nodeClickSetup() {
 
@@ -60,10 +44,10 @@ function nodeClickSetup() {
 }
 
 function clickEvent(d) {
-    if (isCTRLpressed) {
+    if (d3.event.ctrlKey) {
         d.selected = !d.selected;
     }
-    else if (isSHIFTpressed) {
+    else if (d3.event.shiftKey) {
         d.selected = true;
 
         var selectedNodes = graph.nodesArray.filter(node => node.selected);

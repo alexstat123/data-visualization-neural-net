@@ -39,8 +39,18 @@ function updateSelection() {
     d3.select("#nnblocks")
         .selectAll("rect")
         .data(graph.nodesArray, node => node.id)
-        .attr("stroke", "#000000")
-        .attr("stroke-width", node => node.selected ? "1px" : "0");
+        .attr("stroke", node => node.selected ? "#000000" : "#898989")
+        .attr("stroke-width", 1);
+
+    d3.select("#nnblocks")
+        .selectAll("rect")
+        .data(graph.getSelectedNodes(), node => node.id)
+        .raise();
+
+    d3.select("#nnblocks")
+        .selectAll("text")
+        .data(graph.getSelectedNodes(), node => node.id)
+        .raise();
 
     var layersLegends = d3.select("#layersLegend")
         .selectAll(".legendItem")

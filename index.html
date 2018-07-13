@@ -8,6 +8,7 @@
     <link href="libraries/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="libraries/css/mdb.min.css" rel="stylesheet">
+    <link href="libraries/css/fontawesome.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?version=1">
     <!--
     <link rel="stylesheet" href="styles.css"/>
@@ -16,6 +17,7 @@
     !-->
 
     <script type="text/javascript" src="libraries/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="config.js"></script>
 
     <script type="text/javascript" src="d3/d3.js"></script>
     <script type="text/javascript" src="graphNode.js"></script>
@@ -24,22 +26,32 @@
     <script type="text/javascript" src="panelLegend.js"></script>
     <script type="text/javascript" src="panelInfo.js"></script>
     <script type="text/javascript" src="userInteraction.js"></script>
+    <script type="text/javascript" src="tabArrowDrawing.js"></script>
 </head>
 
 <body class="container-fluid">
 <div class="row">
     <!-- Left sidebar -->
-    <div class="col-12  col-xl-3">
+    <div class="col-12  col-xl-3" id="container_LeftSidebar">
         <div class="card card-cascade w-100 mt-3 ">
             <!-- Card image -->
             <div class="view view-cascade gradient-card-header blue-gradient py-3">
                 <!-- Title -->
-                <h5 class="card-header-title mb-0">Layers info</h5>
+                <h5 class="card-header-title mb-0 d-block">
+                    Layers info
+                    <i class="far fa-minus-square right-aligned collapse show"
+                       data-target="#layers_info, #layers_info_hide, #layers_info_show"
+                       id="layers_info_hide" data-toggle="collapse"></i>
+                    <i class="far fa-plus-square right-aligned collapse"
+                       data-target="#layers_info, #layers_info_hide, #layers_info_show"
+                       id="layers_info_show" data-toggle="collapse"></i>
+                </h5>
             </div>
-            <div class="card-body card-body-cascade text-center">
+            <div class="card-body card-body-cascade text-center collapse show" id="layers_info">
                 <div class="row">
-                    <div class="col-12 ">
-                        Selected Layers: 1
+                    <div class="col-12">
+                        Selected Layers:
+                        <span id="info_selectedLayersNum">0</span>
                     </div>
                 </div>
             </div>
@@ -51,14 +63,59 @@
                 <h5 class="card-header-title mb-0">Tools/Help</h5>
             </div>
             <div class="card-body card-body-cascade text-left">
+
                 <div class="row">
-                    <div class="col-12 col-xl-6">
-                        <div class="btn btn-sm btn-primary">Hide</div>
-                        Legend
+                    <div class="col-12">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="check_showLegend" checked>
+                            <label class="custom-control-label" for="check_showLegend">Show legend</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="check_showIds" checked>
+                            <label class="custom-control-label" for="check_showIds">Show ids</label>
+                        </div>
                     </div>
-                    <div class="col-12 col-xl-6">
-                        <div class="btn btn-sm btn-primary">Hide</div>
-                        Ids
+                </div>
+            </div>
+        </div>
+        <div class="card card-cascade w-100 mt-3 ">
+            <!-- Card image -->
+            <div class="view view-cascade gradient-card-header blue-gradient py-3">
+                <!-- Title -->
+                <h5 class="card-header-title mb-0">Visualization settings</h5>
+            </div>
+            <div class="card-body card-body-cascade text-left">
+                <div class="row">
+                    <div class="col-12">
+                        <b>Layer Width</b>
+                        <div class="d-flex justify-content-center mt-2">
+                            <span class="font-weight-bold mr-3">1</span>
+                            <form class="range-field w-50">
+                                <input id="slider_LayerWidth" class="no-border" type="range" min="1" max="1000"
+                                       value="200"/>
+                            </form>
+                            <span class="font-weight-bold ml-3">1000</span>
+                        </div>
+                        <hr>
+                        <b>Layer height</b>
+                        <div class="d-flex justify-content-center mt-2">
+                            <span class="font-weight-bold mr-3">1</span>
+                            <form class="range-field w-50">
+                                <input id="slider_LayerHeight" class="no-border" type="range" min="1" max="400"
+                                       value="25"/>
+                            </form>
+                            <span class="font-weight-bold ml-3">400</span>
+                        </div>
+                        <hr>
+                        <b>Horizontal gap</b>
+                        <div class="d-flex justify-content-center mt-2">
+                            <span class="font-weight-bold mr-3">1</span>
+                            <form class="range-field w-50">
+                                <input id="slider_horizontalGap" class="no-border" type="range" min="0" max="100"
+                                       value="5"/>
+                            </form>
+                            <span class="font-weight-bold ml-3">100</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,11 +139,16 @@
 
                     </div>
                     <div class="col-12 col-xl-6">
-                        <div class="btn btn-sm btn-primary">Load</div>
+                        <div class="file-field">
+                            <div class="btn btn-primary btn-sm float-none">
+                                <input id="btn_loadSettings" type="file" accept="application/json">
+                                Load
+                            </div>
+                        </div>
                         Configuration
                     </div>
                     <div class="col-12 col-xl-6">
-                        <div class="btn btn-sm btn-primary">Save</div>
+                        <div class="btn btn-sm btn-primary " id="btn_saveSettings">Save</div>
                         Configuration
                     </div>
                 </div>
@@ -95,24 +157,27 @@
     </div>
     <!-- / Left sidebar -->
     <!-- Central window -->
-    <div class="col-12 col-xl-9">
+    <div class="col-12 col-xl-9" id="centralContainer">
         <!-- Card -->
         <div class="card card-cascade w-100 mt-3 ">
             <!-- Card image -->
             <div class="view view-cascade gradient-card-header blue-gradient py-3">
                 <!-- Title -->
-                <h5 class="card-header-title mb-0">Neural Network model</h5>
+                <h5 class="card-header-title mb-0 d-block">Neural Network model
+                    <i class="fa fa-expand" id="toggle_expandNeuralNetwork"></i>
+                    <i class="fa fa-compress d-none" id="toggle_resizeNeuralNetwork"></i>
+                </h5>
             </div>
             <!-- Card content -->
             <div class="card-body card-body-cascade text-center">
                 <div class="row">
                     <!-- nn blocks -->
-                    <div class="col-12 col-xl-9">
+                    <div class="col-12 col-xl-9" id="container_neuralNetwork">
                         <div id="nnblocks" class="view">
                         </div>
                     </div>
                     <!-- nn infos -->
-                    <div class="col-12 col-xl-3">
+                    <div class="col-12 col-xl-3" id="container_Legend">
 
                         <div class="card card-body pt-0">
                             <h5 class="card-title my-3 text-left"><b>Legend</b></h5>

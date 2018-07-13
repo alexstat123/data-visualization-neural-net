@@ -52,6 +52,11 @@ graph = {
     updateDepth() {
         var root = this.getRoot();
         root.setDepth(0);
+
+        this.nodesArray.forEach(node => {
+            node.childsArr = Array.from(node.childs.values());
+            node.parentsArr = Array.from(node.parents.values()).sort((a, b) => b.depth - a.depth);
+        });
     },
 
     updateTabs() {
@@ -79,16 +84,22 @@ graph = {
             , "SoftmaxAlt"];
     },
     getActualLayersTypes() {
-        return new Set(this.nodesArray.map(e => e.originalData.layerType));
+        return new Set(...[this.nodesArray.map(e => e.originalData.layerType)]);
     },
     updateNodesColors() {
-        var layersType = [...new Set([...this.getFixedLayersTypes(), ...this.getActualLayersTypes()])];
-        console.log(this.getActualLayersTypes());
-        console.log(layersType);
+        var layersType = this.getFixedLayersTypes();
+        this.getActualLayersTypes().forEach(nodeType => {
+            if (layersType.indexOf(nodeType) === -1) {
+                layersType.push(nodeType);
+            }
+        });
+
         var c20 = d3.scaleOrdinal(d3['schemeCategory20']);
+        d3.range(20).forEach(n => c20(n));
 
         this.nodesColorScale = layerType => {
             var idx = layersType.indexOf(layerType);
+
             if (idx > 20) idx = 20;
             return c20(idx);
         };
@@ -106,7 +117,8 @@ graph = {
     BFS() {
         var nodesToCall = [this.getRoot()];
         var result = [];
-        this.nodesArray.forEach(node => node.visited = false);
+
+        this.nodes.forEach(node => node.visited = false);
         while (nodesToCall.length !== 0) {
             var n = nodesToCall.shift();
             if (n.visited) {
@@ -120,6 +132,7 @@ graph = {
             nodesToCall.push(...n.childs.values());
         }
         this.nodesArray = result;
+
     },
     deselectAllNodes() {
         this.nodesArray.forEach(node => node.selected = false);
@@ -180,7 +193,7 @@ function createGraph(neuralNetwork) {
 
 $(window).bind("load", function () {
     d3.json("data/AnnaNet/net.json", function (error, json) {
-    //d3.json("data/childsTest/net.json", (error, json) => {
+        //  d3.json("data/childsTest/net.json", (error, json) => {
         if (error) {
             console.log(error);  //Log the error.
             throw error;
