@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/AnnaNet/net.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/AnnaNet/net.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphNode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panelLegend.js" beforeDir="false" afterPath="$PROJECT_DIR$/panelLegend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tabArrowDrawing.js" beforeDir="false" afterPath="$PROJECT_DIR$/tabArrowDrawing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userInteraction.js" beforeDir="false" afterPath="$PROJECT_DIR$/userInteraction.js" afterDir="false" />
-    </list>
+    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -262,7 +251,7 @@
       <workItem from="1531469375023" duration="3664000" />
       <workItem from="1531484497449" duration="4548000" />
       <workItem from="1531569943683" duration="252000" />
-      <workItem from="1531571234521" duration="228000" />
+      <workItem from="1531571234521" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="added tabs to data/AnnaNet">
       <created>1529662119373</created>
@@ -296,10 +285,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121075000" />
+    <option name="totallyTimeSpent" value="121204000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="656" height="709" extended-state="1" />
+    <frame x="1" y="23" width="656" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27896342" />
