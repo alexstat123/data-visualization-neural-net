@@ -6,7 +6,7 @@ var gap = settings.gapSize;
 
 function getdata(graph) {
 
-    console.log("my script is working  well!");
+    console.log("my script is working!");
     console.log("graph",graph);
 
     var name = [];
@@ -112,7 +112,8 @@ function drawRectangle(depthArr, name, siblingsArr) {
         .style("font-size", function(d)
         {
             var indexes = getAllIndexes(depthArr, d.depth);
-            return 16 - indexes.length
+            //return 16 - indexes.length
+            return 16 - d.siblingsNum;
         });
 
 }
