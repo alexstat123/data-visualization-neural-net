@@ -2,7 +2,7 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 
 
 var siblingArr = [];
-var gap = 2;
+var gap = settings.gapSize;
 
 function getdata(graph) {
 
@@ -32,9 +32,9 @@ function drawRectangle(depthArr, name, siblingsArr) {
 
 
     //var gap = 1;
-    var barthinkness = 20;
-    var barwidth = 200;
-    var xpos = 0;
+    var barthinkness = settings.barHeight;
+    // var barwidth = 200;
+    // var xpos = 0;
 
     var svg = d3.select("#nnblocks")
         .append("svg")
@@ -43,7 +43,9 @@ function drawRectangle(depthArr, name, siblingsArr) {
 
 
     var rects = svg.selectAll("foo")
-        .data(graph.nodesArray, node => node.id)
+        .data(graph.nodesArray, node => node.id);
+
+    rects
         .enter()
         .append("rect")
         .attr("x", function (d)
@@ -94,7 +96,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
         .attr("x", function (d)
         {
             // x position of bar + half width of bar + tab val*variable
-            return d.xPossition + d.width/2 + d.tab * 30
+            return d.xPossition + d.width/2
 
         })
         .attr("y", function (d) {
@@ -138,7 +140,7 @@ function width(node){
     if(node.parents.size === 0){
 
         // width
-        node.width = 200;
+        node.width = settings.rootWidth;
 
 
         // x possition
@@ -166,10 +168,10 @@ function width(node){
         parentXpos = 0;
         //node.parents.forEach((key,value) => {parentXpos = key.xPossition + key.tab * 30})     // difference of tabs needs to be added
         parent = Array.from(node.parents.values()).sort((a,b) => a.xPossition - b.xPossition)[0];
-        node.width = ((widthsum - (node.tab - parent.tab) * 30 )/ node.siblingsNum);
+        node.width = ((widthsum - (node.tab - parent.tab) * settings.tabSize )/ node.siblingsNum);
 
         //node.xPossition = parentXpos + node.width * node.order + node.tab *30;
-        node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * 30 ;     // difference of tabs needs to be added
+        node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * settings.tabSize ;     // difference of tabs needs to be added
 
         console.log("node.xposition", parent.tab);
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
@@ -178,58 +180,6 @@ function width(node){
         console.log("next guy is",node.parents.values().next().value);
         return nodeWidthAndPosX
     }
-
-    // if i have more than 1 parent
-    if(node.parents.size > 100){
-
-        //width
-        widthsum = 0;
-
-
-
-
-        // array to store tab values of parents
-        tabsArr = [];
-
-        // check if all tab values of parents are the same or not
-        node.parents.forEach((key,value) => {tabsArr.push(key.tab)});
-        truth =tabsArr.reduce(function(a, b){ return (a === b) ? a : NaN; });
-
-        //look at each parent of the current node
-        node.parents.forEach((key,value) => {
-
-            // if parents have tab value higher than me, the sum of their widths is my width
-            // returns 0 if all equal and NaN if not all equal
-            if(key.tab > node.tab){
-                widthsum += key.width;
-                //console.log("i am",node.id)
-            }
-
-
-            // if all of the parents have same tab value and is equal to my tab value, my width
-            // is equal to their combined width
-            if(key.tab === node.tab && truth === 0){
-                widthsum += key.width;
-            }
-
-        });
-
-
-        node.width = widthsum / node.siblingsNum;
-
-        //node.xPossition = 0 +node.tab *30;
-        node.xPossition = 0;
-        nodeWidthAndPosX = [node.width,node.xPossition,node.height];
-
-
-        return nodeWidthAndPosX
-    }
-
-     // if(node.tab > 0){
-     //     //widthsum += key.width - 10;
-     //     console.log("i am",node.id)
-     // }
-
 
 }
 

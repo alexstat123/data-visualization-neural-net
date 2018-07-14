@@ -1,1 +1,5040 @@
-{"netId":"䍧↔漽Ო꾵캜뤦쐜膿ꩻ","netLayers":[{"id":"'301","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'301"},"params":[]},{"id":"'537","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'537","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'559","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'559","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"2048"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'312","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'312"},"params":[]},{"id":"'518","layerType":"Identity","config":{"order":"0","id":"'518"},"params":[]},{"id":"'465","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'465","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'277","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'277","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'279","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'279","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'462","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'462"},"params":[]},{"id":"'355","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'355","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'528","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'528"},"params":[]},{"id":"'495","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'495","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'539","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'539","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'390","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'390"},"params":[]},{"id":"'442","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'442","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'456","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'456"},"params":[]},{"id":"'423","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'423"},"params":[]},{"id":"'463","layerType":"Identity","config":{"order":"0","id":"'463"},"params":[]},{"id":"'336","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'336","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'329","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'329"},"params":[]},{"id":"'315","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'315","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'506","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'506","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'324","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'324"},"params":[]},{"id":"'434","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'434"},"params":[]},{"id":"'507","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'507"},"params":[]},{"id":"'414","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'414","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'417","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'417"},"params":[]},{"id":"'425","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'425","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'439","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'439"},"params":[]},{"id":"'545","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'545"},"params":[]},{"id":"'531","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'531","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'split-3","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-3"},"params":[]},{"id":"'493","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'493","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'367","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'367"},"params":[]},{"id":"'275","layerType":"Subsampling","config":{"kernel":"3,3","ceiling":"false","pad":"0,0","id":"'275","order":"0","poolingMode":"com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_MAX$@2d38edfd","stride":"2,2"},"params":[]},{"id":"'362","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'362"},"params":[]},{"id":"'split-5","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-5"},"params":[]},{"id":"'497","layerType":"Identity","config":{"order":"0","id":"'497"},"params":[]},{"id":"'450","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'450","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-0","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-0"},"params":[]},{"id":"'438","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'438","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'561","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'561","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'342","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'342","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'319","layerType":"Identity","config":{"order":"0","id":"'319"},"params":[]},{"id":"'522","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'522","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'523","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'523"},"params":[]},{"id":"'361","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'361","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'461","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'461","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'563","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'563"},"params":[]},{"id":"'408","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'408","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'504","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'504","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'489","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'489","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'529","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'529"},"params":[]},{"id":"'split-13","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-13"},"params":[]},{"id":"'290","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'290"},"params":[]},{"id":"'287","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'287","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'535","layerType":"Identity","config":{"order":"0","id":"'535"},"params":[]},{"id":"'split-6","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-6"},"params":[]},{"id":"'345","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'345"},"params":[]},{"id":"'550","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'550","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'339","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'339"},"params":[]},{"id":"'359","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'359","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'440","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'440"},"params":[]},{"id":"'476","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'476","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'490","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'490"},"params":[]},{"id":"'478","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'478","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'431","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'431","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'326","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'326","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'318","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'318"},"params":[]},{"id":"'527","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'527","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'479","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'479"},"params":[]},{"id":"'349","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'349","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'353","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'353","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'548","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'548","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'562","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'562"},"params":[]},{"id":"'292","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'292","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'433","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'433","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'332","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'332","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'334","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'334","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'473","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'473"},"params":[]},{"id":"'468","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'468"},"params":[]},{"id":"'485","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'485"},"params":[]},{"id":"'410","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'410","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-10","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-10"},"params":[]},{"id":"'351","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'351"},"params":[]},{"id":"'484","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'484","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'398","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'398","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'out","layerType":"FullyConnected","config":{"numOutputs":"657","paramsUpdater":"NesterovMomentumUpdater","id":"'out","paramsInitializers":"Map('biases -> ReLUInit, 'weights -> ReLUInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'309","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'309","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'328","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'328","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'368","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'368"},"params":[]},{"id":"'514","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'514","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'411","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'411"},"params":[]},{"id":"'401","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'401"},"params":[]},{"id":"'387","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'387","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'294","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'294","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-8","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-8"},"params":[]},{"id":"'551","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'551"},"params":[]},{"id":"'285","layerType":"Identity","config":{"order":"0","id":"'285"},"params":[]},{"id":"'416","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'416","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'467","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'467","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'350","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'350"},"params":[]},{"id":"'445","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'445"},"params":[]},{"id":"'356","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'356"},"params":[]},{"id":"'472","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'472","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'283","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'283","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'499","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'499","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'446","layerType":"Identity","config":{"order":"0","id":"'446"},"params":[]},{"id":"'378","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'378","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'373","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'373"},"params":[]},{"id":"'427","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'427","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-15","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-15"},"params":[]},{"id":"'split-2","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-2"},"params":[]},{"id":"'300","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'300","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'302","layerType":"Identity","config":{"order":"0","id":"'302"},"params":[]},{"id":"'540","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'540"},"params":[]},{"id":"'525","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'525","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"2048"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'364","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'364","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'323","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'323","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'552","layerType":"Identity","config":{"order":"0","id":"'552"},"params":[]},{"id":"'split-14","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-14"},"params":[]},{"id":"'533","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'533","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'393","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'393","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'307","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'307"},"params":[]},{"id":"'split-7","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-7"},"params":[]},{"id":"'330","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'330"},"params":[]},{"id":"'396","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'396"},"params":[]},{"id":"'274","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'274"},"params":[]},{"id":"'284","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'284"},"params":[]},{"id":"'542","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'542","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"2048"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'455","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'455","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'482","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'482","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'296","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'296"},"params":[]},{"id":"'383","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'383","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'389","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'389","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'295","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'295"},"params":[]},{"id":"'271","layerType":"ConvolutionalND","config":{"kernel":"7,7","convolutionDim":"2","pad":"3,3","paramsUpdater":"NesterovMomentumUpdater","id":"'271","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'480","layerType":"Identity","config":{"order":"0","id":"'480"},"params":[]},{"id":"'381","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'381","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'444","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'444","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-11","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-11"},"params":[]},{"id":"'554","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'554","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'366","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'366","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'400","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'400","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'395","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'395","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'470","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'470","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'340","layerType":"Identity","config":{"order":"0","id":"'340"},"params":[]},{"id":"'357","layerType":"Identity","config":{"order":"0","id":"'357"},"params":[]},{"id":"'453","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'453","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'321","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'321","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'289","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'289","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-4","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-4"},"params":[]},{"id":"'379","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'379"},"params":[]},{"id":"'512","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'512","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"2048"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'510","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'510","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'306","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'306","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'402","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'402"},"params":[]},{"id":"'487","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'487","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'544","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'544","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'429","layerType":"Identity","config":{"order":"0","id":"'429"},"params":[]},{"id":"'317","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'317","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'520","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'520","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'419","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'419","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'496","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'496"},"params":[]},{"id":"'557","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'557"},"params":[]},{"id":"'491","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'491"},"params":[]},{"id":"'459","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'459","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'436","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'436","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'501","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'501","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'508","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'508"},"params":[]},{"id":"'412","layerType":"Identity","config":{"order":"0","id":"'412"},"params":[]},{"id":"'385","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'385"},"params":[]},{"id":"'304","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'304","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'softmax","layerType":"SoftmaxAlt","config":{"order":"0","id":"'softmax"},"params":[]},{"id":"'457","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'457"},"params":[]},{"id":"'273","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'273","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'502","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'502"},"params":[]},{"id":"'448","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'448","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'split-12","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-12"},"params":[]},{"id":"'516","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'516","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'556","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'556","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'311","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'311","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'313","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'313"},"params":[]},{"id":"'281","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'281","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'347","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'347","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"512"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'374","layerType":"Identity","config":{"order":"0","id":"'374"},"params":[]},{"id":"'372","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'372","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'344","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'344","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'422","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'422"},"params":[]},{"id":"'534","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'534"},"params":[]},{"id":"'376","layerType":"ConvolutionalND","config":{"kernel":"3,3","convolutionDim":"2","pad":"1,1","paramsUpdater":"NesterovMomentumUpdater","id":"'376","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'546","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'546"},"params":[]},{"id":"'split-9","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-9"},"params":[]},{"id":"'384","layerType":"Join","config":{"joinType":"com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589","order":"0","id":"'384"},"params":[]},{"id":"'564","layerType":"Subsampling","config":{"kernel":"7,7","ceiling":"false","pad":"0,0","id":"'564","order":"0","poolingMode":"com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_AVERAGE_COUNT_EXCLUDE_PADDING$@6add8e3f","stride":"7,7"},"params":[]},{"id":"'298","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'298","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"64"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'404","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'404","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"256"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'406","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'406","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"2,2","group":"1","nOutputChannels":"1024"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'421","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'421","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'338","layerType":"BatchNormalization","config":{"batchNormType":"com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8","momentum":"0.0010000000474974513","epsilon":"1.0E-5","paramsUpdater":"VanillaUpdater","id":"'338","paramsInitializers":"Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)","order":"0"},"params":[{"name":"'biases"},{"name":"'mean"},{"name":"'variance"},{"name":"'scale"}]},{"id":"'split-1","layerType":"Split","config":{"splitType":"com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb","order":"0","id":"'split-1"},"params":[]},{"id":"'428","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'428"},"params":[]},{"id":"'474","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'474"},"params":[]},{"id":"'370","layerType":"ConvolutionalND","config":{"kernel":"1,1","convolutionDim":"2","pad":"0,0","paramsUpdater":"NesterovMomentumUpdater","id":"'370","paramsInitializers":"Map('biases -> NullInit$, 'weights -> NullInit$)","order":"0","dilation":"1,1","stride":"1,1","group":"1","nOutputChannels":"128"},"params":[{"name":"'biases"},{"name":"'weights"}]},{"id":"'517","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'517"},"params":[]},{"id":"'391","layerType":"Identity","config":{"order":"0","id":"'391"},"params":[]},{"id":"'451","layerType":"Activation","config":{"activationType":"com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c","order":"0","id":"'451"},"params":[]},{"id":"'269","layerType":"Identity","config":{"order":"0","id":"'269"},"params":[]}],"links":[{"idPrev":"'300","idsNext":["'301"]},{"idPrev":"'535","idsNext":["'537"]},{"idPrev":"'557","idsNext":["'559"]},{"idPrev":"'311","idsNext":["'312"]},{"idPrev":"'517","idsNext":["'518"]},{"idPrev":"'463","idsNext":["'465"]},{"idPrev":"'split-2","idsNext":["'277","'279"]},{"idPrev":"'461","idsNext":["'462"]},{"idPrev":"'353","idsNext":["'355"]},{"idPrev":"'516","idsNext":["'528"]},{"idPrev":"'493","idsNext":["'495"]},{"idPrev":"'537","idsNext":["'539"]},{"idPrev":"'389","idsNext":["'390"]},{"idPrev":"'split-5","idsNext":["'442","'456"]},{"idPrev":"'422","idsNext":["'423"]},{"idPrev":"'462","idsNext":["'463"]},{"idPrev":"'332","idsNext":["'336"]},{"idPrev":"'split-8","idsNext":["'329","'315"]},{"idPrev":"'504","idsNext":["'506"]},{"idPrev":"'323","idsNext":["'324"]},{"idPrev":"'433","idsNext":["'434"]},{"idPrev":"'506","idsNext":["'507"]},{"idPrev":"'412","idsNext":["'414"]},{"idPrev":"'416","idsNext":["'417"]},{"idPrev":"'split-13","idsNext":["'425","'439"]},{"idPrev":"'split-10","idsNext":["'545","'531"]},{"idPrev":"'368","idsNext":["'split-3"]},{"idPrev":"'split-0","idsNext":["'493","'507"]},{"idPrev":"'366","idsNext":["'367"]},{"idPrev":"'274","idsNext":["'275"]},{"idPrev":"'361","idsNext":["'362"]},{"idPrev":"'440","idsNext":["'split-5"]},{"idPrev":"'496","idsNext":["'497"]},{"idPrev":"'448","idsNext":["'450"]},{"idPrev":"'491","idsNext":["'split-0"]},{"idPrev":"'436","idsNext":["'438"]},{"idPrev":"'559","idsNext":["'561"]},{"idPrev":"'340","idsNext":["'342"]},{"idPrev":"'318","idsNext":["'319"]},{"idPrev":"'520","idsNext":["'522"]},{"idPrev":"'522","idsNext":["'523"]},{"idPrev":"'527","idsNext":["'528"]},{"idPrev":"'359","idsNext":["'361"]},{"idPrev":"'459","idsNext":["'461"]},{"idPrev":"'455","idsNext":["'456"]},{"idPrev":"'562","idsNext":["'563"]},{"idPrev":"'404","idsNext":["'408"]},{"idPrev":"'502","idsNext":["'504"]},{"idPrev":"'487","idsNext":["'489"]},{"idPrev":"'528","idsNext":["'529"]},{"idPrev":"'423","idsNext":["'split-13"]},{"idPrev":"'289","idsNext":["'290"]},{"idPrev":"'285","idsNext":["'287"]},{"idPrev":"'534","idsNext":["'535"]},{"idPrev":"'457","idsNext":["'split-6"]},{"idPrev":"'344","idsNext":["'345"]},{"idPrev":"'548","idsNext":["'550"]},{"idPrev":"'336","idsNext":["'339"]},{"idPrev":"'357","idsNext":["'359"]},{"idPrev":"'439","idsNext":["'440"]},{"idPrev":"'split-11","idsNext":["'476","'490"]},{"idPrev":"'476","idsNext":["'478"]},{"idPrev":"'429","idsNext":["'431"]},{"idPrev":"'324","idsNext":["'326"]},{"idPrev":"'317","idsNext":["'318"]},{"idPrev":"'525","idsNext":["'527"]},{"idPrev":"'478","idsNext":["'479"]},{"idPrev":"'347","idsNext":["'349"]},{"idPrev":"'split-14","idsNext":["'353","'367"]},{"idPrev":"'split-15","idsNext":["'548","'562"]},{"idPrev":"'290","idsNext":["'292"]},{"idPrev":"'431","idsNext":["'433"]},{"idPrev":"'split-12","idsNext":["'332","'334"]},{"idPrev":"'472","idsNext":["'473"]},{"idPrev":"'467","idsNext":["'468"]},{"idPrev":"'484","idsNext":["'485"]},{"idPrev":"'406","idsNext":["'410"]},{"idPrev":"'529","idsNext":["'split-10"]},{"idPrev":"'350","idsNext":["'351"]},{"idPrev":"'482","idsNext":["'484"]},{"idPrev":"'396","idsNext":["'398"]},{"idPrev":"'564","idsNext":["'out"]},{"idPrev":"'307","idsNext":["'309"]},{"idPrev":"'326","idsNext":["'328"]},{"idPrev":"'328","idsNext":["'329"]},{"idPrev":"'367","idsNext":["'368"]},{"idPrev":"'510","idsNext":["'514"]},{"idPrev":"'408","idsNext":["'411"]},{"idPrev":"'split-7","idsNext":["'401","'387"]},{"idPrev":"'292","idsNext":["'294"]},{"idPrev":"'313","idsNext":["'split-8"]},{"idPrev":"'550","idsNext":["'551"]},{"idPrev":"'284","idsNext":["'285"]},{"idPrev":"'414","idsNext":["'416"]},{"idPrev":"'465","idsNext":["'467"]},{"idPrev":"'338","idsNext":["'350"]},{"idPrev":"'444","idsNext":["'445"]},{"idPrev":"'355","idsNext":["'356"]},{"idPrev":"'470","idsNext":["'472"]},{"idPrev":"'489","idsNext":["'490"]},{"idPrev":"'279","idsNext":["'283"]},{"idPrev":"'544","idsNext":["'545"]},{"idPrev":"'497","idsNext":["'499"]},{"idPrev":"'445","idsNext":["'446"]},{"idPrev":"'376","idsNext":["'378"]},{"idPrev":"'372","idsNext":["'373"]},{"idPrev":"'425","idsNext":["'427"]},{"idPrev":"'546","idsNext":["'split-15"]},{"idPrev":"'275","idsNext":["'split-2"]},{"idPrev":"'298","idsNext":["'300"]},{"idPrev":"'301","idsNext":["'302"]},{"idPrev":"'539","idsNext":["'540"]},{"idPrev":"'523","idsNext":["'525"]},{"idPrev":"'362","idsNext":["'364"]},{"idPrev":"'321","idsNext":["'323"]},{"idPrev":"'551","idsNext":["'552"]},{"idPrev":"'438","idsNext":["'439"]},{"idPrev":"'351","idsNext":["'split-14"]},{"idPrev":"'531","idsNext":["'533"]},{"idPrev":"'391","idsNext":["'393"]},{"idPrev":"'306","idsNext":["'307"]},{"idPrev":"'385","idsNext":["'split-7"]},{"idPrev":"'329","idsNext":["'330"]},{"idPrev":"'395","idsNext":["'396"]},{"idPrev":"'273","idsNext":["'274"]},{"idPrev":"'281","idsNext":["'284"]},{"idPrev":"'540","idsNext":["'542"]},{"idPrev":"'453","idsNext":["'455"]},{"idPrev":"'480","idsNext":["'482"]},{"idPrev":"'295","idsNext":["'296"]},{"idPrev":"'381","idsNext":["'383"]},{"idPrev":"'349","idsNext":["'350"]},{"idPrev":"'387","idsNext":["'389"]},{"idPrev":"'283","idsNext":["'295"]},{"idPrev":"'269","idsNext":["'271"]},{"idPrev":"'294","idsNext":["'295"]},{"idPrev":"'479","idsNext":["'480"]},{"idPrev":"'379","idsNext":["'381"]},{"idPrev":"'442","idsNext":["'444"]},{"idPrev":"'474","idsNext":["'split-11"]},{"idPrev":"'552","idsNext":["'554"]},{"idPrev":"'364","idsNext":["'366"]},{"idPrev":"'398","idsNext":["'400"]},{"idPrev":"'393","idsNext":["'395"]},{"idPrev":"'468","idsNext":["'470"]},{"idPrev":"'339","idsNext":["'340"]},{"idPrev":"'356","idsNext":["'357"]},{"idPrev":"'451","idsNext":["'453"]},{"idPrev":"'319","idsNext":["'321"]},{"idPrev":"'287","idsNext":["'289"]},{"idPrev":"'296","idsNext":["'split-4"]},{"idPrev":"'378","idsNext":["'379"]},{"idPrev":"'split-9","idsNext":["'512","'510"]},{"idPrev":"'304","idsNext":["'306"]},{"idPrev":"'401","idsNext":["'402"]},{"idPrev":"'485","idsNext":["'487"]},{"idPrev":"'542","idsNext":["'544"]},{"idPrev":"'561","idsNext":["'562"]},{"idPrev":"'428","idsNext":["'429"]},{"idPrev":"'315","idsNext":["'317"]},{"idPrev":"'518","idsNext":["'520"]},{"idPrev":"'417","idsNext":["'419"]},{"idPrev":"'495","idsNext":["'496"]},{"idPrev":"'556","idsNext":["'557"]},{"idPrev":"'490","idsNext":["'491"]},{"idPrev":"'split-6","idsNext":["'473","'459"]},{"idPrev":"'434","idsNext":["'436"]},{"idPrev":"'499","idsNext":["'501"]},{"idPrev":"'507","idsNext":["'508"]},{"idPrev":"'411","idsNext":["'412"]},{"idPrev":"'384","idsNext":["'385"]},{"idPrev":"'302","idsNext":["'304"]},{"idPrev":"'out","idsNext":["'softmax"]},{"idPrev":"'456","idsNext":["'457"]},{"idPrev":"'271","idsNext":["'273"]},{"idPrev":"'501","idsNext":["'502"]},{"idPrev":"'446","idsNext":["'448"]},{"idPrev":"'330","idsNext":["'split-12"]},{"idPrev":"'512","idsNext":["'516"]},{"idPrev":"'554","idsNext":["'556"]},{"idPrev":"'309","idsNext":["'311"]},{"idPrev":"'312","idsNext":["'313"]},{"idPrev":"'277","idsNext":["'281"]},{"idPrev":"'345","idsNext":["'347"]},{"idPrev":"'373","idsNext":["'374"]},{"idPrev":"'370","idsNext":["'372"]},{"idPrev":"'342","idsNext":["'344"]},{"idPrev":"'410","idsNext":["'422"]},{"idPrev":"'533","idsNext":["'534"]},{"idPrev":"'374","idsNext":["'376"]},{"idPrev":"'545","idsNext":["'546"]},{"idPrev":"'508","idsNext":["'split-9"]},{"idPrev":"'400","idsNext":["'401"]},{"idPrev":"'383","idsNext":["'384"]},{"idPrev":"'563","idsNext":["'564"]},{"idPrev":"'split-4","idsNext":["'298","'312"]},{"idPrev":"'split-1","idsNext":["'404","'406"]},{"idPrev":"'419","idsNext":["'421"]},{"idPrev":"'334","idsNext":["'338"]},{"idPrev":"'402","idsNext":["'split-1"]},{"idPrev":"'427","idsNext":["'428"]},{"idPrev":"'473","idsNext":["'474"]},{"idPrev":"'split-3","idsNext":["'370","'384"]},{"idPrev":"'514","idsNext":["'517"]},{"idPrev":"'421","idsNext":["'422"]},{"idPrev":"'390","idsNext":["'391"]},{"idPrev":"'450","idsNext":["'451"]}]}
+{
+  "netId": "䍧↔漽Ო꾵캜뤦쐜膿ꩻ",
+  "netLayers": [
+    {
+      "id": "'301",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'301"
+      },
+      "params": []
+    },
+    {
+      "id": "'537",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'537",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'559",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'559",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "2048"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'312",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'312"
+      },
+      "params": []
+    },
+    {
+      "id": "'518",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'518"
+      },
+      "params": []
+    },
+    {
+      "id": "'465",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'465",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'277",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'277",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'279",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'279",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'462",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'462"
+      },
+      "params": []
+    },
+    {
+      "id": "'355",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'355",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'528",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'528"
+      },
+      "params": []
+    },
+    {
+      "id": "'495",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'495",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'539",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'539",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'390",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'390"
+      },
+      "params": []
+    },
+    {
+      "id": "'442",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'442",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'456",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'456"
+      },
+      "params": []
+    },
+    {
+      "id": "'423",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'423"
+      },
+      "params": []
+    },
+    {
+      "id": "'463",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'463"
+      },
+      "params": []
+    },
+    {
+      "id": "'336",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'336",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'329",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'329"
+      },
+      "params": []
+    },
+    {
+      "id": "'315",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'315",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'506",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'506",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'324",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'324"
+      },
+      "params": []
+    },
+    {
+      "id": "'434",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'434"
+      },
+      "params": []
+    },
+    {
+      "id": "'507",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'507"
+      },
+      "params": []
+    },
+    {
+      "id": "'414",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'414",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'417",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'417"
+      },
+      "params": []
+    },
+    {
+      "id": "'425",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'425",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'439",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'439"
+      },
+      "params": []
+    },
+    {
+      "id": "'545",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'545"
+      },
+      "params": []
+    },
+    {
+      "id": "'531",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'531",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'split-3",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-3"
+      },
+      "params": []
+    },
+    {
+      "id": "'493",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'493",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'367",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'367"
+      },
+      "params": []
+    },
+    {
+      "id": "'275",
+      "layerType": "Subsampling",
+      "config": {
+        "kernel": "3,3",
+        "ceiling": "false",
+        "pad": "0,0",
+        "id": "'275",
+        "order": "0",
+        "poolingMode": "com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_MAX$@2d38edfd",
+        "stride": "2,2"
+      },
+      "params": []
+    },
+    {
+      "id": "'362",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'362"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-5",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-5"
+      },
+      "params": []
+    },
+    {
+      "id": "'497",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'497"
+      },
+      "params": []
+    },
+    {
+      "id": "'450",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'450",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-0",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-0"
+      },
+      "params": []
+    },
+    {
+      "id": "'438",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'438",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'561",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'561",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'342",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'342",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'319",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'319"
+      },
+      "params": []
+    },
+    {
+      "id": "'522",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'522",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'523",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'523"
+      },
+      "params": []
+    },
+    {
+      "id": "'361",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'361",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'461",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'461",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'563",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'563"
+      },
+      "params": []
+    },
+    {
+      "id": "'408",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'408",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'504",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'504",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'489",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'489",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'529",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'529"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-13",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-13"
+      },
+      "params": []
+    },
+    {
+      "id": "'290",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'290"
+      },
+      "params": []
+    },
+    {
+      "id": "'287",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'287",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'535",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'535"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-6",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-6"
+      },
+      "params": []
+    },
+    {
+      "id": "'345",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'345"
+      },
+      "params": []
+    },
+    {
+      "id": "'550",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'550",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'339",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'339"
+      },
+      "params": []
+    },
+    {
+      "id": "'359",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'359",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'440",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'440"
+      },
+      "params": []
+    },
+    {
+      "id": "'476",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'476",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'490",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'490"
+      },
+      "params": []
+    },
+    {
+      "id": "'478",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'478",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'431",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'431",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'326",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'326",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'318",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'318"
+      },
+      "params": []
+    },
+    {
+      "id": "'527",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'527",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'479",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'479"
+      },
+      "params": []
+    },
+    {
+      "id": "'349",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'349",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'353",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'353",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'548",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'548",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'562",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'562"
+      },
+      "params": []
+    },
+    {
+      "id": "'292",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'292",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'433",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'433",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'332",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'332",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'334",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'334",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'473",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'473"
+      },
+      "params": []
+    },
+    {
+      "id": "'468",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'468"
+      },
+      "params": []
+    },
+    {
+      "id": "'485",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'485"
+      },
+      "params": []
+    },
+    {
+      "id": "'410",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'410",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-10",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-10"
+      },
+      "params": []
+    },
+    {
+      "id": "'351",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'351"
+      },
+      "params": []
+    },
+    {
+      "id": "'484",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'484",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'398",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'398",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'out",
+      "layerType": "FullyConnected",
+      "config": {
+        "numOutputs": "657",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'out",
+        "paramsInitializers": "Map('biases -> ReLUInit, 'weights -> ReLUInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'309",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'309",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'328",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'328",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'368",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'368"
+      },
+      "params": []
+    },
+    {
+      "id": "'514",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'514",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'411",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'411"
+      },
+      "params": []
+    },
+    {
+      "id": "'401",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'401"
+      },
+      "params": []
+    },
+    {
+      "id": "'387",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'387",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'294",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'294",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-8",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-8"
+      },
+      "params": []
+    },
+    {
+      "id": "'551",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'551"
+      },
+      "params": []
+    },
+    {
+      "id": "'285",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'285"
+      },
+      "params": []
+    },
+    {
+      "id": "'416",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'416",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'467",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'467",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'350",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'350"
+      },
+      "params": []
+    },
+    {
+      "id": "'445",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'445"
+      },
+      "params": []
+    },
+    {
+      "id": "'356",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'356"
+      },
+      "params": []
+    },
+    {
+      "id": "'472",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'472",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'283",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'283",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'499",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'499",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'446",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'446"
+      },
+      "params": []
+    },
+    {
+      "id": "'378",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'378",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'373",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'373"
+      },
+      "params": []
+    },
+    {
+      "id": "'427",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'427",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-15",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-15"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-2",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-2"
+      },
+      "params": []
+    },
+    {
+      "id": "'300",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'300",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'302",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'302"
+      },
+      "params": []
+    },
+    {
+      "id": "'540",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'540"
+      },
+      "params": []
+    },
+    {
+      "id": "'525",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'525",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "2048"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'364",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'364",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'323",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'323",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'552",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'552"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-14",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-14"
+      },
+      "params": []
+    },
+    {
+      "id": "'533",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'533",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'393",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'393",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'307",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'307"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-7",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-7"
+      },
+      "params": []
+    },
+    {
+      "id": "'330",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'330"
+      },
+      "params": []
+    },
+    {
+      "id": "'396",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'396"
+      },
+      "params": []
+    },
+    {
+      "id": "'274",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'274"
+      },
+      "params": []
+    },
+    {
+      "id": "'284",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'284"
+      },
+      "params": []
+    },
+    {
+      "id": "'542",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'542",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "2048"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'455",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'455",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'482",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'482",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'296",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'296"
+      },
+      "params": []
+    },
+    {
+      "id": "'383",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'383",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'389",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'389",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'295",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'295"
+      },
+      "params": []
+    },
+    {
+      "id": "'271",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "7,7",
+        "convolutionDim": "2",
+        "pad": "3,3",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'271",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'480",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'480"
+      },
+      "params": []
+    },
+    {
+      "id": "'381",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'381",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'444",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'444",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-11",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-11"
+      },
+      "params": []
+    },
+    {
+      "id": "'554",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'554",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'366",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'366",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'400",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'400",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'395",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'395",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'470",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'470",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'340",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'340"
+      },
+      "params": []
+    },
+    {
+      "id": "'357",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'357"
+      },
+      "params": []
+    },
+    {
+      "id": "'453",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'453",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'321",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'321",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'289",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'289",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-4",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-4"
+      },
+      "params": []
+    },
+    {
+      "id": "'379",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'379"
+      },
+      "params": []
+    },
+    {
+      "id": "'512",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'512",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "2048"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'510",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'510",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'306",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'306",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'402",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'402"
+      },
+      "params": []
+    },
+    {
+      "id": "'487",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'487",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'544",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'544",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'429",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'429"
+      },
+      "params": []
+    },
+    {
+      "id": "'317",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'317",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'520",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'520",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'419",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'419",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'496",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'496"
+      },
+      "params": []
+    },
+    {
+      "id": "'557",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'557"
+      },
+      "params": []
+    },
+    {
+      "id": "'491",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'491"
+      },
+      "params": []
+    },
+    {
+      "id": "'459",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'459",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'436",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'436",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'501",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'501",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'508",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'508"
+      },
+      "params": []
+    },
+    {
+      "id": "'412",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'412"
+      },
+      "params": []
+    },
+    {
+      "id": "'385",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'385"
+      },
+      "params": []
+    },
+    {
+      "id": "'304",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'304",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'softmax",
+      "layerType": "SoftmaxAlt",
+      "config": {
+        "order": "0",
+        "id": "'softmax"
+      },
+      "params": []
+    },
+    {
+      "id": "'457",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'457"
+      },
+      "params": []
+    },
+    {
+      "id": "'273",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'273",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'502",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'502"
+      },
+      "params": []
+    },
+    {
+      "id": "'448",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'448",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'split-12",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-12"
+      },
+      "params": []
+    },
+    {
+      "id": "'516",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'516",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'556",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'556",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'311",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'311",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'313",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'313"
+      },
+      "params": []
+    },
+    {
+      "id": "'281",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'281",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'347",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'347",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "512"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'374",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'374"
+      },
+      "params": []
+    },
+    {
+      "id": "'372",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'372",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'344",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'344",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'422",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'422"
+      },
+      "params": []
+    },
+    {
+      "id": "'534",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'534"
+      },
+      "params": []
+    },
+    {
+      "id": "'376",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "3,3",
+        "convolutionDim": "2",
+        "pad": "1,1",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'376",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'546",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'546"
+      },
+      "params": []
+    },
+    {
+      "id": "'split-9",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-9"
+      },
+      "params": []
+    },
+    {
+      "id": "'384",
+      "layerType": "Join",
+      "config": {
+        "joinType": "com.metaliquid.nn.impl.cuda.nets.layers.JoinType$SUM$@1a6dc589",
+        "order": "0",
+        "id": "'384"
+      },
+      "params": []
+    },
+    {
+      "id": "'564",
+      "layerType": "Subsampling",
+      "config": {
+        "kernel": "7,7",
+        "ceiling": "false",
+        "pad": "0,0",
+        "id": "'564",
+        "order": "0",
+        "poolingMode": "com.metaliquid.nn.impl.cuda.nets.layers.PoolingMode$POOLING_AVERAGE_COUNT_EXCLUDE_PADDING$@6add8e3f",
+        "stride": "7,7"
+      },
+      "params": []
+    },
+    {
+      "id": "'298",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'298",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "64"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'404",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'404",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "256"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'406",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'406",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "2,2",
+        "group": "1",
+        "nOutputChannels": "1024"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'421",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'421",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'338",
+      "layerType": "BatchNormalization",
+      "config": {
+        "batchNormType": "com.metaliquid.nn.impl.cuda.nets.layers.BatchNormType$CUDNN_BATCHNORM_SPATIAL$@43a65cd8",
+        "momentum": "0.0010000000474974513",
+        "epsilon": "1.0E-5",
+        "paramsUpdater": "VanillaUpdater",
+        "id": "'338",
+        "paramsInitializers": "Map('mean -> ZerosInit, 'variance -> OnesInit, 'biases -> ZerosInit, 'scale -> OnesInit)",
+        "order": "0"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'mean"
+        },
+        {
+          "name": "'variance"
+        },
+        {
+          "name": "'scale"
+        }
+      ]
+    },
+    {
+      "id": "'split-1",
+      "layerType": "Split",
+      "config": {
+        "splitType": "com.metaliquid.nn.impl.cuda.nets.layers.SplitType$COPY$@2e73d5eb",
+        "order": "0",
+        "id": "'split-1"
+      },
+      "params": []
+    },
+    {
+      "id": "'428",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'428"
+      },
+      "params": []
+    },
+    {
+      "id": "'474",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'474"
+      },
+      "params": []
+    },
+    {
+      "id": "'370",
+      "layerType": "ConvolutionalND",
+      "config": {
+        "kernel": "1,1",
+        "convolutionDim": "2",
+        "pad": "0,0",
+        "paramsUpdater": "NesterovMomentumUpdater",
+        "id": "'370",
+        "paramsInitializers": "Map('biases -> NullInit$, 'weights -> NullInit$)",
+        "order": "0",
+        "dilation": "1,1",
+        "stride": "1,1",
+        "group": "1",
+        "nOutputChannels": "128"
+      },
+      "params": [
+        {
+          "name": "'biases"
+        },
+        {
+          "name": "'weights"
+        }
+      ]
+    },
+    {
+      "id": "'517",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'517"
+      },
+      "params": []
+    },
+    {
+      "id": "'391",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'391"
+      },
+      "params": []
+    },
+    {
+      "id": "'451",
+      "layerType": "Activation",
+      "config": {
+        "activationType": "com.metaliquid.nn.impl.cuda.nets.layers.ActivationType$RELU$@a96d56c",
+        "order": "0",
+        "id": "'451"
+      },
+      "params": []
+    },
+    {
+      "id": "'269",
+      "layerType": "Identity",
+      "config": {
+        "order": "0",
+        "id": "'269"
+      },
+      "params": []
+    }
+  ],
+  "links": [
+    {
+      "idPrev": "'300",
+      "idsNext": [
+        "'301"
+      ]
+    },
+    {
+      "idPrev": "'535",
+      "idsNext": [
+        "'537"
+      ]
+    },
+    {
+      "idPrev": "'557",
+      "idsNext": [
+        "'559"
+      ]
+    },
+    {
+      "idPrev": "'311",
+      "idsNext": [
+        "'312"
+      ]
+    },
+    {
+      "idPrev": "'517",
+      "idsNext": [
+        "'518"
+      ]
+    },
+    {
+      "idPrev": "'463",
+      "idsNext": [
+        "'465"
+      ]
+    },
+    {
+      "idPrev": "'split-2",
+      "idsNext": [
+        "'277",
+        "'279"
+      ]
+    },
+    {
+      "idPrev": "'461",
+      "idsNext": [
+        "'462"
+      ]
+    },
+    {
+      "idPrev": "'353",
+      "idsNext": [
+        "'355"
+      ]
+    },
+    {
+      "idPrev": "'516",
+      "idsNext": [
+        "'528"
+      ]
+    },
+    {
+      "idPrev": "'493",
+      "idsNext": [
+        "'495"
+      ]
+    },
+    {
+      "idPrev": "'537",
+      "idsNext": [
+        "'539"
+      ]
+    },
+    {
+      "idPrev": "'389",
+      "idsNext": [
+        "'390"
+      ]
+    },
+    {
+      "idPrev": "'split-5",
+      "idsNext": [
+        "'442",
+        "'456"
+      ]
+    },
+    {
+      "idPrev": "'422",
+      "idsNext": [
+        "'423"
+      ]
+    },
+    {
+      "idPrev": "'462",
+      "idsNext": [
+        "'463"
+      ]
+    },
+    {
+      "idPrev": "'332",
+      "idsNext": [
+        "'336"
+      ]
+    },
+    {
+      "idPrev": "'split-8",
+      "idsNext": [
+        "'329",
+        "'315"
+      ]
+    },
+    {
+      "idPrev": "'504",
+      "idsNext": [
+        "'506"
+      ]
+    },
+    {
+      "idPrev": "'323",
+      "idsNext": [
+        "'324"
+      ]
+    },
+    {
+      "idPrev": "'433",
+      "idsNext": [
+        "'434"
+      ]
+    },
+    {
+      "idPrev": "'506",
+      "idsNext": [
+        "'507"
+      ]
+    },
+    {
+      "idPrev": "'412",
+      "idsNext": [
+        "'414"
+      ]
+    },
+    {
+      "idPrev": "'416",
+      "idsNext": [
+        "'417"
+      ]
+    },
+    {
+      "idPrev": "'split-13",
+      "idsNext": [
+        "'425",
+        "'439"
+      ]
+    },
+    {
+      "idPrev": "'split-10",
+      "idsNext": [
+        "'545",
+        "'531"
+      ]
+    },
+    {
+      "idPrev": "'368",
+      "idsNext": [
+        "'split-3"
+      ]
+    },
+    {
+      "idPrev": "'split-0",
+      "idsNext": [
+        "'493",
+        "'507"
+      ]
+    },
+    {
+      "idPrev": "'366",
+      "idsNext": [
+        "'367"
+      ]
+    },
+    {
+      "idPrev": "'274",
+      "idsNext": [
+        "'275"
+      ]
+    },
+    {
+      "idPrev": "'361",
+      "idsNext": [
+        "'362"
+      ]
+    },
+    {
+      "idPrev": "'440",
+      "idsNext": [
+        "'split-5"
+      ]
+    },
+    {
+      "idPrev": "'496",
+      "idsNext": [
+        "'497"
+      ]
+    },
+    {
+      "idPrev": "'448",
+      "idsNext": [
+        "'450"
+      ]
+    },
+    {
+      "idPrev": "'491",
+      "idsNext": [
+        "'split-0"
+      ]
+    },
+    {
+      "idPrev": "'436",
+      "idsNext": [
+        "'438"
+      ]
+    },
+    {
+      "idPrev": "'559",
+      "idsNext": [
+        "'561"
+      ]
+    },
+    {
+      "idPrev": "'340",
+      "idsNext": [
+        "'342"
+      ]
+    },
+    {
+      "idPrev": "'318",
+      "idsNext": [
+        "'319"
+      ]
+    },
+    {
+      "idPrev": "'520",
+      "idsNext": [
+        "'522"
+      ]
+    },
+    {
+      "idPrev": "'522",
+      "idsNext": [
+        "'523"
+      ]
+    },
+    {
+      "idPrev": "'527",
+      "idsNext": [
+        "'528"
+      ]
+    },
+    {
+      "idPrev": "'359",
+      "idsNext": [
+        "'361"
+      ]
+    },
+    {
+      "idPrev": "'459",
+      "idsNext": [
+        "'461"
+      ]
+    },
+    {
+      "idPrev": "'455",
+      "idsNext": [
+        "'456"
+      ]
+    },
+    {
+      "idPrev": "'562",
+      "idsNext": [
+        "'563"
+      ]
+    },
+    {
+      "idPrev": "'404",
+      "idsNext": [
+        "'408"
+      ]
+    },
+    {
+      "idPrev": "'502",
+      "idsNext": [
+        "'504"
+      ]
+    },
+    {
+      "idPrev": "'487",
+      "idsNext": [
+        "'489"
+      ]
+    },
+    {
+      "idPrev": "'528",
+      "idsNext": [
+        "'529"
+      ]
+    },
+    {
+      "idPrev": "'423",
+      "idsNext": [
+        "'split-13"
+      ]
+    },
+    {
+      "idPrev": "'289",
+      "idsNext": [
+        "'290"
+      ]
+    },
+    {
+      "idPrev": "'285",
+      "idsNext": [
+        "'287"
+      ]
+    },
+    {
+      "idPrev": "'534",
+      "idsNext": [
+        "'535"
+      ]
+    },
+    {
+      "idPrev": "'457",
+      "idsNext": [
+        "'split-6"
+      ]
+    },
+    {
+      "idPrev": "'344",
+      "idsNext": [
+        "'345"
+      ]
+    },
+    {
+      "idPrev": "'548",
+      "idsNext": [
+        "'550"
+      ]
+    },
+    {
+      "idPrev": "'336",
+      "idsNext": [
+        "'339"
+      ]
+    },
+    {
+      "idPrev": "'357",
+      "idsNext": [
+        "'359"
+      ]
+    },
+    {
+      "idPrev": "'439",
+      "idsNext": [
+        "'440"
+      ]
+    },
+    {
+      "idPrev": "'split-11",
+      "idsNext": [
+        "'476",
+        "'490"
+      ]
+    },
+    {
+      "idPrev": "'476",
+      "idsNext": [
+        "'478"
+      ]
+    },
+    {
+      "idPrev": "'429",
+      "idsNext": [
+        "'431"
+      ]
+    },
+    {
+      "idPrev": "'324",
+      "idsNext": [
+        "'326"
+      ]
+    },
+    {
+      "idPrev": "'317",
+      "idsNext": [
+        "'318"
+      ]
+    },
+    {
+      "idPrev": "'525",
+      "idsNext": [
+        "'527"
+      ]
+    },
+    {
+      "idPrev": "'478",
+      "idsNext": [
+        "'479"
+      ]
+    },
+    {
+      "idPrev": "'347",
+      "idsNext": [
+        "'349"
+      ]
+    },
+    {
+      "idPrev": "'split-14",
+      "idsNext": [
+        "'353",
+        "'367"
+      ]
+    },
+    {
+      "idPrev": "'split-15",
+      "idsNext": [
+        "'548",
+        "'562"
+      ]
+    },
+    {
+      "idPrev": "'290",
+      "idsNext": [
+        "'292"
+      ]
+    },
+    {
+      "idPrev": "'431",
+      "idsNext": [
+        "'433"
+      ]
+    },
+    {
+      "idPrev": "'split-12",
+      "idsNext": [
+        "'332",
+        "'334"
+      ]
+    },
+    {
+      "idPrev": "'472",
+      "idsNext": [
+        "'473"
+      ]
+    },
+    {
+      "idPrev": "'467",
+      "idsNext": [
+        "'468"
+      ]
+    },
+    {
+      "idPrev": "'484",
+      "idsNext": [
+        "'485"
+      ]
+    },
+    {
+      "idPrev": "'406",
+      "idsNext": [
+        "'410"
+      ]
+    },
+    {
+      "idPrev": "'529",
+      "idsNext": [
+        "'split-10"
+      ]
+    },
+    {
+      "idPrev": "'350",
+      "idsNext": [
+        "'351"
+      ]
+    },
+    {
+      "idPrev": "'482",
+      "idsNext": [
+        "'484"
+      ]
+    },
+    {
+      "idPrev": "'396",
+      "idsNext": [
+        "'398"
+      ]
+    },
+    {
+      "idPrev": "'564",
+      "idsNext": [
+        "'out"
+      ]
+    },
+    {
+      "idPrev": "'307",
+      "idsNext": [
+        "'309"
+      ]
+    },
+    {
+      "idPrev": "'326",
+      "idsNext": [
+        "'328"
+      ]
+    },
+    {
+      "idPrev": "'328",
+      "idsNext": [
+        "'329"
+      ]
+    },
+    {
+      "idPrev": "'367",
+      "idsNext": [
+        "'368"
+      ]
+    },
+    {
+      "idPrev": "'510",
+      "idsNext": [
+        "'514"
+      ]
+    },
+    {
+      "idPrev": "'408",
+      "idsNext": [
+        "'411"
+      ]
+    },
+    {
+      "idPrev": "'split-7",
+      "idsNext": [
+        "'401",
+        "'387"
+      ]
+    },
+    {
+      "idPrev": "'292",
+      "idsNext": [
+        "'294"
+      ]
+    },
+    {
+      "idPrev": "'313",
+      "idsNext": [
+        "'split-8"
+      ]
+    },
+    {
+      "idPrev": "'550",
+      "idsNext": [
+        "'551"
+      ]
+    },
+    {
+      "idPrev": "'284",
+      "idsNext": [
+        "'285"
+      ]
+    },
+    {
+      "idPrev": "'414",
+      "idsNext": [
+        "'416"
+      ]
+    },
+    {
+      "idPrev": "'465",
+      "idsNext": [
+        "'467"
+      ]
+    },
+    {
+      "idPrev": "'338",
+      "idsNext": [
+        "'350"
+      ]
+    },
+    {
+      "idPrev": "'444",
+      "idsNext": [
+        "'445"
+      ]
+    },
+    {
+      "idPrev": "'355",
+      "idsNext": [
+        "'356"
+      ]
+    },
+    {
+      "idPrev": "'470",
+      "idsNext": [
+        "'472"
+      ]
+    },
+    {
+      "idPrev": "'489",
+      "idsNext": [
+        "'490"
+      ]
+    },
+    {
+      "idPrev": "'279",
+      "idsNext": [
+        "'283"
+      ]
+    },
+    {
+      "idPrev": "'544",
+      "idsNext": [
+        "'545"
+      ]
+    },
+    {
+      "idPrev": "'497",
+      "idsNext": [
+        "'499"
+      ]
+    },
+    {
+      "idPrev": "'445",
+      "idsNext": [
+        "'446"
+      ]
+    },
+    {
+      "idPrev": "'376",
+      "idsNext": [
+        "'378"
+      ]
+    },
+    {
+      "idPrev": "'372",
+      "idsNext": [
+        "'373"
+      ]
+    },
+    {
+      "idPrev": "'425",
+      "idsNext": [
+        "'427"
+      ]
+    },
+    {
+      "idPrev": "'546",
+      "idsNext": [
+        "'split-15"
+      ]
+    },
+    {
+      "idPrev": "'275",
+      "idsNext": [
+        "'split-2"
+      ]
+    },
+    {
+      "idPrev": "'298",
+      "idsNext": [
+        "'300"
+      ]
+    },
+    {
+      "idPrev": "'301",
+      "idsNext": [
+        "'302"
+      ]
+    },
+    {
+      "idPrev": "'539",
+      "idsNext": [
+        "'540"
+      ]
+    },
+    {
+      "idPrev": "'523",
+      "idsNext": [
+        "'525"
+      ]
+    },
+    {
+      "idPrev": "'362",
+      "idsNext": [
+        "'364"
+      ]
+    },
+    {
+      "idPrev": "'321",
+      "idsNext": [
+        "'323"
+      ]
+    },
+    {
+      "idPrev": "'551",
+      "idsNext": [
+        "'552"
+      ]
+    },
+    {
+      "idPrev": "'438",
+      "idsNext": [
+        "'439"
+      ]
+    },
+    {
+      "idPrev": "'351",
+      "idsNext": [
+        "'split-14"
+      ]
+    },
+    {
+      "idPrev": "'531",
+      "idsNext": [
+        "'533"
+      ]
+    },
+    {
+      "idPrev": "'391",
+      "idsNext": [
+        "'393"
+      ]
+    },
+    {
+      "idPrev": "'306",
+      "idsNext": [
+        "'307"
+      ]
+    },
+    {
+      "idPrev": "'385",
+      "idsNext": [
+        "'split-7"
+      ]
+    },
+    {
+      "idPrev": "'329",
+      "idsNext": [
+        "'330"
+      ]
+    },
+    {
+      "idPrev": "'395",
+      "idsNext": [
+        "'396"
+      ]
+    },
+    {
+      "idPrev": "'273",
+      "idsNext": [
+        "'274"
+      ]
+    },
+    {
+      "idPrev": "'281",
+      "idsNext": [
+        "'284"
+      ]
+    },
+    {
+      "idPrev": "'540",
+      "idsNext": [
+        "'542"
+      ]
+    },
+    {
+      "idPrev": "'453",
+      "idsNext": [
+        "'455"
+      ]
+    },
+    {
+      "idPrev": "'480",
+      "idsNext": [
+        "'482"
+      ]
+    },
+    {
+      "idPrev": "'295",
+      "idsNext": [
+        "'296"
+      ]
+    },
+    {
+      "idPrev": "'381",
+      "idsNext": [
+        "'383"
+      ]
+    },
+    {
+      "idPrev": "'349",
+      "idsNext": [
+        "'350"
+      ]
+    },
+    {
+      "idPrev": "'387",
+      "idsNext": [
+        "'389"
+      ]
+    },
+    {
+      "idPrev": "'283",
+      "idsNext": [
+        "'295"
+      ]
+    },
+    {
+      "idPrev": "'269",
+      "idsNext": [
+        "'271"
+      ]
+    },
+    {
+      "idPrev": "'294",
+      "idsNext": [
+        "'295"
+      ]
+    },
+    {
+      "idPrev": "'479",
+      "idsNext": [
+        "'480"
+      ]
+    },
+    {
+      "idPrev": "'379",
+      "idsNext": [
+        "'381"
+      ]
+    },
+    {
+      "idPrev": "'442",
+      "idsNext": [
+        "'444"
+      ]
+    },
+    {
+      "idPrev": "'474",
+      "idsNext": [
+        "'split-11"
+      ]
+    },
+    {
+      "idPrev": "'552",
+      "idsNext": [
+        "'554"
+      ]
+    },
+    {
+      "idPrev": "'364",
+      "idsNext": [
+        "'366"
+      ]
+    },
+    {
+      "idPrev": "'398",
+      "idsNext": [
+        "'400"
+      ]
+    },
+    {
+      "idPrev": "'393",
+      "idsNext": [
+        "'395"
+      ]
+    },
+    {
+      "idPrev": "'468",
+      "idsNext": [
+        "'470"
+      ]
+    },
+    {
+      "idPrev": "'339",
+      "idsNext": [
+        "'340"
+      ]
+    },
+    {
+      "idPrev": "'356",
+      "idsNext": [
+        "'357"
+      ]
+    },
+    {
+      "idPrev": "'451",
+      "idsNext": [
+        "'453"
+      ]
+    },
+    {
+      "idPrev": "'319",
+      "idsNext": [
+        "'321"
+      ]
+    },
+    {
+      "idPrev": "'287",
+      "idsNext": [
+        "'289"
+      ]
+    },
+    {
+      "idPrev": "'296",
+      "idsNext": [
+        "'split-4"
+      ]
+    },
+    {
+      "idPrev": "'378",
+      "idsNext": [
+        "'379"
+      ]
+    },
+    {
+      "idPrev": "'split-9",
+      "idsNext": [
+        "'512",
+        "'510"
+      ]
+    },
+    {
+      "idPrev": "'304",
+      "idsNext": [
+        "'306"
+      ]
+    },
+    {
+      "idPrev": "'401",
+      "idsNext": [
+        "'402"
+      ]
+    },
+    {
+      "idPrev": "'485",
+      "idsNext": [
+        "'487"
+      ]
+    },
+    {
+      "idPrev": "'542",
+      "idsNext": [
+        "'544"
+      ]
+    },
+    {
+      "idPrev": "'561",
+      "idsNext": [
+        "'562"
+      ]
+    },
+    {
+      "idPrev": "'428",
+      "idsNext": [
+        "'429"
+      ]
+    },
+    {
+      "idPrev": "'315",
+      "idsNext": [
+        "'317"
+      ]
+    },
+    {
+      "idPrev": "'518",
+      "idsNext": [
+        "'520"
+      ]
+    },
+    {
+      "idPrev": "'417",
+      "idsNext": [
+        "'419"
+      ]
+    },
+    {
+      "idPrev": "'495",
+      "idsNext": [
+        "'496"
+      ]
+    },
+    {
+      "idPrev": "'556",
+      "idsNext": [
+        "'557"
+      ]
+    },
+    {
+      "idPrev": "'490",
+      "idsNext": [
+        "'491"
+      ]
+    },
+    {
+      "idPrev": "'split-6",
+      "idsNext": [
+        "'473",
+        "'459"
+      ]
+    },
+    {
+      "idPrev": "'434",
+      "idsNext": [
+        "'436"
+      ]
+    },
+    {
+      "idPrev": "'499",
+      "idsNext": [
+        "'501"
+      ]
+    },
+    {
+      "idPrev": "'507",
+      "idsNext": [
+        "'508"
+      ]
+    },
+    {
+      "idPrev": "'411",
+      "idsNext": [
+        "'412"
+      ]
+    },
+    {
+      "idPrev": "'384",
+      "idsNext": [
+        "'385"
+      ]
+    },
+    {
+      "idPrev": "'302",
+      "idsNext": [
+        "'304"
+      ]
+    },
+    {
+      "idPrev": "'out",
+      "idsNext": [
+        "'softmax"
+      ]
+    },
+    {
+      "idPrev": "'456",
+      "idsNext": [
+        "'457"
+      ]
+    },
+    {
+      "idPrev": "'271",
+      "idsNext": [
+        "'273"
+      ]
+    },
+    {
+      "idPrev": "'501",
+      "idsNext": [
+        "'502"
+      ]
+    },
+    {
+      "idPrev": "'446",
+      "idsNext": [
+        "'448"
+      ]
+    },
+    {
+      "idPrev": "'330",
+      "idsNext": [
+        "'split-12"
+      ]
+    },
+    {
+      "idPrev": "'512",
+      "idsNext": [
+        "'516"
+      ]
+    },
+    {
+      "idPrev": "'554",
+      "idsNext": [
+        "'556"
+      ]
+    },
+    {
+      "idPrev": "'309",
+      "idsNext": [
+        "'311"
+      ]
+    },
+    {
+      "idPrev": "'312",
+      "idsNext": [
+        "'313"
+      ]
+    },
+    {
+      "idPrev": "'277",
+      "idsNext": [
+        "'281"
+      ]
+    },
+    {
+      "idPrev": "'345",
+      "idsNext": [
+        "'347"
+      ]
+    },
+    {
+      "idPrev": "'373",
+      "idsNext": [
+        "'374"
+      ]
+    },
+    {
+      "idPrev": "'370",
+      "idsNext": [
+        "'372"
+      ]
+    },
+    {
+      "idPrev": "'342",
+      "idsNext": [
+        "'344"
+      ]
+    },
+    {
+      "idPrev": "'410",
+      "idsNext": [
+        "'422"
+      ]
+    },
+    {
+      "idPrev": "'533",
+      "idsNext": [
+        "'534"
+      ]
+    },
+    {
+      "idPrev": "'374",
+      "idsNext": [
+        "'376"
+      ]
+    },
+    {
+      "idPrev": "'545",
+      "idsNext": [
+        "'546"
+      ]
+    },
+    {
+      "idPrev": "'508",
+      "idsNext": [
+        "'split-9"
+      ]
+    },
+    {
+      "idPrev": "'400",
+      "idsNext": [
+        "'401"
+      ]
+    },
+    {
+      "idPrev": "'383",
+      "idsNext": [
+        "'384"
+      ]
+    },
+    {
+      "idPrev": "'563",
+      "idsNext": [
+        "'564"
+      ]
+    },
+    {
+      "idPrev": "'split-4",
+      "idsNext": [
+        "'298",
+        "'312"
+      ]
+    },
+    {
+      "idPrev": "'split-1",
+      "idsNext": [
+        "'404",
+        "'406"
+      ]
+    },
+    {
+      "idPrev": "'419",
+      "idsNext": [
+        "'421"
+      ]
+    },
+    {
+      "idPrev": "'334",
+      "idsNext": [
+        "'338"
+      ]
+    },
+    {
+      "idPrev": "'402",
+      "idsNext": [
+        "'split-1"
+      ]
+    },
+    {
+      "idPrev": "'427",
+      "idsNext": [
+        "'428"
+      ]
+    },
+    {
+      "idPrev": "'473",
+      "idsNext": [
+        "'474"
+      ]
+    },
+    {
+      "idPrev": "'split-3",
+      "idsNext": [
+        "'370",
+        "'384"
+      ]
+    },
+    {
+      "idPrev": "'514",
+      "idsNext": [
+        "'517"
+      ]
+    },
+    {
+      "idPrev": "'421",
+      "idsNext": [
+        "'422"
+      ]
+    },
+    {
+      "idPrev": "'390",
+      "idsNext": [
+        "'391"
+      ]
+    },
+    {
+      "idPrev": "'450",
+      "idsNext": [
+        "'451"
+      ]
+    }
+  ]
+}

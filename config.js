@@ -67,6 +67,8 @@ $(window).on("load", function () {
 
     $("#container_LeftSidebar").on("input change", function (e) {
         $(window).trigger("changedSettings");
+      //  $(window).trigger("graphLoaded", graph);
+
     });
 
 });
