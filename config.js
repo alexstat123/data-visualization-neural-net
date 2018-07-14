@@ -74,9 +74,5 @@ $(window).on("load", function () {
 });
 
 $(window).on("changedSettings", function () {
-    d3.select("#nnblocks")
-        .select('svg')
-        .remove();
-
     $(window).trigger("graphLoaded", graph);
 });

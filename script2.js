@@ -1,4 +1,5 @@
 $(window).on("graphLoaded", (event, data) => getdata(data));
+$(window).on("changedSettings", (event, data) => drawRectangle(null, null, null));
 
 
 var siblingArr = [];
@@ -36,18 +37,28 @@ function drawRectangle(depthArr, name, siblingsArr) {
     // var barwidth = 200;
     // var xpos = 0;
 
-    var svg = d3.select("#nnblocks")
+    var svg = d3
+        .select("#container_neuralNetwork")
+        .selectAll("#svg_NNContainer")
+        .data([graph], graph=>graph.netId);
+
+    svg.exit().remove();
+
+      svg = svg.enter()
         .append("svg")
+        .attr("id", "svg_NNContainer")
         .attr("width", 1000)
-        .attr("height", 1800);
+        .attr("height", 1800)
+          .merge(svg);
 
-
-    var rects = svg.selectAll("foo")
+    var rects = svg.selectAll(".svg_layer")
         .data(graph.nodesArray, node => node.id);
 
     rects
         .enter()
         .append("rect")
+        .attr("class","svg_layer")
+        .merge(rects)
         .attr("x", function (d)
         {
 
@@ -58,7 +69,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
             //console.log("my order",d.order);
 
             //return dimetionParameter[1] + d.tab * 30
-            return dimetionParameter[1]
+            return dimetionParameter[1] + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
 
         })
         .attr("y", function (d, i) {
@@ -111,7 +122,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .style("font-size", function(d)
         {
-            var indexes = getAllIndexes(depthArr, d.depth);
+            var indexes = d.siblingsNum
             return 16 - indexes.length
         });
 

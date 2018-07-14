@@ -36,18 +36,18 @@ function drawLegend(graph) {
 }
 
 function updateSelection() {
-    d3.select("#nnblocks")
-        .selectAll("rect")
+    d3.select("#svg_NNContainer")
+        .selectAll(".svg_layer")
         .data(graph.nodesArray, node => node.id)
         .attr("stroke", node => node.selected ? "#000000" : "#898989")
         .attr("stroke-width", 1);
 
-    d3.select("#nnblocks")
-        .selectAll("rect")
+    d3.select("#svg_NNContainer")
+        .selectAll(".svg_layer")
         .data(graph.getSelectedNodes(), node => node.id)
         .raise();
 
-    d3.select("#nnblocks")
+    d3.select("#svg_NNContainer")
         .selectAll("text")
         .data(graph.getSelectedNodes(), node => node.id)
         .raise();

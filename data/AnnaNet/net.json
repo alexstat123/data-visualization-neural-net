@@ -344,6 +344,21 @@
       "params": []
     },
     {
+      "id": "'exit1",
+      "layerType": "Exit",
+      "params": []
+    },
+    {
+      "id": "'sonExit1",
+      "layerType": "Exit",
+      "params": []
+    },
+    {
+      "id": "'exit2",
+      "layerType": "Exit",
+      "params": []
+    },
+    {
       "id": "'conv1",
       "layerType": "ConvolutionalND",
       "config": {
@@ -435,13 +450,21 @@
       "idsNext": [
         "'conv2",
         "'conv2b",
-        "'join"
+        "'join",
+        "'exit1"
+      ]
+    },
+    {
+      "idPrev": "'exit1",
+      "idsNext": [
+        "'sonExit1"
       ]
     },
     {
       "idPrev": "'fc1",
       "idsNext": [
-        "'relu4"
+        "'relu4",
+        "'exit2"
       ]
     },
     {
