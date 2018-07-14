@@ -2,29 +2,24 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 $(window).on("changedSettings", (event, data) => drawRectangle(null, null, null));
 
 
-var siblingArr = [];
+
 var gap = settings.gapSize;
 
 function getdata(graph) {
 
-    console.log("my script is working fine!");
+    console.log("script is working!");
     console.log("graph",graph);
 
-    var name = [];
-    var depthArr = [];
 
-    drawRectangle(depthArr, name, siblingArr);
+    drawRectangle();
     $(window).trigger("graphDrawn");
 }
 
 
-function drawRectangle(depthArr, name, siblingsArr) {
+function drawRectangle() {
 
-
-    //var gap = 1;
     var barthinkness = settings.barHeight;
-    // var barwidth = 200;
-    // var xpos = 0;
+
 
     var svg = d3
         .select("#container_neuralNetwork")
@@ -50,9 +45,8 @@ function drawRectangle(depthArr, name, siblingsArr) {
         .merge(rects)
         .attr("x", function (d)
         {
-
             dimetionParameter =width(d);
-            return dimetionParameter[1] + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
+            return d.xPossition + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
 
         })
         .attr("y", function (d) {
@@ -61,26 +55,44 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .attr("width", function (d)
         {
-
             dimetionParameter =width(d);
-            return dimetionParameter[0]- gap;
+            return d.width- gap;
 
         })
         .attr("height", function(d){
             dimetionParameter =width(d);
-            return dimetionParameter[2] * barthinkness
+            return d.height * barthinkness
         })
-        .attr("fill", function(d)
-        {
+        .attr("fill", function(d){return d.color})
+        .on("mouseover",function(d){
+            tooltip.style("display",null);
+            console.log(d.id)
+        })
+        .on("mouseout",function(d){
+            tooltip.style("display","none");
+        })
+        .on("mousemove",function(d){
+            var xPos = d3.mouse(this)[0] - 15;
+            var yPos = d3.mouse(this)[1] - 55;
+            tooltip.attr("transform","translate(" + xPos +","+yPos+")");
+            tooltip.select("text").text(d.id);
+        })
 
-            return d.color
-        });
+    var tooltip = svg.append("g")
+                     .attr("class",tooltip)
+                     .style("display","none");
 
-
+    tooltip.append("text")
+        .attr("x",15)
+        .attr("dy","1.2em")
+        .style("font-size","1.2em")
+        .attr("font-weight","bold");
 
 
     var label = svg.selectAll("text")
         .data(graph.nodesArray,node => node.id)
+
+    label
         .enter()
         .append("text")
         .style("fill", "black")
@@ -102,28 +114,12 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .style("font-size", function(d)
         {
-            var indexes = getAllIndexes(depthArr, d.depth);
-            //return 16 - indexes.length
             return 16 - d.siblingsNum;
         });
 
+    rects.exit().remove();
+    label.exit().remove();
 }
-
-depthCheckArr = [];
-
-function getAllIndexes(arr, val)
-{
-
-    var indexes = [], i = -1;
-    while ((i = arr.indexOf(val, i + 1)) != -1)
-    {
-        indexes.push(i);
-    }
-
-    return indexes;
-}
-
-
 
 
 function width(node){
@@ -136,7 +132,6 @@ function width(node){
 
 
         // x possition
-        //node.xPossition = 0 +node.tab *30;
         node.xPossition = 0;
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
         return nodeWidthAndPosX
@@ -150,11 +145,8 @@ function width(node){
         //sum all parents witdths
         Array.from(node.parents.values()).filter(parent=>parent.tab<=node.tab).forEach((key,value) => {
             widthsum += key.width;
-            //widthsum += key.width - key.tab * 10;
 
         });
-
-
 
         // x position
         parentXpos = 0;
