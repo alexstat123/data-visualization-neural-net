@@ -1,4 +1,5 @@
 $(window).on("graphLoaded", (event, data) => getdata(data));
+$(window).on("changedSettings", (event, data) => drawRectangle(null, null, null));
 
 
 var siblingArr = [];
@@ -6,22 +7,11 @@ var gap = settings.gapSize;
 
 function getdata(graph) {
 
-    console.log("my script is working!");
+    console.log("my script is working fine!");
     console.log("graph",graph);
 
     var name = [];
     var depthArr = [];
-    var order = [];
-    var tabs = [];
-    graph["nodesArray"].forEach(function (item, index, array) {
-
-        depthArr.push(item["depth"]);
-        siblingArr.push(item["siblingsNum"]);
-        name.push(item["id"]);
-        order.push(item["order"]);
-        tabs.push(item["tab"]);
-
-    })
 
     drawRectangle(depthArr, name, siblingArr);
     $(window).trigger("graphDrawn");
@@ -36,44 +26,45 @@ function drawRectangle(depthArr, name, siblingsArr) {
     // var barwidth = 200;
     // var xpos = 0;
 
-    var svg = d3.select("#nnblocks")
+    var svg = d3
+        .select("#container_neuralNetwork")
+        .selectAll("#svg_NNContainer")
+        .data([graph], graph=>graph.netId);
+
+    svg.exit().remove();
+
+    svg = svg.enter()
         .append("svg")
+        .attr("id", "svg_NNContainer")
         .attr("width", 1000)
-        .attr("height", 1800);
+        .attr("height", 1800)
+        .merge(svg);
 
-
-    var rects = svg.selectAll("foo")
+    var rects = svg.selectAll(".svg_layer")
         .data(graph.nodesArray, node => node.id);
 
     rects
         .enter()
         .append("rect")
+        .attr("class","svg_layer")
+        .merge(rects)
         .attr("x", function (d)
         {
 
             dimetionParameter =width(d);
-            // x position of bar + tab val*variable
-            //console.log("i am",d.id);
-            //console.log("my tab",d.tab);
-            //console.log("my order",d.order);
-
-            //return dimetionParameter[1] + d.tab * 30
-            return dimetionParameter[1]
+            return dimetionParameter[1] + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
 
         })
-        .attr("y", function (d, i) {
+        .attr("y", function (d) {
 
             return d["depth"] * (barthinkness)
         })
         .attr("width", function (d)
         {
 
-            // var indexes = getAllIndexes(depthArr, d.depth);
-            // console.log("indexes",indexes);
-
             dimetionParameter =width(d);
             return dimetionParameter[0]- gap;
-            //return dimetionParameter[0]- gap;
+
         })
         .attr("height", function(d){
             dimetionParameter =width(d);
@@ -101,7 +92,7 @@ function drawRectangle(depthArr, name, siblingsArr) {
         })
         .attr("y", function (d) {
 
-            return d.depth * (barthinkness) // d.depth * (barthinkness + gap) was here
+            return d.depth * (barthinkness)
         })
         .attr("dy", ".75em")
         .attr("text-anchor", "middle")

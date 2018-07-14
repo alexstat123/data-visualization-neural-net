@@ -1,12 +1,12 @@
-$(window).on("graphDrawn", () => {
-    var box = d3.select("#nnblocks>svg").node().getBBox();
-    d3.select("#nnblocks>svg").attr("width", box.width).attr("height", box.height);
-    console.log("init");
-    nodeClickSetup()
-});
-
+$(window).on("graphDrawn", () => eventHalnder());
 $(window).on("load", () => setupFileLoader());
 $(window).on("load", () => setupCollapseClicks());
+
+function eventHalnder(){
+    var box = d3.select("#svg_NNContainer").node().getBBox();
+    d3.select("#svg_NNContainer").attr("width", box.width).attr("height", box.height);
+    nodeClickSetup()
+}
 
 function setupCollapseClicks() {
     $("#toggle_expandNeuralNetwork, #toggle_resizeNeuralNetwork").on("click", () => {
@@ -17,9 +17,6 @@ function setupCollapseClicks() {
 
 function setupFileLoader() {
     $('#nn_file').on("change", function (event) {
-        d3.select("#nnblocks")
-            .select('svg')
-            .remove();
 
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -32,12 +29,12 @@ function setupFileLoader() {
 
 function nodeClickSetup() {
 
-    d3.select("#nnblocks")
-        .selectAll("rect")
+    d3.select("#svg_NNContainer")
+        .selectAll(".svg_layer")
         .data(graph.nodesArray, node => node.id)
         .on("click", d => clickEvent(d));
 
-    d3.select("#nnblocks")
+    d3.select("#svg_NNContainer")
         .selectAll("text")
         .data(graph.nodesArray, node => node.id)
         .on("click", d => clickEvent(d));

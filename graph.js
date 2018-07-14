@@ -6,6 +6,7 @@ graph = {
         Node dictionary
         id=>nodeObject
      */
+    netId: '',
     nodes: new Map(),
     nodesArray: [],
     nodesColorScale: null,
@@ -67,11 +68,7 @@ graph = {
         this.getRoot().updateChildsHorizontalPosition();
     },
     updateNodesHeight() {
-        var leafs = this.nodesArray.filter(e => e.childs.size === 0);
-        leafs.forEach(leaf => {
-            leaf.height = 1;
-            leaf.updateParentsHeight();
-        });
+        this.getRoot().updateParentsHeight();
     },
     getFixedLayersTypes() {
         return ["FullyConnected"
@@ -144,7 +141,7 @@ graph = {
         return this.nodesArray.filter(filter);
     },
     getAllPathsBetween(nodeA, nodeB) {
-        this.nodesArray.forEach(node => node.isInPath = false);
+        this.nodesArray.forEach(node => node.isInPath = -1);
 
         if (nodeA.depth > nodeB.depth) {
             var tmp = nodeA;
@@ -158,6 +155,11 @@ graph = {
         setResult.add(nodeB);
         return setResult;
     },
+    updateBranches() {
+        var leafs = this.nodesArray.filter(e => e.childs.size === 0).sort((a, b) => b.depth - a.depth);
+        leafs.shift().setHierarcyAsMain();
+        leafs.forEach(node => node.setHierarcyAsSecondary());
+    },
     clear() {
         this.nodesArray = [];
         this.nodes.clear();
@@ -169,6 +171,7 @@ graph = {
 function createGraph(neuralNetwork) {
 
     graph.clear();
+    graph.netId = neuralNetwork.netId;
     //foreach layer create the relative node
     neuralNetwork.netLayers.forEach(function (row) {
         graph.nodeFromJson(row);
@@ -183,11 +186,13 @@ function createGraph(neuralNetwork) {
 
     graph.BFS();
     graph.updateDepth();
+    graph.updateBranches();
     graph.updateTabs();
+
     graph.updateChildsPosition();
     graph.updateNodesHeight();
     graph.updateNodesColors();
-
+    settings.barHeight = window.innerHeight / graph.nodesArray[graph.nodesArray.length - 1].depth;
     $(window).trigger("graphLoaded", graph);
 }
 

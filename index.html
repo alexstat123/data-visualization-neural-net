@@ -74,6 +74,10 @@
                             <input type="checkbox" class="custom-control-input" id="check_showIds" checked>
                             <label class="custom-control-label" for="check_showIds">Show ids</label>
                         </div>
+                        <hr>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            What works
+                        </button>
                     </div>
                 </div>
             </div>
@@ -199,7 +203,56 @@
     </div>
     <!-- /Central window -->
 </div>
+<!-- Button trigger modal -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">What works</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <b>Works:</b><br>
+                Display of AnnaNet, BranchNet and ResnetVGGFaces type networks
+                <br>
+                Selection of nodes with mouse and ctrl/shift keys
+                <br>
+                Expand/compress of lateral panels
+                <br>
+                Enlarge/Shrink Neural Netowrk space
+                <br>
+                Hide/Show legend
+                <br>
+                Save and Load configuration
+                <br>
+                Load Neural Network from net.json file
+                <br>
+
+                <br>
+                <b>What are we working on:</b>
+                <br>
+                Middle exit branches
+                <br>
+                Customization of width, height, gap, colors size of nodes
+                <br>
+                Hide/show ids
+                <br>
+                Single node information on hover
+                <br>
+                Aggregated selected nodes informations
+                <br>
+
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="libraries/js/bootstrap.min.js"></script>

@@ -22,6 +22,7 @@ function createNode(nodeData) {
         parents: new Map(),
         //Dictionary of nodes connected to this node "on bottom" part of it.
         childs: new Map(),
+        isMainBranch: null,
         childsArr: [],
         parentsArr: [],
         //Add a parent to the dictionary, indexed by id
@@ -39,70 +40,91 @@ function createNode(nodeData) {
                 return;
 
             this.depth = newDepth;
-            //For each child set its depth
             this.childs.forEach(child => child.setDepth(newDepth + 1));
         },
         setTab: function (newTab) {
-
+            //the childs have no order, so we need to pay attention to wheter the
+            //tab has already been set to a value less then the newTab
+            // ex. parent sets tab of the reentrant child, then sets tab of other childs
+            //finally other childs will try to set again tab of reentrant child
             if (this.tab > -1 && this.tab < newTab) {
                 return;
             }
 
             this.tab = newTab;
+            // Children tabs are defined based on how many
+            // different depths are connected to the current node
+            // 0 depth => leaf
+            // 1 depth => split node
+            // 2 depth => tab node
+            // 3 or more depths => not managed, complex network
             var childDepths = new Set(this.childsArr.map(node => node.depth));
 
-            var toDo = null;
-            //console.log(childDepths);
             if (childDepths.size === 0) {
-                //No childs
-                //console.log("nochilds");
                 return;
             }
             else if (childDepths.size === 1) {
                 //Childs are all on the same depth
-                toDo = (child) => child.setTab(newTab);
-                //console.log("+0")
+                this.childs.forEach(child => child.setTab(newTab));
             }
             else if (childDepths.size === 2) {
-                //The childs of this have 2 different levels of depth so it is the case to use tabs
+                //tab needed
                 var maxDepth = d3.max([...childDepths]);
-                toDo = (child) => {
-                    //The child which is at maximum depth is the merge node so it should not be tabbed
-                    child.depth === maxDepth ? child.setTab(newTab) : child.setTab(newTab + 1);
-                }
+                this.childs.forEach(child => {
+                    if (child.isMainBranch === this.isMainBranch) {
+                        //The child which is at maximum depth is the merge node so it must not be tabbed
+                        child.depth === maxDepth ? child.setTab(newTab) : child.setTab(newTab + 1);
+                    } else {
+                        //Secondary branches tabs does not depend on main branch tabs
+                        child.setTab(0);
+                    }
+                });
             }
             else {
                 //Complex network
                 throw "not yet implemented";
             }
 
-            this.childs.forEach(child => toDo(child));
         },
         updateChildsHorizontalPosition: function () {
-            var order = {};
+            // Order of the nodes on the x axis
+            // Nodes on different depths (tabbed case) or in different branches (early exit)
+            // must not share the order
+            var childsInDepths = {};
+            this.childs.forEach(child => {
+                if (!childsInDepths[[child.depth, child.isMainBranch]]) {
+                    childsInDepths[[child.depth, child.isMainBranch]] = [];
+                }
+
+                childsInDepths[[child.depth, child.isMainBranch]].push(child);
+            });
 
             this.childs.forEach(child => {
-                child.siblingsNum = this.childsArr.filter(sibling => sibling.depth === child.depth).length;
-                child.order = order[child.depth] || 0;
-                order[child.depth] = child.order + 1;
+                child.siblingsNum = childsInDepths[[child.depth, child.isMainBranch]].length;
+                child.order = childsInDepths[[child.depth, child.isMainBranch]].indexOf(child);
                 child.updateChildsHorizontalPosition();
             });
         },
         updateParentsHeight: function () {
-            if (this.parents.size === 0) return;
-            if (this.id === '\'562'){
-                console.log([...this.parentsArr]);}
-            this.parentsArr.forEach(parent => {
-                if (parent.height > 0)
-                    return;
-
-                parent.height = this.depth - parent.depth;
-                parent.updateParentsHeight();
-            });
+            /**
+             * Height of node is defined as
+             * minimum depth of childern - node depth
+             */
+            if (this.childs.size === 0) {
+                this.height = 1;
+                return;
+            }
+            const minimumChildDepth = d3.min(this.childsArr, child => child.depth);
+            this.height = minimumChildDepth - this.depth;
+            this.childsArr.forEach(child => child.updateParentsHeight());
         },
         upperHierarchyContains: function (node, pathSet) {
-            console.log(this);
-
+            /*
+             * Search goes bottom to top
+             * Given the gaph properties, if the depth of the current node is less than
+             * the depth of the node we are searching, we will not find it going higher.
+             *
+             */
             if (this === node)
                 return true;
 
@@ -110,14 +132,36 @@ function createNode(nodeData) {
                 return false;
 
             var found = false;
-            for (const parent of this.parents.values()) {
-                if (parent.isInPath || (parent.upperHierarchyContains(node, pathSet) && !found)) {
-                    found = true;
-                    this.isInPath = true;
-                    pathSet.add(this);
+            this.isInPath = 0;
+
+            this.parentsArr.forEach(parent => {
+                //Parent has already been analyzed
+                if (parent.isInPath === -1) {
+                    found = parent.upperHierarchyContains(node, pathSet);
                 }
+
+                if (parent.isInPath === 1) {
+                    found = true;
+                }
+            });
+
+            if (found) {
+                this.isInPath = 1;
+                pathSet.add(this);
             }
             return found;
+        },
+        setHierarcyAsMain() {
+            this.isMainBranch = true;
+            this.parentsArr.forEach(node => node.setHierarcyAsMain());
+        },
+        setHierarcyAsSecondary() {
+            if (this.isMainBranch) {
+                return;
+            }
+
+            this.isMainBranch = false;
+            this.parentsArr.forEach(node => node.setHierarcyAsSecondary());
         }
     };
 

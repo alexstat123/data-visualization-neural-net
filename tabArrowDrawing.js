@@ -2,40 +2,50 @@ $(window).on("graphDrawn", updateArrows);
 
 function updateArrows() {
     var nodesNeedingArrow = graph.nodesArray.filter(node => {
-        console.log(node.childsArr.some(child => node.tab < child.tab));
         return node.childsArr.some(child => node.tab < child.tab);
     });
-    console.log(nodesNeedingArrow);
 
     var lineSize = 2;
     var squareSize = lineSize * 4;
 
-    var selectedNodes = d3.select("#nnblocks")
-        .select("svg")
-        .selectAll("line")
+    var selectedNodes = d3.select("#svg_NNContainer")
+        .selectAll(".connection")
         .data(nodesNeedingArrow, node => node.id);
 
-    selectedNodes
+    selectedNodes.exit().remove();
+
+    var connections = selectedNodes
         .enter()
+        .append("g")
+        .classed("connection", true);
+
+    connections
         .append("line")
         .attr("stroke-width", lineSize)
         .attr("stroke", "#424242")
-        .merge(selectedNodes)
-        .attr('x1', node => node.xPossition + (settings.tabSize / 2))
+        .merge(selectedNodes.select('line'))
+        .attr('x1', node => {
+            console.log((node.depth + 1) * settings.barHeight);
+            return node.xPossition + (settings.tabSize / 2)
+        })
         .attr('x2', node => node.xPossition + (settings.tabSize / 2))
         .attr('y1', node => (node.depth + 1) * settings.barHeight)
         .attr('y2', node => getConnectedNode(node).depth * settings.barHeight);
 
-    selectedNodes.enter()
+    connections
         .append("rect")
+        .classed("topConnection", true)
+        .merge(selectedNodes.select(".topConnection"))
         .attr("x", node => node.xPossition + (settings.tabSize / 2) - (squareSize / 2))
         .attr("y", node => (node.depth + 1) * settings.barHeight)
         .attr("width", squareSize)
         .attr("height", settings.barHeight / 2)
         .attr("fill", node => getConnectedNode(node).color);
 
-    selectedNodes.enter()
+    connections
         .append("rect")
+        .classed("bottomConnection", true)
+        .merge(selectedNodes.select(".bottomConnection"))
         .attr("width", squareSize)
         .attr("height", settings.barHeight / 2)
         .attr("x", node => node.xPossition + (settings.tabSize / 2) - (squareSize / 2))
