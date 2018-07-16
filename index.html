@@ -10,6 +10,7 @@
     <link href="libraries/css/mdb.min.css" rel="stylesheet">
     <link href="libraries/css/fontawesome.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?version=1">
+    <link href="tooltip.css" rel="stylesheet">
     <!--
     <link rel="stylesheet" href="styles.css"/>
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -27,9 +28,11 @@
     <script type="text/javascript" src="panelInfo.js"></script>
     <script type="text/javascript" src="userInteraction.js"></script>
     <script type="text/javascript" src="tabArrowDrawing.js"></script>
+
 </head>
 
 <body class="container-fluid">
+
 <div class="row">
     <!-- Left sidebar -->
     <div class="col-12  col-xl-3" id="container_LeftSidebar">
@@ -252,6 +255,13 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="tooltip" class="hidden">
+    <p><strong>Node Info</strong></p>
+    <!--<p><span id="value">100</span>%</p>-->
+    <p>node name: <span id="value">100</span>%</p>
+    <p>depth: <span id="value2">200</span>%</p>
 </div>
 
 <!-- Bootstrap core JavaScript -->

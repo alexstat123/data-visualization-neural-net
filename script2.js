@@ -7,7 +7,7 @@ var gap = settings.gapSize;
 
 function getdata(graph) {
 
-    console.log("script is working!");
+    console.log("script is working ok!");
     console.log("graph",graph);
 
 
@@ -35,7 +35,7 @@ function drawRectangle() {
         .attr("height", 1800)
         .merge(svg);
 
-    var rects = svg.selectAll(".svg_layer")
+    var rects = svg.selectAll("rect") // ".svg_layer"
         .data(graph.nodesArray, node => node.id);
 
     rects
@@ -65,28 +65,31 @@ function drawRectangle() {
         })
         .attr("fill", function(d){return d.color})
         .on("mouseover",function(d){
-            tooltip.style("display",null);
-            console.log(d.id)
+
+
+            var xPosition = parseFloat(d3.select(this).attr("x")) +700;
+            var yPosition = parseFloat(d3.select(this).attr("y"));
+
+
+            d3.select("#tooltip")
+                .style("left", xPosition + "px")
+                .style("top", yPosition + "px")
+                .html("name: " +d.id + '<br/>' +" order: " + d.order);
+
+            d3.select("#tooltip").style("opacity", 1)
+
         })
         .on("mouseout",function(d){
-            tooltip.style("display","none");
+
+            //d3.select("#tooltip").remove();
+            d3.select("#tooltip").style("opacity", 0)
         })
         .on("mousemove",function(d){
-            var xPos = d3.mouse(this)[0] - 15;
-            var yPos = d3.mouse(this)[1] - 55;
-            tooltip.attr("transform","translate(" + xPos +","+yPos+")");
-            tooltip.select("text").text(d.id);
+
+            //d3.select("#tooltip").classed("hidden", true)
+
         })
 
-    var tooltip = svg.append("g")
-                     .attr("class",tooltip)
-                     .style("display","none");
-
-    tooltip.append("text")
-        .attr("x",15)
-        .attr("dy","1.2em")
-        .style("font-size","1.2em")
-        .attr("font-weight","bold");
 
 
     var label = svg.selectAll("text")
@@ -117,8 +120,27 @@ function drawRectangle() {
             return 16 - d.siblingsNum;
         });
 
+
     rects.exit().remove();
     label.exit().remove();
+
+
+    var tooltip = svg.append("g")
+        .attr("class",tooltip)
+        //.style("border-radius", "10em")
+        //.style("background-color","black")
+        .style("display","none");
+
+    tooltip.append("text")
+        .attr("x",15)
+        .attr("dy","1.2em")
+        .style("font-size","1em")
+        .style("fill","blue")
+        .style("stroke", "red")
+        .style("Opacity","0.7")
+
+
+        .attr("font-weight","bold");
 }
 
 
