@@ -2,7 +2,7 @@ $(window).on("graphDrawn", () => eventHalnder());
 $(window).on("load", () => setupFileLoader());
 $(window).on("load", () => setupCollapseClicks());
 
-function eventHalnder(){
+function eventHalnder() {
     var box = d3.select("#svg_NNContainer").node().getBBox();
     d3.select("#svg_NNContainer").attr("width", box.width).attr("height", box.height);
     nodeClickSetup()
@@ -12,6 +12,11 @@ function setupCollapseClicks() {
     $("#toggle_expandNeuralNetwork, #toggle_resizeNeuralNetwork").on("click", () => {
         $("#centralContainer").toggleClass("col-xl-12 order-first");
         $("#toggle_expandNeuralNetwork, #toggle_resizeNeuralNetwork").toggleClass('d-none');
+    });
+
+    $("#toggle_expandInfo, #toggle_resizeInfo").on("click", () => {
+        $("#container_LeftSidebar").toggleClass("col-xl-12 order-1");
+        $("#toggle_expandInfo, #toggle_resizeInfo").toggleClass('d-none');
     });
 }
 

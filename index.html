@@ -48,6 +48,9 @@
                     <i class="far fa-plus-square right-aligned collapse"
                        data-target="#layers_info, #layers_info_hide, #layers_info_show"
                        id="layers_info_show" data-toggle="collapse"></i>
+
+                    <i class="fa fa-expand" id="toggle_expandInfo"></i>
+                    <i class="fa fa-compress d-none" id="toggle_resizeInfo"></i>
                 </h5>
             </div>
             <div class="card-body card-body-cascade text-center collapse show" id="layers_info">
@@ -55,6 +58,9 @@
                     <div class="col-12">
                         Selected Layers:
                         <span id="info_selectedLayersNum">0</span>
+                    </div>
+                    <div class="col-12" id="container_layersInfo">
+
                     </div>
                 </div>
             </div>
@@ -164,7 +170,21 @@
     </div>
     <!-- / Left sidebar -->
     <!-- Central window -->
-    <div class="col-12 col-xl-9" id="centralContainer">
+    <div class="col-12 col-xl-9 " id="centralContainer">
+
+        <div id="emptyCardHeight" class="card card-cascade w-100 mt-3 position-absolute invisible">
+            <!-- Card image -->
+            <div class="view view-cascade gradient-card-header blue-gradient py-3">
+                <!-- Title -->
+                <h5 class="card-header-title mb-0 d-block">Neural Network model
+                </h5>
+            </div>
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center pb-0">
+            </div>
+
+        </div>
+
         <!-- Card -->
         <div class="card card-cascade w-100 mt-3 ">
             <!-- Card image -->
@@ -257,7 +277,7 @@
     </div>
 </div>
 
-<div id="tooltip" class="hidden">
+<div id="tooltip" class="hidden d-none">
     <p><strong>Node Info</strong></p>
     <!--<p><span id="value">100</span>%</p>-->
     <p>node name: <span id="value">100</span>%</p>

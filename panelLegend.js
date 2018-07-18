@@ -1,41 +1,64 @@
 var legendItem = null;
 $(window).on("load", setup);
 $(window).on("graphLoaded", (event, graph) => drawLegend(graph));
-$(window).on("nodesSelectionChanged", () => updateSelection());
+$(window).on("nodesSelectionChanged", (event, newSelection) => updateSelection(newSelection));
 
 function setup() {
     legendItem = d3.select(".legendItem").remove().node();
 }
 
 function drawLegend(graph) {
-
+    // svg container
     var layersLegends = d3.select("#layersLegend");
-    var legendsBind = layersLegends
-        .selectAll(".legendItem")
+    // g elements
+    var itemsUpdate = layersLegends
+        .selectAll("g.legendItem")
         .data(graph.getLayersColors(), type => type.type);
 
-    var lineHeight = 30;
-    var items = legendsBind
-        .enter()
-        .append(() => {
-            return legendItem.cloneNode(true);
-        })
-        .attr("x", 0)
-        .merge(legendsBind)
-        .attr("y", (d, i) => lineHeight * i);
+    var padding = 5;
+    var lineHeight = 30 - padding;
 
-    items.select(".type")
+    var itemsEnter = itemsUpdate
+        .enter()
+        .append("g")
+        .attr("class", "legendItem");
+
+    const itemsMerge = itemsEnter
+        .merge(itemsUpdate);
+
+    //g is bound to the type, so we only set the text into the enter section
+    itemsEnter
+        .append("text")
+        .attr("class", "type")
+        .attr("dominant-baseline", "middle")
+        .attr("x", lineHeight + (padding * 2))
         .text(layer => layer.type);
-    items.select(".square")
+
+    //Same as before, g is bound to type, we only set the color when it enters
+    itemsEnter
+        .append("rect")
+        .attr("class", "square")
+        //i prefer rectangles instead of squares
+        .attr("width", lineHeight + padding)
+        .attr("height", lineHeight)
         .attr("fill", layer => layer.color);
 
-    legendsBind.exit().remove();
+    //We may allow to reorder the legend if future, so y is on the merge section
+    itemsMerge
+        .select(".square")
+        .attr("y", (d, i) => (lineHeight + padding) * i);
+
+    itemsMerge
+        .select(".type")
+        .attr("y", (d, i) => ((lineHeight + padding) * i) + lineHeight / 2);
+
+    itemsUpdate.exit().remove();
 
     var box = layersLegends.node().getBBox();
     layersLegends.attr("height", box.height);
 }
 
-function updateSelection() {
+function updateSelection(newSelection) {
     d3.select("#svg_NNContainer")
         .selectAll(".svg_layer")
         .data(graph.nodesArray, node => node.id)
@@ -54,7 +77,7 @@ function updateSelection() {
 
     var layersLegends = d3.select("#layersLegend")
         .selectAll(".legendItem")
-        .data(graph.nodesArray.map(node => node.selected ? node.type : {'type': ''}), type => type.type);
+        .data(newSelection.map(node => node.type), type => type.type);
 
     layersLegends.select(".type")
         .attr("font-weight", "bold");

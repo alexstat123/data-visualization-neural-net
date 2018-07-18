@@ -192,7 +192,8 @@ function createGraph(neuralNetwork) {
     graph.updateChildsPosition();
     graph.updateNodesHeight();
     graph.updateNodesColors();
-    settings.barHeight = window.innerHeight / graph.nodesArray[graph.nodesArray.length - 1].depth;
+    console.log(window.innerHeight - $("#emptyCardHeight").height());
+    settings.barHeight = (window.innerHeight - $("#emptyCardHeight").height() - (settings.tabSize * 2)) / (graph.nodesArray[graph.nodesArray.length - 1].depth + 1);
     $(window).trigger("graphLoaded", graph);
 }
 
