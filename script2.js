@@ -3,7 +3,8 @@ $(window).on("changedSettings", (event, data) => drawRectangle(null, null, null)
 
 
 
-var gap = settings.gapSize;
+//var gap = settings.gapSize;
+//var gap = 20;
 
 function getdata(graph) {
 
@@ -19,7 +20,7 @@ function getdata(graph) {
 function drawRectangle() {
 
     var barthinkness = settings.barHeight;
-
+    var gap = settings.gapSize;
 
     var svg = d3
         .select("#container_neuralNetwork")
@@ -112,8 +113,8 @@ function drawRectangle() {
         {
             // x position of bar + half width of bar + tab val*variable
             //width(d);
-
-            return d.xPossition + d.width/2 + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize)
+            console.log("width",d.width - settings.gapSize);
+            return d.xPossition + (d.width - gap)/2 + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize)
 
 
         })
@@ -131,14 +132,19 @@ function drawRectangle() {
         })
         .style("font-size", function(d)
         {
-            console.log("barthikness",barthinkness);
+            //console.log("barthikness",barthinkness);
             //return (16 - d.siblingsNum + barthinkness/7);
+            if((d.width - settings.gapSize) <44){
+                return (d.width - settings.gapSize - 30)  ;
+            }
             if(barthinkness > 6){
                 return (10 - d.siblingsNum + barthinkness/7);
             }else{
 
                 return ( d.siblingsNum + barthinkness/7);
             }
+
+
 
         });
 
@@ -197,13 +203,11 @@ function width(node){
         node.width = ((widthsum - (node.tab - parent.tab) * settings.tabSize )/ node.siblingsNum);
 
         //node.xPossition = parentXpos + node.width * node.order + node.tab *30;
-        node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * settings.tabSize ;     // difference of tabs needs to be added
+        node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * settings.tabSize;     // difference of tabs needs to be added
 
         //console.log("node.xposition", parent.tab);
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
 
-        //console.log("i am",node.id);
-        //console.log("next guy is",node.parents.values().next().value);
         return nodeWidthAndPosX
     }
 
