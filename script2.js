@@ -7,7 +7,7 @@ var gap = settings.gapSize;
 
 function getdata(graph) {
 
-    console.log("script is working ok!");
+    console.log("script is working very well!");
     console.log("graph",graph);
 
 
@@ -45,9 +45,10 @@ function drawRectangle() {
         .merge(rects)
         .attr("x", function (d)
         {
-            dimetionParameter =width(d);
-            return d.xPossition + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
+            width(d);
 
+            return d.xPossition + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize);
+            //return d.xPossition
         })
         .attr("y", function (d) {
 
@@ -55,12 +56,12 @@ function drawRectangle() {
         })
         .attr("width", function (d)
         {
-            dimetionParameter =width(d);
+
             return d.width- gap;
 
         })
         .attr("height", function(d){
-            dimetionParameter =width(d);
+
             return d.height * barthinkness
         })
         .attr("fill", function(d){return d.color})
@@ -74,7 +75,14 @@ function drawRectangle() {
             d3.select("#tooltip")
                 .style("left", xPosition + "px")
                 .style("top", yPosition + "px")
-                .html("name: " +d.id + '<br/>' +" order: " + d.order);
+                .html("Name: " +d.id + '<br/>' + "Layer Type: " + d.originalData.layerType + '<br/>'
+                    + "Kernel: " + d.originalData.config.kernel + '<br/>' + "Convolution Dim: " + d.originalData.config.convolutionDim);
+
+
+            //console.log("data",d.originalData);
+            console.log("layer type",d.originalData.layerType);
+            console.log("config",d.originalData.config);
+            console.log("kernel",d.originalData.config.kernel);
 
             d3.select("#tooltip").style("opacity", 1)
 
@@ -98,16 +106,22 @@ function drawRectangle() {
     label
         .enter()
         .append("text")
+        .merge(label)
         .style("fill", "black")
         .attr("x", function (d)
         {
             // x position of bar + half width of bar + tab val*variable
-            return d.xPossition + d.width/2
+            //width(d);
+
+            return d.xPossition + d.width/2 + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize)
+
 
         })
         .attr("y", function (d) {
 
             return d.depth * (barthinkness)
+
+
         })
         .attr("dy", ".75em")
         .attr("text-anchor", "middle")
@@ -117,7 +131,15 @@ function drawRectangle() {
         })
         .style("font-size", function(d)
         {
-            return 16 - d.siblingsNum;
+            console.log("barthikness",barthinkness);
+            //return (16 - d.siblingsNum + barthinkness/7);
+            if(barthinkness > 6){
+                return (10 - d.siblingsNum + barthinkness/7);
+            }else{
+
+                return ( d.siblingsNum + barthinkness/7);
+            }
+
         });
 
 
@@ -127,8 +149,6 @@ function drawRectangle() {
 
     var tooltip = svg.append("g")
         .attr("class",tooltip)
-        //.style("border-radius", "10em")
-        //.style("background-color","black")
         .style("display","none");
 
     tooltip.append("text")
@@ -179,11 +199,11 @@ function width(node){
         //node.xPossition = parentXpos + node.width * node.order + node.tab *30;
         node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * settings.tabSize ;     // difference of tabs needs to be added
 
-        console.log("node.xposition", parent.tab);
+        //console.log("node.xposition", parent.tab);
         nodeWidthAndPosX = [node.width,node.xPossition,node.height];
 
-        console.log("i am",node.id);
-        console.log("next guy is",node.parents.values().next().value);
+        //console.log("i am",node.id);
+        //console.log("next guy is",node.parents.values().next().value);
         return nodeWidthAndPosX
     }
 
