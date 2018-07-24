@@ -213,3 +213,28 @@ function width(node){
 
 }
 
+function plusZoom(){
+
+    console.log("plus zoom pressed!");
+
+
+    $("#slider_LayerWidth").val(parseInt($("#slider_LayerWidth").val())+30);
+    $("#slider_LayerWidth").trigger('change');
+
+    $("#slider_LayerHeight").val(parseInt($("#slider_LayerHeight").val())+30);
+    $("#slider_LayerHeight").trigger('change');
+
+}
+
+function minusZoom() {
+
+    console.log("minus zoom pressed!");
+
+    $("#slider_LayerWidth").val(parseInt($("#slider_LayerWidth").val())-30);
+    $("#slider_LayerWidth").trigger('change');
+
+    $("#slider_LayerHeight").val(parseInt($("#slider_LayerHeight").val())-30);
+    $("#slider_LayerHeight").trigger('change');
+}
+
+
