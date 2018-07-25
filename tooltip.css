@@ -18,30 +18,39 @@ body {
     width: 960px;
 }
 
-/*svg {*/
-    /*font: 10px sans-serif;*/
-    /*shape-rendering: crispEdges;*/
-/*}*/
 
-/*rect {*/
-    /*fill: #ddd;*/
-/*}*/
-
-/*.axis path,*/
-/*.axis line {*/
-    /*fill: none;*/
-    /*stroke: #fff;*/
-/*}*/
 
 #plusZoom {
     position: relative;
-    right: 780px;
+    right: 1100px;
     top: -320px;
 }
 
 #minusZoom {
     position: relative;
-    right: 780px;
+    right: 1100px;
     top: -317px;
 }
 
+#container_Legend {
+    position: fixed;
+    right: 80px;
+    top: 30px;
+    transform: scale(0.7,0.7);
+
+
+}
+
+#container_LeftSidebar {
+    position: fixed;
+    transform: scale(0.7,0.7);
+    top: -150px;
+    left: -50px;
+}
+
+#centralContainer {
+
+    right: -200px;
+    top: 0px;
+
+}
