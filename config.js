@@ -3,7 +3,8 @@ settings = {
     barHeight: 20,
     rootWidth: 200,
     gapSize: 3,
-    showLegend: true
+    showLegend: true,
+    showIds: true
 }
 
 function loadSettingsFile(event) {
@@ -64,10 +65,14 @@ $(window).on("load", function () {
         settings.showLegend = this.checked;
     });
 
+    $("#check_showIds").on("change", function (e) {
+        settings.showIds = this.checked;
+    });
+
 
     $("#container_LeftSidebar").on("input change", function (e) {
         $(window).trigger("changedSettings");
-      //  $(window).trigger("graphLoaded", graph);
+        //  $(window).trigger("graphLoaded", graph);
 
     });
 
