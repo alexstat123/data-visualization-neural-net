@@ -12,3 +12,45 @@
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
+
+body {
+    position: absolute;
+    width: 960px;
+}
+
+
+
+#plusZoom {
+    position: relative;
+    right: 1100px;
+    top: -320px;
+}
+
+#minusZoom {
+    position: relative;
+    right: 1100px;
+    top: -317px;
+}
+
+#container_Legend {
+    position: fixed;
+    right: 80px;
+    top: 30px;
+    transform: scale(0.7,0.7);
+
+
+}
+
+#container_LeftSidebar {
+    position: fixed;
+    transform: scale(0.7,0.7);
+    top: -150px;
+    left: -50px;
+}
+
+#centralContainer {
+
+    right: -200px;
+    top: 0px;
+
+}

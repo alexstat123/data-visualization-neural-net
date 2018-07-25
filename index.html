@@ -33,6 +33,8 @@
 
 <body class="container-fluid">
 
+
+
 <div class="row">
     <!-- Left sidebar -->
     <div class="col-12  col-xl-3" id="container_LeftSidebar">
@@ -91,13 +93,13 @@
                 </div>
             </div>
         </div>
-        <div class="card card-cascade w-100 mt-3 ">
+        <div  class="card card-cascade w-100 mt-3 ">
             <!-- Card image -->
             <div class="view view-cascade gradient-card-header blue-gradient py-3">
                 <!-- Title -->
                 <h5 class="card-header-title mb-0">Visualization settings</h5>
             </div>
-            <div class="card-body card-body-cascade text-left">
+            <div  class="card-body card-body-cascade text-left">
                 <div class="row">
                     <div class="col-12">
                         <b>Layer Width</b>
@@ -132,6 +134,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="card card-cascade w-100 mt-3 ">
             <!-- Card image -->
@@ -208,6 +211,7 @@
 
                         <div class="card card-body pt-0">
                             <h5 class="card-title my-3 text-left"><b>Legend</b></h5>
+
                             <svg id="layersLegend" class="text-left">
                                 <svg class="legendItem">
                                     <rect class="square" height="20px" width="30px"></rect>
@@ -215,6 +219,12 @@
                                           alignment-baseline="central"></text>
                                 </svg>
                             </svg>
+                            <div id="plusZoom">
+                                <button onclick="plusZoom()" data-zoom="+1">+</button>
+                            </div>
+                            <div id="minusZoom">
+                                <button onclick="minusZoom()" data-zoom="-1">--</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,6 +293,8 @@
     <p>node name: <span id="value">100</span>%</p>
     <p>depth: <span id="value2">200</span>%</p>
 </div>
+
+
 
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="libraries/js/bootstrap.min.js"></script>
