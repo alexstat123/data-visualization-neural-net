@@ -81,9 +81,9 @@ function drawRectangle() {
 
 
             //console.log("data",d.originalData);
-            console.log("layer type",d.originalData.layerType);
-            console.log("config",d.originalData.config);
-            console.log("kernel",d.originalData.config.kernel);
+            //console.log("layer type",d.originalData.layerType);
+            //console.log("config",d.originalData.config);
+            //console.log("kernel",d.originalData.config.kernel);
 
             d3.select("#tooltip").style("opacity", 1)
 
@@ -107,13 +107,14 @@ function drawRectangle() {
     label
         .enter()
         .append("text")
+
         .merge(label)
         .style("fill", "black")
         .attr("x", function (d)
         {
             // x position of bar + half width of bar + tab val*variable
             //width(d);
-            console.log("width",d.width - settings.gapSize);
+            //console.log("width",d.width - settings.gapSize);
             return d.xPossition + (d.width - gap)/2 + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize)
 
 
@@ -128,8 +129,11 @@ function drawRectangle() {
         .attr("text-anchor", "middle")
         .text(function (d)
         {
-            return d.id;
+            // return d.id;
+            return semanticZoom(d);
         })
+        //.append("tspan").text(function(d){return d.order})
+
         .style("font-size", function(d)
         {
             //console.log("barthikness",barthinkness);
@@ -147,6 +151,80 @@ function drawRectangle() {
 
 
         });
+
+
+    // Object.keys(graph.nodesArray).forEach(function (key) {
+    //
+    //     var keysInOriginaData = Object.keys(graph.nodesArray[key].originalData);
+    //     console.log("keysInOriginaData",keysInOriginaData);
+    //
+    //     //console.log("key",key);
+    //
+    //     var valuesInOriginalData = Object.values(graph.nodesArray[key].originalData);
+    //     console.log("valuesOriginalData",valuesInOriginalData);
+    //
+    //     var myJSON = JSON.stringify(valuesInOriginalData[1]);
+    //
+    //     var newarr = Array.from(keysInOriginaData, key => {key + valuesInOriginalData[key]});
+    //     console.log("newarr",newarr);
+    //
+    //     //console.log("valuesInOriginalData",valuesInOriginalData[0]);
+    //     //console.log("myJSON[1]",myJSON);
+    //     //console.log("keysInOriginaData",keysInOriginaData);
+    //
+    //     keysInOriginaData.forEach((index,i) =>{
+    //
+    //         //console.log("i",valuesInOriginalData[1]);
+    //
+    //         label.append("tspan")
+    //             .text(function(d){
+    //
+    //                 return index + ": " + valuesInOriginalData[index];
+    //             })
+    //             .attr("y", function (d) {
+    //
+    //                 var gapFromBottomEdge = 0.1 + (0.2 * i) * barthinkness;
+    //                 //var gapFromBottomEdge = 0.1 + (0.2 * i) * 100;
+    //                 //console.log("gapFromBottomEdge",gapFromBottomEdge);
+    //                 return d.depth * (barthinkness) - gapFromBottomEdge ;
+    //
+    //             })
+    //             .attr("x", function (d)
+    //             {
+    //
+    //                 return d.xPossition + (d.width - gap)/2 + (d.isMainBranch? 0 : settings.rootWidth+settings.tabSize)
+    //
+    //             })
+    //             .style("font-size",function(d){return 12});
+    //
+    //     });
+    //
+    // })
+
+
+
+
+
+
+    Object.keys(graph.nodesArray).forEach(function (key) {
+
+        arr = graph.nodesArray[key].originalData.config;
+        console.log("required data",arr);
+
+        // var keys = Object.keys(arr);
+        // keys.forEach(key => {console.log("keys",arr[key])});
+
+        var keys3 = Object.keys(arr);
+        keys3.forEach(key2 =>{console.log("key2",key2)});
+
+
+    });
+
+
+
+
+
+
 
 
     rects.exit().remove();
@@ -237,4 +315,18 @@ function minusZoom() {
     $("#slider_LayerHeight").trigger('change');
 }
 
+function semanticZoom(d){
+
+    if(d.originalData.config !=undefined){
+        //console.log("config",d.originalData.config);
+        //console.log("string",JSON.stringify(d.originalData.config))
+        //console.log("replace",JSON.stringify(d.originalData.config).replace(/"/g,' ').replace(/{/g, '').replace(/}/g,''))
+        //return JSON.stringify(d.originalData.config).replace(/"/g,' ').replace(/{/g, '').replace(/}/g,'')
+    }
+
+    return d.id
+
+
+
+}
 

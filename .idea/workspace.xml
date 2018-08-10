@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font" />
+    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script2.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,17 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tooltip.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tooltip.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="15">
+              <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -35,17 +30,17 @@
       <file leaf-file-name="script2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="216" selection-start-line="216" selection-end-line="216" />
+            <state relative-caret-position="78">
+              <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/styles.css">
+      <file leaf-file-name="semanticZoom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/semanticZoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="105">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -53,8 +48,8 @@
       <file leaf-file-name="net.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="2295">
+              <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -77,6 +72,9 @@
       <find>30</find>
       <find>slider</find>
       <find>leftPanel</find>
+      <find>centr</find>
+      <find>container_neuralNetwork</find>
+      <find>svg_NNContainer</find>
     </findStrings>
     <replaceStrings>
       <replace>col-xl</replace>
@@ -96,9 +94,10 @@
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/data/ResnetVGGFaces/net.json" />
         <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/script2.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/tooltip.css" />
+        <option value="$PROJECT_DIR$/semanticZoom.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/script2.js" />
       </list>
     </option>
   </component>
@@ -113,7 +112,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="692" />
+    <option name="width" value="743" />
     <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -137,13 +136,13 @@
             <path>
               <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="ResnetVGGFaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -243,6 +242,19 @@
       <workItem from="1532455158280" duration="51000" />
       <workItem from="1532455609636" duration="7585000" />
       <workItem from="1532529168641" duration="6607000" />
+      <workItem from="1532557056762" duration="516000" />
+      <workItem from="1533301478419" duration="3707000" />
+      <workItem from="1533329083903" duration="160000" />
+      <workItem from="1533387965413" duration="836000" />
+      <workItem from="1533415669070" duration="2074000" />
+      <workItem from="1533495183574" duration="9233000" />
+      <workItem from="1533506946044" duration="85000" />
+      <workItem from="1533508020352" duration="3359000" />
+      <workItem from="1533554327328" duration="2721000" />
+      <workItem from="1533716012347" duration="11959000" />
+      <workItem from="1533732273491" duration="1580000" />
+      <workItem from="1533806523141" duration="11223000" />
+      <workItem from="1533888154306" duration="3651000" />
     </task>
     <task id="LOCAL-00001" summary="added tabs to data/AnnaNet">
       <created>1529662119373</created>
@@ -276,22 +288,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175641000" />
+    <option name="totallyTimeSpent" value="226745000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="692" height="709" extended-state="0" />
+    <frame x="0" y="23" width="743" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26445088" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115746975" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -321,158 +333,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="67" lean-forward="true" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/BranchNet/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="714" selection-start-column="714" selection-end-column="714" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_tools_vis.js" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/libraries/js/mdb.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphNode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1299" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'269.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'273.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5795" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'271.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'274.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'277.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'455.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16231" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'456.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userInteraction.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/AnnaNet/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/training.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11790" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="188" column="27" selection-start-line="188" selection-start-column="27" selection-end-line="188" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/css/mdb.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -481,24 +341,188 @@
         <state relative-caret-position="-4160" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/tooltip.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tooltip.css">
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'287.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        <state relative-caret-position="-8964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'323.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3452" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'540.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'535.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'534.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-7.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-8.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'273.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'271.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'285.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'414.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'bn1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret column="109876" selection-start-column="109876" selection-end-column="109876" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv2c.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'pool2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/training.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret column="303271" lean-forward="true" selection-start-column="303271" selection-end-column="303271" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'bn2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'275.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/training.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'457.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'456.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'455.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'269.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-0.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'out.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'274.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'277.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'279.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'289.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'290.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'292.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'294.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'296.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'300.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'516.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'281.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'softmax.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-9.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-14.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-15.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'284.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/semanticZoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
+        <state relative-caret-position="78">
+          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
         </state>
       </provider>
     </entry>
