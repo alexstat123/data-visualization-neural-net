@@ -1,11 +1,14 @@
 $(window).on("graphDrawn", () => eventHalnder());
 $(window).on("load", () => setupFileLoader());
 $(window).on("load", () => setupCollapseClicks());
+$(window).on("nodesSelectionChanged", (event, selection) => selectionOpacity(selection));
+$(window).on("opacityOverride", (event, selection) => selectionOpacity(selection));
 
 function eventHalnder() {
     var box = d3.select("#svg_NNContainer").node().getBBox();
     d3.select("#svg_NNContainer").attr("width", box.width).attr("height", box.height);
-    nodeClickSetup()
+    nodeClickSetup();
+    nodesHoverSetup();
 }
 
 function setupCollapseClicks() {
@@ -36,13 +39,28 @@ function nodeClickSetup() {
 
     d3.select("#svg_NNContainer")
         .selectAll(".svg_layer")
-        .data(graph.nodesArray, node => node.id)
         .on("click", d => clickEvent(d));
 
     d3.select("#svg_NNContainer")
         .selectAll("text")
-        .data(graph.nodesArray, node => node.id)
         .on("click", d => clickEvent(d));
+}
+
+function nodesHoverSetup() {
+    d3
+        .selectAll(".svg_layer")
+        .on("mouseenter", node => {
+            if (!node.selected) {
+                return;
+            }
+            $(window).trigger("mouseOverNode", node);
+        }).on("mouseleave", node => {
+        if (!node.selected) {
+            return;
+        }
+        $(window).trigger("mouseOutNode", node);
+    });
+
 }
 
 function clickEvent(d) {
@@ -67,4 +85,33 @@ function clickEvent(d) {
         d.selected = true;
     }
     $(window).trigger("nodesSelectionChanged", [graph.getSelectedNodes()]);
+}
+
+function selectionOpacity(newSelection) {
+    console.log(newSelection);
+    var nodes = d3
+        .select("#nnblocks")
+        .selectAll(".svg_layer");
+
+    if (!newSelection || newSelection.length === 0) {
+        newSelection = graph.getSelectedNodes();
+    }
+
+    var bindNodes = null;
+    if (newSelection.length === 0) {
+        bindNodes = nodes
+            .data(graph.nodesArray, node => node.id);
+    } else {
+        bindNodes = nodes
+            .data(newSelection, node => node.id);
+    }
+
+    bindNodes
+        .transition(1000)
+        .attr("opacity", 1);
+
+    bindNodes
+        .exit()
+        .transition(1000)
+        .attr("opacity", 0.3);
 }

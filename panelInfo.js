@@ -39,13 +39,15 @@ function updatePanel(newSelection) {
 
     newSelection.forEach(node => {
 
-        for (const [measureName, measureValue] of Object.entries(node.originalData.config)) {
+        for (const [measureName, measureValue] of Object.entries(node.originalData.config || [])) {
             //ID is not useful to display
             if (measureName === "id")
                 return;
 
-            if (measureName === "customName")
-                throw new Error("Field customName is reserved");
+            if (measureName === "customValue")
+                throw new Error("Field customValue is reserved");
+            if (measureName === "customKey")
+                throw new Error("Field customKey is reserved");
 
             if (!data[measureName]) {
                 data[measureName] = {};
@@ -60,6 +62,7 @@ function updatePanel(newSelection) {
             if (!measuresContainer[measureValue]) {
                 measuresContainer[measureValue] = {};
                 measuresContainer[measureValue].customValue = measureValue;
+                measuresContainer[measureValue].customKey = measureName;
             }
             var typesContainer = measuresContainer[measureValue];
 
@@ -89,7 +92,7 @@ function updatePanel(newSelection) {
     var svgContainerEnter = svgContainers
         .enter()
         .append("div")
-        .attr("class", "svg_container");
+        .attr("class", "svg_container card");
 
     var svgContainersMerge = svgContainerEnter.merge(svgContainers);
 
@@ -97,7 +100,7 @@ function updatePanel(newSelection) {
      * SVG TITLE MANAGEMENT
      */
     svgContainerEnter
-        .append("p")
+        .append("div")
         .attr("class", "svg_title");
 
     svgContainersMerge
@@ -109,7 +112,7 @@ function updatePanel(newSelection) {
      */
     var svgEnter = svgContainerEnter
         .append("svg")
-        .attr("class", "svg_measure");
+        .attr("class", "svg_measure mx-2");
 
     svgContainers
         .exit()
@@ -126,7 +129,6 @@ function updatePanel(newSelection) {
 
 function addMeasureSVG(svg) {
 
-
     svg
         .each(function (measure) {
             /**
@@ -138,13 +140,14 @@ function addMeasureSVG(svg) {
              *
              */
 
-                // Convert dictionary to array
+            // Convert dictionary to array
+            console.log(measure);
             var dataArray = Object.keys(measure.values).map(key => measure.values[key]);
             var domain = Array.from(measure.domain);
 
             console.log(dataArray);
             //Need to get distincts keys in all the layers
-            var keys = dataArray.map(row => Object.keys(row).filter(key => key !== "customValue"));
+            var keys = dataArray.map(row => Object.keys(row).filter(key => key !== "customValue" && key !== "customKey"));
             //Flatten the array
             keys = [].concat.apply([], keys);
             //Get distincts elements only
@@ -160,11 +163,10 @@ function addMeasureSVG(svg) {
 
             var stack = d3.stack().keys(keys)(dataArray);
             var maxY = d3.max(stack, row => d3.max(row, element => element[1]));
-
-            const margins = 30;
+            console.log(stack);
+            const margins = 20;
             const height = 150 - margins * 2;
-            const width = 298 - margins * 2;
-
+            const width = this.getBoundingClientRect().width;
             var xScale = d3.scaleBand()
                 .domain(domain)
                 .range([margins, width])
@@ -176,9 +178,10 @@ function addMeasureSVG(svg) {
                 .range([height, margins]);
 
 
+            console.log(stack);
             var rects = d3.select(this)
                 .selectAll(".rectangleContainer")
-                .data(stack, row => console.log(row));
+                .data(stack, row => row.key);
 
 
             rects
@@ -217,13 +220,17 @@ function addMeasureSVG(svg) {
 
             var rectsEnter = rectsUpdate
                 .enter()
-                .append("rect");
-
+                .append("rect")
+                .attr("class", "bar");
+            console.log(rectsEnter);
             var rectExits =
                 rectsUpdate.exit();
+            console.log(rectExits);
 
             //   rectsUpdate
             //      .attr("y", row => yScale(row[1]));
+            console.log(keys);
+
 
             rectsEnter
                 .attr("y", row => yScale(row[0]))
@@ -233,12 +240,12 @@ function addMeasureSVG(svg) {
                 .attr("fill", function () {
                     return graph.nodesColorScale(nodeType.get(this))
                 })
+                .attr("opacity", 1)
                 .transition()
                 .delay(200)
                 .duration(800)
                 .attr("height", row => height - yScale(row[1] - row[0]))
                 .attr("y", row => yScale(row[1]));
-
             rectsUpdate
                 .transition()
                 .duration(800)
@@ -248,6 +255,7 @@ function addMeasureSVG(svg) {
                 .attr("width", xScale.bandwidth())
                 .attr("y", row => yScale(row[1]))
                 .attr("height", row => height - yScale(row[1] - row[0]));
+            console.log("enter");
 
             rectExits
                 .raise()
@@ -262,7 +270,69 @@ function addMeasureSVG(svg) {
                 .attr("height", 0)
                 .remove();
 
+
+            var hovers = d3.select(this)
+                .selectAll(".hoverCatcher")
+                .data(stack[0], elem => elem.data['customValue']);
+
+            hovers = hovers
+                .enter()
+                .append("rect")
+                .attr("class", "hoverCatcher")
+                .merge(hovers);
+
+            hovers
+                .attr("x", elem => xScale(elem.data['customValue']))
+                .attr("y", yScale(maxY))
+                .attr("height", height - yScale(maxY))
+                .attr("width", xScale.bandwidth())
+                .attr("opacity", 0)
+                .raise();
+
+            hovers.exit().remove();
+
+            hovers
+                .on("mouseenter", function (rect) {
+                    console.log(rect);
+
+                    rectsUpdate
+                        .merge(rectsEnter)
+                        .transition(800)
+                        .attr("opacity", node => node.data.customValue === rect.data.customValue ? 1 : 0.2);
+
+                    $(window).trigger("opacityOverride", [graph.getSelectedNodes().filter(node => node.originalData.config[rect.data.customKey] === rect.data.customValue)]);
+                })
+                .on("mouseleave", () => {
+                    rectsUpdate
+                        .merge(rectsEnter)
+                        .transition(800)
+                        .attr("opacity", 1);
+                    $(window).trigger("opacityOverride", []);
+                });
+
         });
+}
 
+$(window).on("mouseOverNode", (event, node) => updateMeasureOpacity(node));
+$(window).on("mouseOutNode", (event, node) => updateMeasureOpacity(null));
 
+function updateMeasureOpacity(measures) {
+    console.log(measures);
+    const rectMeasures = d3
+        .select("#container_layersInfo")
+        .selectAll(".bar")
+        .transition(800);
+
+    if (!measures) {
+
+        rectMeasures.attr("opacity", 1);
+        return;
+    }
+    measures = measures.originalData.config;
+    const keys = Object.keys(measures);
+    rectMeasures
+        .attr("opacity", data => {
+            data = data.data;
+            return keys.indexOf(data.customKey) !== -1 && data.customValue === measures[data.customKey] ? 1 : 0.2;
+        });
 }

@@ -140,6 +140,9 @@ graph = {
     filterNodes(filter) {
         return this.nodesArray.filter(filter);
     },
+    selectNodesPrep(preposition) {
+        this.nodes.forEach(node => node.selected = preposition(node));
+    },
     getAllPathsBetween(nodeA, nodeB) {
         this.nodesArray.forEach(node => node.isInPath = -1);
 
@@ -192,8 +195,14 @@ function createGraph(neuralNetwork) {
     graph.updateChildsPosition();
     graph.updateNodesHeight();
     graph.updateNodesColors();
-    console.log(window.innerHeight - $("#emptyCardHeight").height());
     settings.barHeight = (window.innerHeight - $("#emptyCardHeight").height() - (settings.tabSize * 2)) / (graph.nodesArray[graph.nodesArray.length - 1].depth + 1);
+    var earlyExits = graph.nodesArray.filter(node => !node.isMainBranch);
+    settings.rootWidth = $("#container_neuralNetwork").width() - (settings.tabSize * 2);
+
+    if (earlyExits.length !== 0) {
+        settings.rootWidth /= 2;
+        settings.rootWidth -= settings.tabSize
+    }
     $(window).trigger("graphLoaded", graph);
 }
 

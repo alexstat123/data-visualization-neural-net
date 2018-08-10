@@ -21,20 +21,14 @@ body {
 #container_zoom {
     text-align: left;
     position: absolute;
+    top: 0;
 }
 
 #container_Legend {
 
 }
 
-#container_LeftSidebar {
+#container_LeftSidebar, #centralContainer, #nnblocks {
     height: 100%;
     overflow-y: auto;
-}
-
-#centralContainer {
-
-    height: 100%;
-    overflow-y: auto;
-
 }

@@ -29,8 +29,8 @@ function updateArrows() {
             return node.xPossition + (settings.tabSize / 2)
         })
         .attr('x2', node => node.xPossition + (settings.tabSize / 2))
-        .attr('y1', node => (node.depth + 1) * settings.barHeight)
-        .attr('y2', node => getConnectedNode(node).depth * settings.barHeight);
+        .attr('y1', node => (node.depth + 1.5) * settings.barHeight)
+        .attr('y2', node => (getConnectedNode(node).depth - 0.5) * settings.barHeight);
 
     connections
         .append("rect")

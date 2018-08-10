@@ -43,6 +43,28 @@ function drawLegend(graph) {
         .attr("height", lineHeight)
         .attr("fill", layer => layer.color);
 
+    itemsEnter
+        .on("click", data => {
+            console.log(data);
+            if (d3.event.ctrlKey) {
+                var nodes = graph
+                    .filterNodes(node => node.originalData.layerType === data.type);
+
+                var toChange = nodes.filter(node => !node.selected);
+                if (toChange.length === 0) {
+                    toChange = nodes;
+                }
+
+                toChange.forEach(node => node.selected = !node.selected);
+            } else {
+                graph.selectNodesPrep(node => {
+                    console.log(node);
+                    return node.originalData.layerType === data.type;
+                });
+            }
+            $(window).trigger("nodesSelectionChanged", [graph.getSelectedNodes()]);
+        });
+
     //We may allow to reorder the legend if future, so y is on the merge section
     itemsMerge
         .select(".square")

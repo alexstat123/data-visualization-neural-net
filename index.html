@@ -34,12 +34,12 @@
 <body class="container-fluid h-100">
 
 
-<div class="row h-100">
+<div class="row h-100  ">
     <!-- Left sidebar -->
-    <div class="col-12  col-xl-3" id="container_LeftSidebar">
-        <div class="card card-cascade w-100 mt-3 ">
+    <div class="col-12  col-xl-3 scrollbar-secondary thin" id="container_LeftSidebar">
+        <div class="card card-cascade w-100 my-3" id="container_layersInfoCard">
             <!-- Card image -->
-            <div class="view view-cascade gradient-card-header blue-gradient py-3">
+            <div class="view view-cascade gradient-card-header blue-gradient">
                 <!-- Title -->
                 <h5 class="card-header-title mb-0 d-block">
                     Layers info
@@ -54,13 +54,18 @@
                     <i class="fa fa-compress d-none" id="toggle_resizeInfo"></i>
                 </h5>
             </div>
-            <div class="card-body card-body-cascade text-center collapse show" id="layers_info">
-                <div class="row">
-                    <div class="col-12">
+            <div class="card-body card-body-cascade text-center collapse show scrollbar-primary thin pt-0"
+                 id="layers_info">
+                <div class="row position-relative">
+                    <div class="col-12" id="info_selectedLayersContainer">
                         Selected Layers:
                         <span id="info_selectedLayersNum">0</span>
                     </div>
-                    <div class="col-12" id="container_layersInfo">
+                    <div class="col-12 hidden" id="info_selectedLayersContainerHidden">
+                        Selected Layers:
+                    </div>
+
+                    <div class="col-12 pb-4" id="container_layersInfo">
 
                     </div>
                 </div>
@@ -202,6 +207,10 @@
                 <div class="row">
                     <!-- nn blocks -->
                     <div class="col-12 col-xl-9" id="container_neuralNetwork">
+
+                        <div id="nnblocks" class="view h-100">
+
+                        </div>
                         <div id="container_zoom">
                             <div id="plusZoom ml-2 text-left">
                                 <button onclick="plusZoom()" data-zoom="+1">+</button>
@@ -209,9 +218,6 @@
                             <div id="minusZoom ml-4 text-left">
                                 <button onclick="minusZoom()" data-zoom="-1">--</button>
                             </div>
-                        </div>
-                        <div id="nnblocks" class="view">
-
                         </div>
                     </div>
                     <!-- nn infos -->
@@ -289,7 +295,7 @@
     </div>
 </div>
 
-<div id="tooltip" class="hidden">
+<div id="tooltip" class="hidden" style="opacity: 0; top:0">
     <p><strong>Node Info</strong></p>
     <!--<p><span id="value">100</span>%</p>-->
     <p>node name: <span id="value">100</span>%</p>
