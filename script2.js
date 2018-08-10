@@ -23,7 +23,7 @@ function drawRectangle() {
     var gap = settings.gapSize;
 
     var svg = d3
-        .select("#container_neuralNetwork")
+        .select("#nnblocks")
         .selectAll("#svg_NNContainer")
         .data([graph], graph=>graph.netId);
 
@@ -36,7 +36,7 @@ function drawRectangle() {
         .attr("height", 1800)
         .merge(svg);
 
-    var rects = svg.selectAll("rect") // ".svg_layer"
+    var rects = svg.selectAll(".svg_layer") // ".svg_layer"
         .data(graph.nodesArray, node => node.id);
 
     rects
@@ -209,12 +209,13 @@ function drawRectangle() {
     Object.keys(graph.nodesArray).forEach(function (key) {
 
         arr = graph.nodesArray[key].originalData.config;
-        console.log("required data",arr);
+        console.log("before keys");
 
         // var keys = Object.keys(arr);
         // keys.forEach(key => {console.log("keys",arr[key])});
-
-        var keys3 = Object.keys(arr);
+        console.log("required data",arr);
+        var keys3 = Object.keys(arr||[]);
+        console.log("after keys");
         keys3.forEach(key2 =>{console.log("key2",key2)});
 
 
