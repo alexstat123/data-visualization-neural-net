@@ -1,187 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="position fixed fix">
+    <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panelInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/panelInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panelLegend.js" beforeDir="false" afterPath="$PROJECT_DIR$/panelLegend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tabArrowDrawing.js" beforeDir="false" afterPath="$PROJECT_DIR$/tabArrowDrawing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tooltip.css" beforeDir="false" afterPath="$PROJECT_DIR$/tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userInteraction.js" beforeDir="false" afterPath="$PROJECT_DIR$/userInteraction.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="847806306">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="433" />
-          <entry key="html" value="253" />
-          <entry key="js" value="3589" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="433" />
-          <entry key="HTML" value="253" />
-          <entry key="JavaScript" value="3589" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JavaScript" value="7" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="574384362">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tooltip.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="965">
-              <caret line="221" column="35" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="63" column="85" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/panelInfo.js">
+      <file leaf-file-name="script2.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/script2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="289" column="23" selection-start-line="289" selection-start-column="23" selection-end-line="289" selection-end-column="23" />
+            <state relative-caret-position="78">
+              <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tabArrowDrawing.js">
+      <file leaf-file-name="semanticZoom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/semanticZoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="943">
-              <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+            <state relative-caret-position="105">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panelLegend.js">
+      <file leaf-file-name="net.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="81" column="34" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userInteraction.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+            <state relative-caret-position="2295">
+              <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -197,43 +65,20 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>getAllIndexes</find>
+      <find>array.from</find>
+      <find>col-lg</find>
       <find>.data(depthArr)</find>
       <find>30</find>
       <find>slider</find>
       <find>leftPanel</find>
-      <find>nnblo</find>
-      <find>Vipet</find>
-      <find>150</find>
-      <find>nodesSelectionChanged</find>
-      <find>selectAll</find>
-      <find>graph.nodes</find>
-      <find>originalData</find>
-      <find>opacityOverride</find>
-      <find>ctrl</find>
-      <find>&quot;rect&quot;</find>
-      <find>mouseover</find>
-      <find>customKey</find>
-      <find>showLegend</find>
-      <find>changedSettings</find>
-      <find>graphLoaded</find>
-      <find>layers</find>
-      <find>pb-5</find>
-      <find>trigger</find>
-      <find>customValue</find>
-      <find>mh-100</find>
-      <find>svg_measure</find>
-      <find>selec</find>
-      <find>secondary</find>
-      <find>barHeight</find>
-      <find>rect</find>
-      <find>hoverCa</find>
+      <find>centr</find>
+      <find>container_neuralNetwork</find>
+      <find>svg_NNContainer</find>
     </findStrings>
     <replaceStrings>
       <replace>col-xl</replace>
     </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\Universita\Documents\Universita\Materie\4-0-Anno\4-2-DV\project_git</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -245,17 +90,14 @@
         <option value="$PROJECT_DIR$/data/AnnaNet/net.json" />
         <option value="$PROJECT_DIR$/graph_tools_vis.js" />
         <option value="$PROJECT_DIR$/script.js" />
+        <option value="$PROJECT_DIR$/graph.js" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/data/ResnetVGGFaces/net.json" />
-        <option value="$PROJECT_DIR$/tooltip.css" />
-        <option value="$PROJECT_DIR$/tabArrowDrawing.js" />
-        <option value="$PROJECT_DIR$/userInteraction.js" />
-        <option value="$PROJECT_DIR$/script2.js" />
-        <option value="$PROJECT_DIR$/panelLegend.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/graph.js" />
-        <option value="$PROJECT_DIR$/panelInfo.js" />
+        <option value="$PROJECT_DIR$/tooltip.css" />
+        <option value="$PROJECT_DIR$/semanticZoom.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/script2.js" />
       </list>
     </option>
   </component>
@@ -265,11 +107,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="2578" />
-    <option name="height" value="1416" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="743" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -277,18 +121,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="project_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project_git" type="462c0819:PsiDirectoryNode" />
+              <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="ResnetVGGFaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-visualization-neural-net-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-visualization-neural-net-master" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,7 +156,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -383,13 +242,19 @@
       <workItem from="1532455158280" duration="51000" />
       <workItem from="1532455609636" duration="7585000" />
       <workItem from="1532529168641" duration="6607000" />
-      <workItem from="1532548216476" duration="1071000" />
-      <workItem from="1532549310465" duration="4494000" />
-      <workItem from="1533194013012" duration="85000" />
-      <workItem from="1533677437225" duration="19000" />
-      <workItem from="1533677782787" duration="578000" />
-      <workItem from="1533723766679" duration="67000" />
-      <workItem from="1533723865064" duration="22137000" />
+      <workItem from="1532557056762" duration="516000" />
+      <workItem from="1533301478419" duration="3707000" />
+      <workItem from="1533329083903" duration="160000" />
+      <workItem from="1533387965413" duration="836000" />
+      <workItem from="1533415669070" duration="2074000" />
+      <workItem from="1533495183574" duration="9233000" />
+      <workItem from="1533506946044" duration="85000" />
+      <workItem from="1533508020352" duration="3359000" />
+      <workItem from="1533554327328" duration="2721000" />
+      <workItem from="1533716012347" duration="11959000" />
+      <workItem from="1533732273491" duration="1580000" />
+      <workItem from="1533806523141" duration="11223000" />
+      <workItem from="1533888154306" duration="3651000" />
     </task>
     <task id="LOCAL-00001" summary="added tabs to data/AnnaNet">
       <created>1529662119373</created>
@@ -419,39 +284,33 @@
       <option name="project" value="LOCAL" />
       <updated>1529872425720</updated>
     </task>
-    <task id="LOCAL-00005" summary="position fixed fix">
-      <created>1532544386664</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1532544386664</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206144000" />
+    <option name="totallyTimeSpent" value="226745000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="0" y="23" width="743" height="709" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120173365" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115746975" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4972419" visible="true" weight="0.15366615" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5027581" side_tool="true" visible="true" weight="0.15366615" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,82 +325,14 @@
     <MESSAGE value="added tabs to data/AnnaNet" />
     <MESSAGE value="BugFixed, added color field to nodes" />
     <MESSAGE value="Font" />
-    <MESSAGE value="position fixed fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="position fixed fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Font" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dvproject.html" />
-    <entry file="file://$PROJECT_DIR$/importdata.js" />
-    <entry file="file://$PROJECT_DIR$/BranchNet/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="714" selection-start-column="714" selection-end-column="714" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_tools_vis.js" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/libraries/js/mdb.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphNode.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'269.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'273.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5795" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'271.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'274.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'277.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'455.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16231" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'456.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/AnnaNet/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/training.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11790" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1245" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/css/mdb.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -550,78 +341,188 @@
         <state relative-caret-position="-4160" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.sync-conflict-20180727-225528-XMGOASD.html" />
-    <entry file="file://$PROJECT_DIR$/script2.sync-conflict-20180727-225526-XMGOASD.js" />
-    <entry file="file://$PROJECT_DIR$/userInteraction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="81" column="34" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panelLegend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tooltip.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script2.js">
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'287.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="221" column="35" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="35" />
+        <state relative-caret-position="-8964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'323.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3452" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'540.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'535.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'534.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-7.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-8.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'273.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'271.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'285.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'414.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'bn1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret column="109876" selection-start-column="109876" selection-end-column="109876" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv2c.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'pool2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/training.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret column="303271" lean-forward="true" selection-start-column="303271" selection-end-column="303271" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'conv1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/childsTest/layers/'bn2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'275.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/training.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'457.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'456.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'455.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'269.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-0.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'out.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'274.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'277.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'279.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'289.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'290.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'292.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'294.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'296.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'300.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'516.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'281.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'softmax.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-9.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-14.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'split-15.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/layers/'284.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ResnetVGGFaces/net.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/semanticZoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="63" column="85" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
+    <entry file="file://$PROJECT_DIR$/script2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tabArrowDrawing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panelInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="289" column="23" selection-start-line="289" selection-start-column="23" selection-end-line="289" selection-end-column="23" />
+        <state relative-caret-position="78">
+          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
         </state>
       </provider>
     </entry>
