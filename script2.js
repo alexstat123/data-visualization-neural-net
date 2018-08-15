@@ -45,7 +45,7 @@ function drawRectangle() {
         .merge(rects)
         .attr("x", function (d) {
             width(d);
-
+            //console.log("data",d);
             return d.xPossition + (d.isMainBranch ? 0 : settings.rootWidth + settings.tabSize);
             //return d.xPossition
         })
@@ -54,6 +54,7 @@ function drawRectangle() {
             return d["depth"] * (barthinkness)
         })
         .attr("width", function (d) {
+
 
             return d.width - gap;
 
@@ -327,6 +328,7 @@ function width(node) {
         //node.parents.forEach((key,value) => {parentXpos = key.xPossition + key.tab * 30})     // difference of tabs needs to be added
         parent = Array.from(node.parents.values()).sort((a, b) => a.xPossition - b.xPossition)[0];
         node.width = ((widthsum - (node.tab - parent.tab) * settings.tabSize) / node.siblingsNum);
+
 
         //node.xPossition = parentXpos + node.width * node.order + node.tab *30;
         node.xPossition = parent.xPossition + node.width * node.order + (node.tab - parent.tab) * settings.tabSize;     // difference of tabs needs to be added
