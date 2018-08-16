@@ -2,12 +2,9 @@ $(window).on("graphLoaded", (event, data) => getdata(data));
 $(window).on("changedSettings", (event, data) => drawRectangle());
 
 
-//var gap = settings.gapSize;
-//var gap = 20;
-
 function getdata(graph) {
 
-    console.log("script is working very well!");
+
     console.log("graph", graph);
 
 
@@ -72,12 +69,8 @@ function drawRectangle() {
             var xPosition = parseFloat(d3.select(this).attr("x")) + 700;
             var yPosition = parseFloat(d3.select(this).attr("y"));
 
-            console.log("object",Object.keys(d.originalData.config || {}).map(key => ({
-                k: key,
-                v: d.originalData.config[key],
-                node: d
-            })))
-           var dataObject = Object.keys(d.originalData.config || {}).map(key => ({
+
+            var dataObject = Object.keys(d.originalData.config || {}).map(key => ({
                 k: key,
                 v: d.originalData.config[key],
                 node: d
@@ -86,44 +79,28 @@ function drawRectangle() {
                 .style("left", xPosition + "px")
                 .style("top", yPosition + "px")
                 .selectAll("div")
-                .data( dataObject)
-                    //console.log(Object.keys(d.originalData.config|| {}).map(key => ({k: key, v: d.originalData.config[key]})));
+                .data(dataObject)
 
-                // , D => {console.log("D.K",D);return D.k});
 
-                tooltipData
-                    .enter()
-                    .append("div")
-                    .merge(tooltipData)
-                    .text(d =>{
-                        var textInNode = d.k + ": " + d.v;
-                        return textInNode
-                    });
+            tooltipData
+                .enter()
+                .append("div")
+                .merge(tooltipData)
+                .text(d => {
+                    var textInNode = d.k + ": " + d.v;
+                    return textInNode
+                });
 
             tooltipData.exit().remove();
 
-                // .html("Name: " + d.id + '<br/>' + "Layer Type: " + d.originalData.layerType + '<br/>'
-                //     + "Kernel: " + d.originalData.config.kernel + '<br/>' + "Convolution Dim: " + d.originalData.config.convolutionDim);
-                // .html();
-
-
-            //console.log("data",d.originalData);
-            //console.log("layer type",d.originalData.layerType);
-            //console.log("config",d.originalData.config);
-            //console.log("kernel",d.originalData.config.kernel);
 
             d3.select("#tooltip").style("opacity", 1)
 
         })
         .on("mouseout", function (d) {
 
-            //d3.select("#tooltip").remove();
+
             d3.select("#tooltip").style("opacity", 0)
-        })
-        .on("mousemove", function (d) {
-
-            //d3.select("#tooltip").classed("hidden", true)
-
         })
 
 
@@ -137,9 +114,7 @@ function drawRectangle() {
         .merge(label)
         .style("fill", "black")
         .attr("x", function (d) {
-            // x position of bar + half width of bar + tab val*variable
-            //width(d);
-            //console.log("width",d.width - settings.gapSize);
+
             return d.xPossition + (d.width - gap) / 2 + (d.isMainBranch ? 0 : settings.rootWidth + settings.tabSize)
 
 
@@ -156,11 +131,10 @@ function drawRectangle() {
             // return d.id;
             return semanticZoom(d);
         })
-        //.append("tspan").text(function(d){return d.order})
+
 
         .style("font-size", function (d) {
-            //console.log("barthikness",barthinkness);
-            //return (16 - d.siblingsNum + barthinkness/7);
+
             if ((d.width - settings.gapSize) < 44) {
                 return (d.width - settings.gapSize - 30);
             }
@@ -176,7 +150,7 @@ function drawRectangle() {
 
     var tspans = label.selectAll("tspan")
         .data(d => {
-            //console.log(Object.keys(d.originalData.config|| {}).map(key => ({k: key, v: d.originalData.config[key]})));
+
 
             return Object.keys(d.originalData.config || {}).map(key => ({
                 k: key,
@@ -188,20 +162,10 @@ function drawRectangle() {
         .enter()
         .append("tspan")
         .merge(tspans)
-        .attr("dy", function (d, j) {
-
-            var gapFromBottomEdge = (0.1 + 0.2 * j) * barthinkness;
-            //console.log("text bbox y pos", this.getBBox().y)
-            //var gapFromBottomEdge = 0.4 * barthinkness + j * 10;
-            //console.log("gapFromBottomEdge",gapFromBottomEdge);
-            //return d.depth * (barthinkness) + gapFromBottomEdge;
-            //return  d.node.depth * (barthinkness) + gapFromBottomEdge;
-            return 10;
-
-        })
+        .attr("dy", 10)
         .attr("x", function (d) {
 
-            //return d.xPossition + (d.width - gap) / 2 + (d.isMainBranch ? 0 : settings.rootWidth + settings.tabSize)
+
             return d.node.xPossition + (d.node.width - gap) / 2 + (d.node.isMainBranch ? 0 : settings.rootWidth + settings.tabSize);
 
         })
@@ -216,25 +180,13 @@ function drawRectangle() {
 
         })
         .text(function (d, val) {
-            //only return definded keys and values, do not return non defined
-            //key and values.
 
-            //console.log();
-            // condition for drawing the text
-            //console.log("this", this)
-
-            //console.log("rects bbox", rects.node().getBBox())
-
-            //console.log("node width", d.node.width)
-            //console.log("text",d.k + ": " + d.v)
-
-            //console.log("text length",this.getComputedTextLength())
             if (this.getComputedTextLength() < d.node.width - settings.gapSize) {
 
                 var textInNode = d.k + ": " + d.v;
                 try {
                     this.getBBox();
-                } catch  {
+                } catch {
                     return '';
                 }
                 if (this.getBBox().height < rects.node().getBBox().height) {
@@ -249,60 +201,7 @@ function drawRectangle() {
         });
 
 
-    // var j;
-    //     // for(j = 0; j < 10; j++) {
-    //     //     label.append("tspan")
-    //     //         .text(function(d){
-    //     //
-    //     //             var textInNode =  Object.keys(d.originalData.config || [])[j] + ": " + Object.values(d.originalData.config || [])[j];
-    //     //
-    //     //             // console.log("this",this);
-    //     //             // console.log("bbox",this.getBBox().width)
-    //     //             //console.log("barthikness",barthinkness);
-    //     //
-    //     //             //console.log("text length",label.node().getComputedTextLength());
-    //     //             return textInNode
-    //     //
-    //     //         })
-    //     //         .text(function (d, i) {
-    //     //             //only return definded keys and values, do not return non defined
-    //     //             //key and values.
-    //     //             if(Object.keys(d.originalData.config || [])[j] !== undefined){
-    //     //
-    //     //                 // condition for drawing the text
-    //     //                 if(this.getBBox().width < d.width ){
-    //     //
-    //     //                     var textInNode =  Object.keys(d.originalData.config || [])[j] + ": " + Object.values(d.originalData.config || [])[j];
-    //     //
-    //     //                     console.log("this",this);
-    //     //                     console.log("bbox",this.getBBox().width)
-    //     //                     //console.log("barthikness",barthinkness);
-    //     //
-    //     //                     //console.log("text length",label.node().getComputedTextLength());
-    //     //                     return textInNode
-    //     //
-    //     //                 }
-    //     //
-    //     //             }
-    //     //
-    //     //         })
-    //     //         .attr("y", function (d) {
-    //     //
-    //     //             //var gapFromBottomEdge = (0.1+ 0.2*j)* barthinkness;
-    //     //             var gapFromBottomEdge = 0.4 * barthinkness + j*10;
-    //     //             //console.log("gapFromBottomEdge",gapFromBottomEdge);
-    //     //             return d.depth * (barthinkness) + gapFromBottomEdge;
-    //     //
-    //     //         })
-    //     //         .attr("x", function (d) {
-    //     //
-    //     //             return d.xPossition + (d.width - gap) / 2 + (d.isMainBranch ? 0 : settings.rootWidth + settings.tabSize)
-    //     //
-    //     //         })
-    //     //         .style("font-size", function (d) {
-    //     //             return 12
-    //     //         });
-    //     // }
+
 
 
     rects.exit().remove();
@@ -372,7 +271,7 @@ function width(node) {
 
 function plusZoom() {
 
-    console.log("plus zoom pressed!");
+
 
 
     $("#slider_LayerWidth").val(parseInt($("#slider_LayerWidth").val()) + 30);
@@ -385,7 +284,7 @@ function plusZoom() {
 
 function minusZoom() {
 
-    console.log("minus zoom pressed!");
+
 
     $("#slider_LayerWidth").val(parseInt($("#slider_LayerWidth").val()) - 30);
     $("#slider_LayerWidth").trigger('change');
@@ -399,11 +298,10 @@ function semanticZoom(d) {
     if (d.originalData.config != undefined) {
 
     }
-    if(settings.showIds){
+    if (settings.showIds) {
         return d.id
     }
     return ""
-
 
 
 }

@@ -62,7 +62,7 @@ function createNode(nodeData) {
 
         nodeData.config['poolingMode'] = split;
     }
-    console.log(nodeData.config);
+
 
     //Node object
     var node = {

@@ -20,8 +20,7 @@ function updateExitArrows(){
 
     })
 
-    console.log("branch info",nodesNeedingArrow);
-    console.log("branch connected to", nodesConnectingTO);
+
 
 
     var lineSize = 2;
@@ -43,8 +42,7 @@ function updateExitArrows(){
         .attr("stroke", "#424242")
         .merge(selectedNodes.select('line'))
         .attr('x1', node => {
-            //console.log("some node info",(node.depth + 1) * settings.barHeight);
-            console.log("node.id",node)
+
             return node.xPossition  + node.width - settings.gapSize;
         })
         .attr('x2', node => node.xPossition + (settings.tabSize )+node.width * 1.5 - settings.gapSize *0.5)
@@ -72,8 +70,7 @@ function updateExitArrows(){
         .attr("stroke", "#424242")
         .merge(selectedNodes2.select('line'))
         .attr('x1', node => {
-            //console.log("some node info",(node.depth + 1) * settings.barHeight);
-            console.log("node.id",node)
+
             return node.xPossition + (settings.tabSize )+node.width * 1.5 - settings.gapSize *0.5
         })
         .attr('x2', node => node.xPossition + (settings.tabSize)+node.width * 1.5 - settings.gapSize *0.5)

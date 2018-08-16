@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6108c979-9e1d-481d-a67b-9ce7fd4e80c6" name="Default" comment="Font">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/earlyExitConnections.js" beforeDir="false" afterPath="$PROJECT_DIR$/earlyExitConnections.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphNode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script2.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,11 +30,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="graphNode.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphNode.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="script2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="76" column="46" lean-forward="true" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+            <state relative-caret-position="75">
+              <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
             </state>
           </provider>
         </entry>
@@ -43,8 +51,8 @@
       <file leaf-file-name="earlyExitConnections.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/earlyExitConnections.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="1080">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
@@ -74,6 +82,7 @@
       <find>graphLoaded</find>
       <find>update</find>
       <find>updateArrows</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>col-xl</replace>
@@ -98,9 +107,10 @@
         <option value="$PROJECT_DIR$/tabArrowDrawing.js" />
         <option value="$PROJECT_DIR$/data/exitExitConnection.js" />
         <option value="$PROJECT_DIR$/exitExit.js" />
-        <option value="$PROJECT_DIR$/earlyExitConnections.js" />
-        <option value="$PROJECT_DIR$/script2.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/earlyExitConnections.js" />
+        <option value="$PROJECT_DIR$/graphNode.js" />
+        <option value="$PROJECT_DIR$/script2.js" />
       </list>
     </option>
   </component>
@@ -272,7 +282,7 @@
       <workItem from="1534261065008" duration="10796000" />
       <workItem from="1534313436111" duration="5375000" />
       <workItem from="1534338204494" duration="5308000" />
-      <workItem from="1534422916560" duration="2895000" />
+      <workItem from="1534422916560" duration="3776000" />
     </task>
     <task id="LOCAL-00001" summary="added tabs to data/AnnaNet">
       <created>1529662119373</created>
@@ -306,13 +316,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288290000" />
+    <option name="totallyTimeSpent" value="289171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="2" y="23" width="654" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12734374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24923548" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -479,15 +489,6 @@
     <entry file="file://$PROJECT_DIR$/../../draw line/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphNode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panelInfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -531,8 +532,8 @@
     <entry file="file://$PROJECT_DIR$/exitExit.js" />
     <entry file="file://$PROJECT_DIR$/earlyExitConnections.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="1080">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
@@ -546,10 +547,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graphNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/script2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="76" column="46" lean-forward="true" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+        <state relative-caret-position="75">
+          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
         </state>
       </provider>
     </entry>
