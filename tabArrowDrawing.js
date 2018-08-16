@@ -25,7 +25,6 @@ function updateArrows() {
         .attr("stroke", "#424242")
         .merge(selectedNodes.select('line'))
         .attr('x1', node => {
-            console.log((node.depth + 1) * settings.barHeight);
             return node.xPossition + (settings.tabSize / 2)
         })
         .attr('x2', node => node.xPossition + (settings.tabSize / 2))

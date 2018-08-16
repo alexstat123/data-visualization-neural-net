@@ -65,10 +65,11 @@ graph = {
     },
 
     updateChildsPosition() {
-        this.getRoot().updateChildsHorizontalPosition();
+        this.nodesArray.forEach(node => node.updateChildsHorizontalPosition());
+
     },
     updateNodesHeight() {
-        this.getRoot().updateParentsHeight();
+        this.nodesArray.forEach(node => node.updateParentsHeight());
     },
     getFixedLayersTypes() {
         return ["FullyConnected"
@@ -110,6 +111,9 @@ graph = {
         var layersType = [...this.getActualLayersTypes()];
 
         return layersType.map(type => ({"type": type, "color": this.nodesColorScale(type)}))
+    },
+    updateClusters() {
+        this.nodesArray.forEach(node => node.updateCluster());
     },
     BFS() {
         var nodesToCall = [this.getRoot()];
@@ -191,11 +195,14 @@ function createGraph(neuralNetwork) {
     graph.updateDepth();
     graph.updateBranches();
     graph.updateTabs();
-
-    graph.updateChildsPosition();
     graph.updateNodesHeight();
+
+    graph.updateClusters();
+    graph.updateChildsPosition();
+
     graph.updateNodesColors();
-    settings.barHeight = (window.innerHeight - $("#emptyCardHeight").height() - (settings.tabSize * 2)) / (graph.nodesArray[graph.nodesArray.length - 1].depth + 1);
+    const titleHeight = $("#emptyCardHeight").height();
+    settings.barHeight = (window.innerHeight - titleHeight - (settings.tabSize * 2)) / (graph.nodesArray[graph.nodesArray.length - 1].depth + 1);
     var earlyExits = graph.nodesArray.filter(node => !node.isMainBranch);
     settings.rootWidth = $("#container_neuralNetwork").width() - (settings.tabSize * 2);
 

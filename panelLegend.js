@@ -45,7 +45,6 @@ function drawLegend(graph) {
 
     itemsEnter
         .on("click", data => {
-            console.log(data);
             if (d3.event.ctrlKey) {
                 var nodes = graph
                     .filterNodes(node => node.originalData.layerType === data.type);
@@ -58,7 +57,6 @@ function drawLegend(graph) {
                 toChange.forEach(node => node.selected = !node.selected);
             } else {
                 graph.selectNodesPrep(node => {
-                    console.log(node);
                     return node.originalData.layerType === data.type;
                 });
             }

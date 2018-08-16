@@ -64,31 +64,60 @@ function nodesHoverSetup() {
 }
 
 function clickEvent(d) {
+
     if (d3.event.ctrlKey) {
-        d.selected = !d.selected;
+        if (d3.event.altKey) {
+            if (d.cluster.nodes.some(node => !node.selected)) {
+                graph.selectNodesPrep(node => node.cluster === d.cluster || node.selected);
+            } else {
+                d.cluster.nodes.forEach(node => node.selected = false);
+            }
+        } else {
+            d.selected = !d.selected;
+        }
     }
     else if (d3.event.shiftKey) {
         d.selected = true;
 
         var selectedNodes = graph.nodesArray.filter(node => node.selected);
-        if (selectedNodes.length === 2) {
-            graph.deselectAllNodes();
-            var start = selectedNodes[0];
-            var end = selectedNodes[1];
+        var start = selectedNodes[0];
+        var end = selectedNodes[1];
 
-            var nodesBetween = graph.getAllPathsBetween(start, end);
-            nodesBetween.forEach(node => node.selected = true);
+        if (selectedNodes.length > 2) {
+            selectedNodes.forEach(function (d, i) {
+                if (!end || d.depth > end.depth) {
+                    end = d;
+                }
+                if (!end || d.depth < start.depth) {
+                    start = d;
+                }
+            });
         }
+
+        graph.deselectAllNodes();
+
+
+        var nodesBetween = graph.getAllPathsBetween(start, end);
+        console.log(nodesBetween);
+        nodesBetween.forEach(node => node.selected = true);
     }
     else {
         graph.deselectAllNodes();
-        d.selected = true;
+        if (!d3.event.altKey) {
+            d.selected = true;
+        } else {
+            graph.selectNodesPrep(node => node.cluster === d.cluster);
+        }
     }
+
     $(window).trigger("nodesSelectionChanged", [graph.getSelectedNodes()]);
 }
 
+function clickTime() {
+
+}
+
 function selectionOpacity(newSelection) {
-    console.log(newSelection);
     var nodes = d3
         .select("#nnblocks")
         .selectAll(".svg_layer");

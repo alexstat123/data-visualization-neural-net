@@ -8,7 +8,6 @@ settings = {
 }
 
 function loadSettingsFile(event) {
-    console.log("loaded");
     var reader = new FileReader();
     reader.onload = function (e) {
         const loaded = JSON.parse(e.target.result);

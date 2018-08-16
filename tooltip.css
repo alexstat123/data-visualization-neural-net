@@ -20,15 +20,23 @@ body {
 
 #container_zoom {
     text-align: left;
-    position: absolute;
-    top: 0;
 }
 
-#container_Legend {
+#container_zoom button {
+    opacity: 0.9;
+    background-color: #dadcde !important;
+    color: black !important;
+}
 
+#container_zoom div {
+    display: inline-block;
 }
 
 #container_LeftSidebar, #centralContainer, #nnblocks {
     height: 100%;
     overflow-y: auto;
+}
+
+#container_Legend {
+    right: 0;
 }

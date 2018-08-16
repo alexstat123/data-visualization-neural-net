@@ -38,8 +38,8 @@ function updatePanel(newSelection) {
     var data = {};
 
     newSelection.forEach(node => {
-
-        for (const [measureName, measureValue] of Object.entries(node.originalData.config || [])) {
+        Object.keys(node.originalData.config || []).forEach(measureName => {
+            measureValue = node.originalData.config[measureName];
             //ID is not useful to display
             if (measureName === "id")
                 return;
@@ -48,7 +48,6 @@ function updatePanel(newSelection) {
                 throw new Error("Field customValue is reserved");
             if (measureName === "customKey")
                 throw new Error("Field customKey is reserved");
-
             if (!data[measureName]) {
                 data[measureName] = {};
                 data[measureName].customName = measureName;
@@ -71,15 +70,14 @@ function updatePanel(newSelection) {
             }
 
             typesContainer[node.originalData.layerType]++;
-        }
+        })
     });
 
     /**
      * Need an array to bind to d3. The key we lose in the process is already duplicated inside
      * @type {any[]}
      */
-    var tmp = Object.keys(data).map(key => data[key]);
-    console.log(tmp);
+    var tmp = Object.values(data);
 
     var svgContainers = d3.select("#container_layersInfo")
         .selectAll(".svg_container")
@@ -140,12 +138,9 @@ function addMeasureSVG(svg) {
              *
              */
 
-            // Convert dictionary to array
-            console.log(measure);
+                // Convert dictionary to array
             var dataArray = Object.keys(measure.values).map(key => measure.values[key]);
-            var domain = Array.from(measure.domain);
-
-            console.log(dataArray);
+            var domain = Array.from(measure.domain).sort((a, b) => (a - b) || (a < b ? -1 : 1));
             //Need to get distincts keys in all the layers
             var keys = dataArray.map(row => Object.keys(row).filter(key => key !== "customValue" && key !== "customKey"));
             //Flatten the array
@@ -160,10 +155,8 @@ function addMeasureSVG(svg) {
                     }
                 });
             });
-
             var stack = d3.stack().keys(keys)(dataArray);
             var maxY = d3.max(stack, row => d3.max(row, element => element[1]));
-            console.log(stack);
             const margins = 20;
             const height = 150 - margins * 2;
             const width = this.getBoundingClientRect().width;
@@ -177,13 +170,14 @@ function addMeasureSVG(svg) {
                 .nice()
                 .range([height, margins]);
 
+            d3.select(this).interrupt();
 
-            console.log(stack);
+
             var rects = d3.select(this)
                 .selectAll(".rectangleContainer")
                 .data(stack, row => row.key);
 
-
+            rects.interrupt();
             rects
                 .exit()
                 .transition()
@@ -222,15 +216,14 @@ function addMeasureSVG(svg) {
                 .enter()
                 .append("rect")
                 .attr("class", "bar");
-            console.log(rectsEnter);
+
+
             var rectExits =
                 rectsUpdate.exit();
-            console.log(rectExits);
 
-            //   rectsUpdate
-            //      .attr("y", row => yScale(row[1]));
-            console.log(keys);
-
+            rectsEnter.interrupt();
+            rectsUpdate.interrupt();
+            rectExits.interrupt();
 
             rectsEnter
                 .attr("y", row => yScale(row[0]))
@@ -255,7 +248,6 @@ function addMeasureSVG(svg) {
                 .attr("width", xScale.bandwidth())
                 .attr("y", row => yScale(row[1]))
                 .attr("height", row => height - yScale(row[1] - row[0]));
-            console.log("enter");
 
             rectExits
                 .raise()
@@ -275,6 +267,8 @@ function addMeasureSVG(svg) {
                 .selectAll(".hoverCatcher")
                 .data(stack[0], elem => elem.data['customValue']);
 
+            hovers.interrupt();
+
             hovers = hovers
                 .enter()
                 .append("rect")
@@ -293,7 +287,6 @@ function addMeasureSVG(svg) {
 
             hovers
                 .on("mouseenter", function (rect) {
-                    console.log(rect);
 
                     rectsUpdate
                         .merge(rectsEnter)
@@ -317,7 +310,6 @@ $(window).on("mouseOverNode", (event, node) => updateMeasureOpacity(node));
 $(window).on("mouseOutNode", (event, node) => updateMeasureOpacity(null));
 
 function updateMeasureOpacity(measures) {
-    console.log(measures);
     const rectMeasures = d3
         .select("#container_layersInfo")
         .selectAll(".bar")

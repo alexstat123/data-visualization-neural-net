@@ -1,5 +1,5 @@
 $(window).on("graphLoaded", (event, data) => getdata(data));
-$(window).on("changedSettings", (event, data) => drawRectangle(null, null, null));
+$(window).on("changedSettings", (event, data) => drawRectangle());
 
 
 //var gap = settings.gapSize;
@@ -151,15 +151,19 @@ function drawRectangle() {
         .data(d => {
             //console.log(Object.keys(d.originalData.config|| {}).map(key => ({k: key, v: d.originalData.config[key]})));
 
-            return Object.keys(d.originalData.config|| {}).map(key => ({k: key, v: d.originalData.config[key], node:d}));
-        },d => d.k);
+            return Object.keys(d.originalData.config || {}).map(key => ({
+                k: key,
+                v: d.originalData.config[key],
+                node: d
+            }));
+        }, d => d.k);
     tspans
         .enter()
         .append("tspan")
         .merge(tspans)
-        .attr("dy", function (d,j) {
+        .attr("dy", function (d, j) {
 
-            var gapFromBottomEdge = (0.1+ 0.2*j)* barthinkness;
+            var gapFromBottomEdge = (0.1 + 0.2 * j) * barthinkness;
             //console.log("text bbox y pos", this.getBBox().y)
             //var gapFromBottomEdge = 0.4 * barthinkness + j * 10;
             //console.log("gapFromBottomEdge",gapFromBottomEdge);
@@ -181,7 +185,7 @@ function drawRectangle() {
 
             var textInNode = d.k + ": " + d.v;
 
-             //console.log("d.k",textInNode);
+            //console.log("d.k",textInNode);
             // console.log("bbox",this.getBBox().width)
             //console.log("barthikness",barthinkness);
 
@@ -206,8 +210,12 @@ function drawRectangle() {
             if (this.getComputedTextLength() < d.node.width) {
 
                 var textInNode = d.k + ": " + d.v;
-
-                if(this.getBBox().height < rects.node().getBBox().height){
+                try {
+                    this.getBBox();
+                } catch  {
+                    return '';
+                }
+                if (this.getBBox().height < rects.node().getBBox().height) {
 
                     return textInNode
                 }
@@ -217,7 +225,6 @@ function drawRectangle() {
 
 
         });
-
 
 
     // var j;
