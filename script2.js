@@ -72,12 +72,39 @@ function drawRectangle() {
             var xPosition = parseFloat(d3.select(this).attr("x")) + 700;
             var yPosition = parseFloat(d3.select(this).attr("y"));
 
-
-            d3.select("#tooltip")
+            console.log("object",Object.keys(d.originalData.config || {}).map(key => ({
+                k: key,
+                v: d.originalData.config[key],
+                node: d
+            })))
+           var dataObject = Object.keys(d.originalData.config || {}).map(key => ({
+                k: key,
+                v: d.originalData.config[key],
+                node: d
+            }))
+            var tooltipData = d3.select("#tooltip")
                 .style("left", xPosition + "px")
                 .style("top", yPosition + "px")
-                .html("Name: " + d.id + '<br/>' + "Layer Type: " + d.originalData.layerType + '<br/>'
-                    + "Kernel: " + d.originalData.config.kernel + '<br/>' + "Convolution Dim: " + d.originalData.config.convolutionDim);
+                .selectAll("div")
+                .data( dataObject)
+                    //console.log(Object.keys(d.originalData.config|| {}).map(key => ({k: key, v: d.originalData.config[key]})));
+
+                // , D => {console.log("D.K",D);return D.k});
+
+                tooltipData
+                    .enter()
+                    .append("div")
+                    .merge(tooltipData)
+                    .text(d =>{
+                        var textInNode = d.k + ": " + d.v;
+                        return textInNode
+                    });
+
+            tooltipData.exit().remove();
+
+                // .html("Name: " + d.id + '<br/>' + "Layer Type: " + d.originalData.layerType + '<br/>'
+                //     + "Kernel: " + d.originalData.config.kernel + '<br/>' + "Convolution Dim: " + d.originalData.config.convolutionDim);
+                // .html();
 
 
             //console.log("data",d.originalData);
@@ -185,11 +212,6 @@ function drawRectangle() {
 
             var textInNode = d.k + ": " + d.v;
 
-            //console.log("d.k",textInNode);
-            // console.log("bbox",this.getBBox().width)
-            //console.log("barthikness",barthinkness);
-
-            //console.log("text length",label.node().getComputedTextLength());
             return textInNode
 
         })
@@ -207,7 +229,7 @@ function drawRectangle() {
             //console.log("text",d.k + ": " + d.v)
 
             //console.log("text length",this.getComputedTextLength())
-            if (this.getComputedTextLength() < d.node.width) {
+            if (this.getComputedTextLength() < d.node.width - settings.gapSize) {
 
                 var textInNode = d.k + ": " + d.v;
                 try {
@@ -377,8 +399,11 @@ function semanticZoom(d) {
     if (d.originalData.config != undefined) {
 
     }
+    if(settings.showIds){
+        return d.id
+    }
+    return ""
 
-    return d.id
 
 
 }

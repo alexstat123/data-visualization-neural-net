@@ -47,7 +47,7 @@ function updateExitArrows(){
             console.log("node.id",node)
             return node.xPossition  + node.width - settings.gapSize;
         })
-        .attr('x2', node => node.xPossition + (settings.tabSize )+node.width * 1.5)
+        .attr('x2', node => node.xPossition + (settings.tabSize )+node.width * 1.5 - settings.gapSize *0.5)
         .attr('y1', node => (node.depth + 0.5 ) * settings.barHeight)
         .attr('y2', node => (node.depth + 0.5 ) * settings.barHeight);
 
@@ -74,9 +74,9 @@ function updateExitArrows(){
         .attr('x1', node => {
             //console.log("some node info",(node.depth + 1) * settings.barHeight);
             console.log("node.id",node)
-            return node.xPossition + (settings.tabSize )+node.width * 1.5
+            return node.xPossition + (settings.tabSize )+node.width * 1.5 - settings.gapSize *0.5
         })
-        .attr('x2', node => node.xPossition + (settings.tabSize)+node.width * 1.5)
+        .attr('x2', node => node.xPossition + (settings.tabSize)+node.width * 1.5 - settings.gapSize *0.5)
         .attr('y1', node => (node.depth + 0.5 ) * settings.barHeight)
         .attr('y2', node => (node.depth + 0.5 ) * settings.barHeight + settings.barHeight * 0.5);
 
