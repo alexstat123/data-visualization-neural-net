@@ -65,7 +65,7 @@ function nodesHoverSetup() {
 
 function clickEvent(d) {
 
-    if (d3.event.ctrlKey) {
+    if (d3.event.ctrlKey || d3.event.altKey && d3.event.shiftKey) {
         if (d3.event.altKey) {
             if (d.cluster.nodes.some(node => !node.selected)) {
                 graph.selectNodesPrep(node => node.cluster === d.cluster || node.selected);
