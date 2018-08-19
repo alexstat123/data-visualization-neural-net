@@ -201,6 +201,7 @@ function createGraph(neuralNetwork) {
     graph.updateChildsPosition();
 
     graph.updateNodesColors();
+    $("#nnTitle").text(graph.netId);
     const titleHeight = $("#emptyCardHeight").height();
     settings.barHeight = (window.innerHeight - titleHeight - (settings.tabSize * 2)) / (graph.nodesArray[graph.nodesArray.length - 1].depth + 1);
     var earlyExits = graph.nodesArray.filter(node => !node.isMainBranch);

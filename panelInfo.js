@@ -157,12 +157,13 @@ function addMeasureSVG(svg) {
             });
             var stack = d3.stack().keys(keys)(dataArray);
             var maxY = d3.max(stack, row => d3.max(row, element => element[1]));
-            const margins = 20;
-            const height = 150 - margins * 2;
+            const margins = 30;
+            const marginRight=5;
+            const height = 150 - margins - marginRight;
             const width = this.getBoundingClientRect().width;
             var xScale = d3.scaleBand()
                 .domain(domain)
-                .range([margins, width])
+                .range([margins, width - marginRight])
                 .padding(0.1);
 
             var yScale = d3.scaleLinear()
