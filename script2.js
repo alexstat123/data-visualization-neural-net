@@ -3,11 +3,6 @@ $(window).on("changedSettings", (event, data) => drawRectangle());
 
 
 function getdata(graph) {
-
-
-    console.log("graph", graph);
-
-
     drawRectangle();
     $(window).trigger("graphDrawn");
 }

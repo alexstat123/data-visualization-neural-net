@@ -30,8 +30,6 @@
     <script type="text/javascript" src="tabArrowDrawing.js"></script>
     <script type="text/javascript" src="semanticZoom.js"></script>
     <script type="text/javascript" src="earlyExitConnections.js"></script>
-    <script type="text/javascript" src="exitExit.js"></script>
-
 </head>
 
 <body class="container-fluid h-100">
@@ -94,7 +92,7 @@
                         </div>
                         <hr>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            What works
+                            How to use
                         </button>
                     </div>
                 </div>
@@ -259,43 +257,73 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">What works</h5>
+                <h5 class="modal-title" id="exampleModalLabel">How to use</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <b>Works:</b><br>
-                Display of AnnaNet, BranchNet and ResnetVGGFaces type networks
-                <br>
-                Selection of nodes with mouse and ctrl/shift keys
-                <br>
-                Expand/compress of lateral panels
-                <br>
-                Enlarge/Shrink Neural Netowrk space
-                <br>
-                Hide/Show legend
-                <br>
-                Save and Load configuration
-                <br>
-                Load Neural Network from net.json file
-                <br>
-
-                <br>
-                <b>What are we working on:</b>
-                <br>
-                Middle exit branches
-                <br>
-                Customization of width, height, gap, colors size of nodes
-                <br>
-                Hide/show ids
-                <br>
-                Single node information on hover
-                <br>
-                Aggregated selected nodes informations
-                <br>
-
-
+            <div class="modal-body text-justify pr-5">
+                <h3><b>Topology</b></h3>
+                <p>
+                    Two nodes are connected only if they share a bottom/top border.
+                    If they share the left/right borders, they are not connected
+                </p>
+                <h3 class="mt-5"><b>Selections</b></h3>
+                <div class="pl-3">
+                    <h4><b>Node selection</b></h4>
+                    <p class="pl-3">
+                        <b>Left click</b> on a node will select it and deselect all the other nodes
+                    </p>
+                </div>
+                <div class="pl-3">
+                    <h4><b>Multiple node selection</b></h4>
+                    <div class="pl-3">
+                        <h5><b>Add to selection</b></h5>
+                        <p class="pl-3">
+                            <b>CTRL + Left click</b> on a node will toggle the selected state of that node
+                        </p>
+                    </div>
+                    <div class="pl-3">
+                        <h5><b>Branch selection</b></h5>
+                        <p class="pl-2">
+                            <small>A branch is defined as all the nodes between a pair of split and merge nodes</small>
+                        </p>
+                        <p class="pl-3">
+                            <b>ALT + Left click</b> on a node will select all the nodes within his branch
+                        </p>
+                    </div>
+                    <div class="pl-3">
+                        <h5><b>Multiple Branch selection</b></h5>
+                        <p class="pl-3">
+                            <b>ALT + CTRL + Left click</b> on a node will add to the current selection all the nodes
+                            within the branch of the clicked node if they were not selected. Otherwise they will be
+                            removed from the current selection.
+                        </p>
+                    </div>
+                    <div class="pl-3">
+                        <h5><b>Ancestors selection</b></h5>
+                        <p class="pl-3">
+                            <b>Left click</b> on a node and then <b>Left click + SHIFT</b> on another node will
+                            select
+                            all the ancestors of the deepest node up to the other selected node.
+                        </p>
+                    </div>
+                    <div class="pl-3">
+                        <h5><b>Category selection</b></h5>
+                        <p class="pl-3">
+                            <b>Left click</b> on a node category in the leged will select all the nodes of that
+                            category
+                        </p>
+                    </div>
+                    <div class="pl-3">
+                        <h5><b>Multiple Category selection</b></h5>
+                        <p class="pl-3">
+                            <b>CTRL + Left click</b> on a node category in the leged will add (or
+                            remove if they are all already selected) to the current
+                            selection all the nodes of that category
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

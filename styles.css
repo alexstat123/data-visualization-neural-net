@@ -24,6 +24,7 @@ svg text {
 
 #layers_info {
     overflow-y: scroll;
+    overflow-x: auto;
     max-height: 100%;
 }
 
