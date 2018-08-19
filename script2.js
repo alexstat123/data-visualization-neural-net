@@ -186,7 +186,7 @@ function drawRectangle() {
                 var textInNode = d.k + ": " + d.v;
                 try {
                     this.getBBox();
-                } catch {
+                } catch(e) {
                     return '';
                 }
                 if (this.getBBox().height < rects.node().getBBox().height) {
